@@ -134,7 +134,7 @@ export const SITE_CONFIG = {
 
   // === IMAGENS ===
   imagens: {
-    advogado: '/images/cerbelera_oliveira_team_photo.webp',
+    advogado: '/images/cerbelera_oliveira_team_photo.jpg',
     hero: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80',
     escritorio:
       'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',

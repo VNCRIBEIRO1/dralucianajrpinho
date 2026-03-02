@@ -3,7 +3,7 @@
 
 export const IMAGES = {
   // Foto dos sócios
-  lawyer: '/images/cerbelera_oliveira_team_photo.webp',
+  lawyer: '/images/cerbelera_oliveira_team_photo.jpg',
 
   // Hero background - Estátua da Justiça
   hero: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80',

@@ -206,8 +206,20 @@ export default function AgendaPage() {
     try {
       const res = await fetch('/api/google/sync', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mes: mesAtual, ano: anoAtual, direcao: 'ambos' }) })
       const data = await res.json()
-      setSyncMsg(res.ok ? `Sync: ${data.envio?.criados || 0} enviado(s), ${data.importacao?.importados || 0} importado(s)` : `Erro: ${data.error}`)
-      if (res.ok) await carregarAgendamentos()
+      if (res.ok) {
+        const e = data.envio || {}
+        const i = data.importacao || {}
+        const partes = []
+        if (e.criados > 0) partes.push(`${e.criados} enviado(s)`)
+        if (i.importados > 0) partes.push(`${i.importados} importado(s)`)
+        if (i.atualizados > 0) partes.push(`${i.atualizados} atualizado(s)`)
+        if (i.cancelados > 0) partes.push(`${i.cancelados} cancelado(s)`)
+        if (e.erros?.length > 0) partes.push(`⚠️ ${e.erros.length} erro(s)`)
+        setSyncMsg(partes.length > 0 ? `✅ Sync: ${partes.join(', ')}` : '✅ Tudo sincronizado')
+        await carregarAgendamentos()
+      } else {
+        setSyncMsg(`❌ Erro: ${data.error}`)
+      }
     } catch { setSyncMsg('Erro de conexão') }
     setSincronizando(false); setTimeout(() => setSyncMsg(null), 5000)
   }

@@ -39,12 +39,14 @@ export async function PUT(
           if (user?.googleSyncAtivo && user.googleRefreshToken) {
             // Se o status mudou para cancelado → DELETAR do Google Calendar
             if (dados.status === 'cancelado') {
-              await deletarEventoGoogle(session.userId, agendamento.googleEventId)
-              // Limpar o googleEventId local após deletar do Google
-              await prisma.agendamento.update({
-                where: { id },
-                data: { googleEventId: null },
-              })
+              const deletado = await deletarEventoGoogle(session.userId, agendamento.googleEventId)
+              // Só limpar o googleEventId se deletou com sucesso do Google
+              if (deletado) {
+                await prisma.agendamento.update({
+                  where: { id },
+                  data: { googleEventId: null },
+                })
+              }
             } else {
               // Atualizar evento no Google com os novos dados
               await atualizarEventoGoogle(session.userId, agendamento.googleEventId, {

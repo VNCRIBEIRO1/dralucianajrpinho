@@ -1014,6 +1014,9 @@ _Enviado via Assistente Virtual do site_`.trim();
                             className="text-sm text-secondary-700 leading-relaxed whitespace-pre-line"
                             dangerouslySetInnerHTML={{
                               __html: msg.texto
+                                .replace(/&/g, '&amp;')
+                                .replace(/</g, '&lt;')
+                                .replace(/>/g, '&gt;')
                                 .replace(
                                   /\*([^*]+)\*/g,
                                   '<strong class="text-secondary-800">$1</strong>'

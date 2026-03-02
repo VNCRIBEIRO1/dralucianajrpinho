@@ -40,27 +40,22 @@ export async function POST(request: NextRequest) {
 
       // Verificar se o canal é válido
       if (user.googleChannelId !== channelId) {
-        console.log(`[Webhook] Canal ${channelId} não pertence ao usuário ${userId}`)
         return NextResponse.json({ ok: true })
       }
 
-      // Sincronizar o mês atual e o próximo (para cobrir eventos recentes)
+      // Sincronizar mês atual + próximo (eventos podem ser para o futuro)
       const agora = new Date()
       const mesAtual = agora.getMonth() + 1
       const anoAtual = agora.getFullYear()
 
-      console.log(`[Webhook] Sincronizando para usuário ${userId} — ${mesAtual}/${anoAtual}`)
-
-      // Sync do mês atual
-      const resultado = await sincronizarDoGoogle(userId, mesAtual, anoAtual)
-      console.log(`[Webhook] Resultado sync: importados=${resultado.importados}, atualizados=${resultado.atualizados}, cancelados=${resultado.cancelados}`)
-
-      // Se estiver no final do mês, sincronizar o próximo também
-      const diasNoMes = new Date(anoAtual, mesAtual, 0).getDate()
-      if (agora.getDate() >= diasNoMes - 3) {
+      try {
+        await sincronizarDoGoogle(userId, mesAtual, anoAtual)
+        // Sempre sincronizar mês seguinte também
         const proxMes = mesAtual === 12 ? 1 : mesAtual + 1
         const proxAno = mesAtual === 12 ? anoAtual + 1 : anoAtual
         await sincronizarDoGoogle(userId, proxMes, proxAno)
+      } catch {
+        // Não travar — webhook não pode falhar
       }
     }
 

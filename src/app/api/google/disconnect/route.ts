@@ -12,6 +12,12 @@ export async function POST() {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
 
+    // Parar webhook antes de desconectar
+    try {
+      const { pararWebhook } = await import('@/lib/google-calendar')
+      await pararWebhook(session.userId)
+    } catch { /* silencioso */ }
+
     await prisma.user.update({
       where: { id: session.userId },
       data: {
@@ -19,6 +25,9 @@ export async function POST() {
         googleRefreshToken: null,
         googleTokenExpiry: null,
         googleSyncAtivo: false,
+        googleChannelId: null,
+        googleResourceId: null,
+        googleChannelExpiry: null,
       },
     })
 

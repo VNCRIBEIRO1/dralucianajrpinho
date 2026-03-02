@@ -105,6 +105,10 @@ model Processo {
   andamentos Andamento[]
   documentos Documento[]
   pagamentos Pagamento[]
+
+  @@index([status])
+  @@index([clienteId])
+  @@index([advogadoId])
 }
 
 // ============================================================
@@ -123,6 +127,9 @@ model Prazo {
 
   processoId String
   processo   Processo @relation(fields: [processoId], references: [id], onDelete: Cascade)
+
+  @@index([dataLimite])
+  @@index([status])
 }
 
 // ============================================================
@@ -156,6 +163,11 @@ model Agendamento {
 
   clienteId String?
   cliente   Cliente? @relation(fields: [clienteId], references: [id], onDelete: SetNull)
+
+  @@index([dataHora])
+  @@index([status])
+  @@index([googleEventId])
+  @@index([clienteId])
 }
 
 // ============================================================
@@ -229,6 +241,9 @@ model Triagem {
   clienteId   String?  // quando convertida em cliente
   observacoes String?
   criadoEm    DateTime @default(now())
+
+  @@index([status])
+  @@index([criadoEm])
 }
 
 // ============================================================

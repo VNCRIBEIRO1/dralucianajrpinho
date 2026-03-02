@@ -7,7 +7,10 @@ export async function POST(request: NextRequest) {
     const { nome, email, senha, role, chaveAdmin } = await request.json()
 
     // Chave de segurança para criar primeiro usuário
-    const chaveCorreta = process.env.ADMIN_KEY || 'cerbelera2025'
+    const chaveCorreta = process.env.ADMIN_KEY
+    if (!chaveCorreta) {
+      return NextResponse.json({ error: 'ADMIN_KEY não configurada no servidor' }, { status: 500 })
+    }
     if (!chaveAdmin || chaveAdmin !== chaveCorreta) {
       return NextResponse.json({ error: 'Chave de administrador inválida' }, { status: 403 })
     }

@@ -3,8 +3,13 @@ import type { NextRequest } from 'next/server'
 import { jwtVerify } from 'jose'
 
 const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || ''
+  process.env.JWT_SECRET || 'fallback-dev-secret-change-in-production'
 )
+
+// Em produção, JWT_SECRET deve estar definido
+if (process.env.NODE_ENV === 'production' && !process.env.JWT_SECRET) {
+  console.error('⚠️ CRITICAL: JWT_SECRET não configurado em produção!')
+}
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl

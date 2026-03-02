@@ -29,8 +29,8 @@ export async function POST(request: NextRequest) {
     const ano = dados.ano || new Date().getFullYear()
     const direcao = dados.direcao || 'ambos' // 'enviar', 'receber', 'ambos'
 
-    let resultadoEnvio = { criados: 0, total: 0 }
-    let resultadoImportacao = { importados: 0 }
+    let resultadoEnvio = { criados: 0, total: 0, erros: [] as string[] }
+    let resultadoImportacao = { importados: 0, atualizados: 0, cancelados: 0, totalGoogle: 0 }
 
     if (direcao === 'enviar' || direcao === 'ambos') {
       resultadoEnvio = await sincronizarParaGoogle(session.userId, mes, ano)
@@ -38,6 +38,13 @@ export async function POST(request: NextRequest) {
 
     if (direcao === 'receber' || direcao === 'ambos') {
       resultadoImportacao = await sincronizarDoGoogle(session.userId, mes, ano)
+      // Também sincronizar mês seguinte para pegar eventos futuros
+      const proxMes = mes === 12 ? 1 : mes + 1
+      const proxAno = mes === 12 ? ano + 1 : ano
+      const resultadoProx = await sincronizarDoGoogle(session.userId, proxMes, proxAno)
+      resultadoImportacao.importados += resultadoProx.importados
+      resultadoImportacao.atualizados += resultadoProx.atualizados
+      resultadoImportacao.cancelados += resultadoProx.cancelados
     }
 
     return NextResponse.json({
