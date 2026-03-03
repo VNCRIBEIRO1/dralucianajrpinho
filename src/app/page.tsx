@@ -6,6 +6,11 @@ import {
   CheckCircle2,
   MapPin,
   Star,
+  Heart,
+  Puzzle,
+  Globe,
+  Shield,
+  Award,
 } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import SectionHeader from '@/components/SectionHeader';
@@ -17,70 +22,70 @@ import { IMAGES } from '@/lib/images';
 
 const areas = [
   {
+    iconName: 'Shield',
+    title: 'Direito Previdenciário',
+    description:
+      'Planejamento previdenciário, aposentadorias, revisões de benefícios, auxílio-doença, pensão por morte e defesa junto ao INSS com 23 anos de experiência.',
+  },
+  {
+    iconName: 'Heart',
+    title: 'Direitos Humanos',
+    description:
+      'Defesa intransigente da dignidade humana, combate à discriminação e promoção da igualdade. Atuação em casos de violação de direitos fundamentais.',
+  },
+  {
     iconName: 'Users',
-    title: 'Direito Trabalhista',
+    title: 'Direitos PCD & Neurodiversidade',
     description:
-      'Defesa estratégica em reclamações trabalhistas, rescisões, assédio moral, horas extras, acidentes de trabalho e demais questões laborais.',
-  },
-  {
-    iconName: 'ShieldCheck',
-    title: 'Direito Criminal',
-    description:
-      'Atuação em defesas criminais, habeas corpus, audiências de custódia, recursos e acompanhamento processual completo.',
-  },
-  {
-    iconName: 'Briefcase',
-    title: 'Direito Civil',
-    description:
-      'Orientação em contratos, responsabilidade civil, indenizações, cobranças, ações de reparação e direito das obrigações.',
-  },
-  {
-    iconName: 'Building2',
-    title: 'Direito Empresarial',
-    description:
-      'Assessoria jurídica para empresas, contratos comerciais, recuperação judicial, falência e questões societárias.',
+      'BPC/LOAS, inclusão escolar, cotas, acessibilidade e combate ao capacitismo. Experiência pessoal como autista com diagnóstico tardio.',
   },
   {
     iconName: 'Landmark',
-    title: 'Direito Administrativo',
+    title: 'ESG & Sustentabilidade',
     description:
-      'Atuação em licitações, contratos administrativos, concursos públicos, mandados de segurança e processos disciplinares.',
+      'Consultoria jurídica em práticas ambientais, sociais e de governança. Integração de responsabilidade social com compliance jurídico.',
   },
   {
     iconName: 'Scale',
-    title: 'Cálculos Judiciais',
+    title: 'BPC/LOAS',
     description:
-      'Elaboração e conferência de cálculos judiciais, liquidação de sentenças, atualização de débitos e perícias contábeis.',
+      'Benefício de Prestação Continuada para pessoas com deficiência e idosos. Assessoria completa desde o requerimento até recurso judicial.',
+  },
+  {
+    iconName: 'Briefcase',
+    title: 'Aposentadorias',
+    description:
+      'Aposentadoria por tempo de contribuição, idade, especial, rural e por invalidez. Cálculos e planejamento para o melhor benefício possível.',
   },
 ];
 
 const blogPosts = [
   {
-    title: 'Demissão por Justa Causa: Conheça Seus Direitos',
+    title: 'BPC/LOAS: Guia Completo para Pessoas com Deficiência',
     excerpt:
-      'Entenda quando a demissão por justa causa pode ser aplicada, quais os direitos do trabalhador e como se defender de uma aplicação indevida.',
-    date: '20 Fev 2026',
+      'Entenda quem tem direito ao BPC, como solicitar, documentação necessária e o que fazer em caso de negativa do INSS.',
+    date: '25 Fev 2026',
+    readTime: '8 min',
+    slug: 'bpc-loas-guia-completo',
+    category: 'Direito Previdenciário',
+  },
+  {
+    title: 'Autismo e Direitos: O Que a Lei Garante',
+    excerpt:
+      'Conheça os direitos das pessoas autistas no Brasil — BPC, isenções, inclusão escolar, trabalho e acessibilidade.',
+    date: '18 Fev 2026',
     readTime: '6 min',
-    slug: 'demissao-justa-causa',
-    category: 'Direito Trabalhista',
+    slug: 'autismo-e-direitos',
+    category: 'Direitos Humanos',
   },
   {
-    title: 'Crimes Contra a Honra: Calúnia, Difamação e Injúria',
+    title: 'Planejamento Previdenciário: Como Garantir a Melhor Aposentadoria',
     excerpt:
-      'Saiba as diferenças entre calúnia, difamação e injúria, as penas previstas e como proceder caso seja vítima.',
-    date: '15 Fev 2026',
-    readTime: '5 min',
-    slug: 'crimes-contra-honra',
-    category: 'Direito Criminal',
-  },
-  {
-    title: 'Contratos Empresariais: Como Proteger Seu Negócio',
-    excerpt:
-      'Descubra os elementos essenciais de um contrato empresarial e como evitar cláusulas abusivas que podem prejudicar sua empresa.',
+      'Saiba como um planejamento previdenciário adequado pode aumentar significativamente o valor da sua aposentadoria.',
     date: '10 Fev 2026',
     readTime: '7 min',
-    slug: 'contratos-empresariais',
-    category: 'Direito Empresarial',
+    slug: 'planejamento-previdenciario',
+    category: 'Direito Previdenciário',
   },
 ];
 
@@ -90,14 +95,68 @@ export default function HomePage() {
       {/* Hero */}
       <HeroSection />
 
+      {/* Seção Destaque: Causas que importam */}
+      <section className="py-16 bg-gradient-to-r from-lavender-500/5 via-rose-500/5 to-gold-500/5">
+        <div className="container-custom">
+          <AnimatedSection className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-lavender-600 bg-lavender-500/10 px-4 py-1.5 rounded-full mb-4">
+              <span className="text-lg infinity-gradient font-bold">∞</span>
+              O Que Nos Move
+            </span>
+            <h2 className="section-title">
+              Advocacia com <span className="text-lavender-500">Propósito</span>
+            </h2>
+            <p className="section-subtitle mx-auto">
+              Cada caso é uma história. Cada vitória é uma vida transformada.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Puzzle,
+                title: 'Neurodiversidade',
+                desc: 'Como autista com diagnóstico tardio, a Dra. Luciana entende na pele as barreiras que pessoas neurodivergentes enfrentam. Sua luta é pessoal e profissional.',
+                color: 'from-lavender-500 to-lavender-600',
+                bgIcon: 'bg-lavender-500/10',
+              },
+              {
+                icon: Heart,
+                title: 'Inclusão Social',
+                desc: 'Membro ativa da ALFAA, defende o acesso igualitário a direitos, combatendo o capacitismo e promovendo políticas de inclusão em Lucas do Rio Verde e região.',
+                color: 'from-rose-500 to-rose-600',
+                bgIcon: 'bg-rose-500/10',
+              },
+              {
+                icon: Globe,
+                title: 'Alcance Global',
+                desc: 'Com inscrição na OAP (Portugal, 2023), atende brasileiros em qualquer lugar do mundo. A justiça não tem fronteiras.',
+                color: 'from-gold-500 to-gold-600',
+                bgIcon: 'bg-gold-500/10',
+              },
+            ].map((item, index) => (
+              <AnimatedSection key={item.title} delay={index * 0.15}>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-secondary-100 h-full">
+                  <div className={`w-14 h-14 ${item.bgIcon} rounded-xl flex items-center justify-center mb-6`}>
+                    <item.icon className={`w-7 h-7 bg-gradient-to-r ${item.color} bg-clip-text text-transparent`} style={{ color: item.color.includes('lavender') ? '#8b5cf6' : item.color.includes('rose') ? '#f43f5e' : '#f59e0b' }} />
+                  </div>
+                  <h3 className="text-xl font-serif font-bold text-primary-500 mb-3">{item.title}</h3>
+                  <p className="text-secondary-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Áreas de Atuação */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <AnimatedSection>
             <SectionHeader
               badge="Áreas de Atuação"
-              title="Como Podemos Ajudar"
-              subtitle="Oferecemos atuação estratégica e humanizada em diversas áreas do Direito, sempre com ética e compromisso com resultados."
+              title="Como Posso Ajudar"
+              subtitle="Especialização em Direito Previdenciário com atuação multidisciplinar em Direitos Humanos, ESG e inclusão de PCDs."
             />
           </AnimatedSection>
 
@@ -131,60 +190,60 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
               <div className="relative">
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative border-4 border-transparent" style={{ borderImage: 'linear-gradient(135deg, #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6) 1' }}>
                   <Image
                     src={IMAGES.lawyer}
-                    alt="Sócios Cerbelera & Oliveira Advogados"
+                    alt="Dra. Luciana de Jesus Ribeiro Pinho"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                {/* Decorative badge */}
-                <div className="absolute -bottom-6 -right-6 bg-gold-500 text-white p-6 rounded-xl shadow-xl">
-                  <div className="flex items-center gap-1 mb-1">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-white text-white" />
-                    ))}
-                  </div>
-                  <p className="text-sm font-medium">4.9 no Google</p>
-                  <p className="text-xs opacity-80">38 avaliações</p>
+                {/* Stats badge */}
+                <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-lavender-500 to-lavender-600 text-white p-6 rounded-xl shadow-xl">
+                  <p className="text-3xl font-bold">23</p>
+                  <p className="text-sm font-medium">Anos de Carreira</p>
+                  <p className="text-xs opacity-80 mt-1">Desde 2003</p>
+                </div>
+                {/* Autism awareness badge */}
+                <div className="absolute -top-4 -left-4 bg-white text-primary-500 p-3 rounded-xl shadow-lg">
+                  <span className="text-2xl infinity-gradient font-bold">∞</span>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <span className="inline-block text-sm font-medium text-primary-500 bg-primary-50 px-4 py-1.5 rounded-full mb-4">
-                Sobre o Escritório
+              <span className="inline-block text-sm font-medium text-lavender-600 bg-lavender-500/10 px-4 py-1.5 rounded-full mb-4">
+                Sobre a Dra. Luciana Pinho
               </span>
               <h2 className="section-title">
-                Advocacia Estratégica, Ética e Humanizada
+                Uma Advogada que Luta com o <span className="text-lavender-500">Coração</span> e a <span className="text-gold-500">Lei</span>
               </h2>
               <p className="text-secondary-600 leading-relaxed mb-6">
-                O escritório Cerbelera & Oliveira Advogados Associados atua em
-                Presidente Prudente e região, oferecendo uma advocacia
-                estratégica e humanizada. Liderado pelo Me. Diogo Ramos Cerbelera
-                Neto, Mestre em Direito, e Dr. Luã Carlos de Oliveira, o escritório
-                une rigor acadêmico e sensibilidade humana para defender os
-                direitos de cada cliente.
+                A Dra. Luciana de Jesus Ribeiro Pinho é uma advogada previdenciarista
+                de destaque em Mato Grosso, com 23 anos de carreira dedicada à
+                justiça social em Lucas do Rio Verde. Sua atuação une conhecimento
+                técnico profundo com uma sensibilidade única — moldada por sua
+                própria vivência como autista com diagnóstico tardio.
               </p>
 
               <ul className="space-y-4 mb-8">
                 {[
-                  'Atendimento humanizado e personalizado',
-                  'Estacionamento próprio para clientes',
-                  'Transparência em todas as orientações',
-                  'Compromisso com resultados e excelência',
+                  'Mais de 500 processos conduzidos com excelência',
+                  '5+ pós-graduações em múltiplas áreas do Direito',
+                  'Inscrição na OAP — Atuação internacional em Portugal',
+                  'Membro ativo da ALFAA — Combate ao capacitismo',
+                  'Pioneira em ESG e Direitos Humanos na região',
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-gold-500 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-lavender-500 flex-shrink-0" />
                     <span className="text-secondary-700">{item}</span>
                   </li>
                 ))}
               </ul>
 
               <Link href="/sobre" className="btn-primary">
-                Conheça Nossa História
+                Conheça Minha História
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </AnimatedSection>
@@ -193,7 +252,7 @@ export default function HomePage() {
       </section>
 
       {/* Estatísticas */}
-      <section className="py-16 bg-gradient-to-r from-[#0a110b] via-[#1a2e1f] to-[#0a110b] relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-r from-[#07040f] via-[#150c2a] to-[#07040f] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
@@ -207,10 +266,10 @@ export default function HomePage() {
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '4.9', label: 'Avaliação Google', hasStar: true },
-              { number: '38', label: 'Avaliações de Clientes', hasStar: false },
-              { number: '6', label: 'Áreas de Atuação', hasStar: false },
-              { number: '100%', label: 'Compromisso Ético', hasStar: false },
+              { number: '23', label: 'Anos de Carreira', hasStar: false },
+              { number: '500+', label: 'Processos Conduzidos', hasStar: false },
+              { number: '5+', label: 'Pós-Graduações', hasStar: false },
+              { number: '100%', label: 'Compromisso com Inclusão', hasStar: false },
             ].map((stat, index) => (
               <AnimatedSection
                 key={stat.label}
@@ -218,11 +277,11 @@ export default function HomePage() {
                 className="text-center"
               >
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <p className="text-3xl md:text-4xl font-bold text-gold-400">
+                  <p className="text-3xl md:text-4xl font-bold text-lavender-400">
                     {stat.number}
                   </p>
                   {stat.hasStar && (
-                    <Star className="w-6 h-6 fill-gold-400 text-gold-400" />
+                    <Star className="w-6 h-6 fill-lavender-400 text-lavender-400" />
                   )}
                 </div>
                 <p className="text-primary-200 text-sm">{stat.label}</p>
@@ -232,17 +291,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Avaliações Google — Slider Real */}
+      {/* Avaliações */}
       <GoogleReviewsSlider />
 
-      {/* Blog - Prévia */}
+      {/* Blog */}
       <section className="py-20 bg-secondary-50">
         <div className="container-custom">
           <AnimatedSection>
             <SectionHeader
               badge="Blog Jurídico"
               title="Artigos Informativos"
-              subtitle="Conteúdo educativo para esclarecer dúvidas jurídicas comuns, sem caráter de aconselhamento."
+              subtitle="Conteúdo educativo sobre direitos previdenciários, inclusão e neurodiversidade."
             />
           </AnimatedSection>
 
@@ -265,29 +324,29 @@ export default function HomePage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-gradient-to-br from-[#050905] via-[#0e1810] to-[#1a2e1f] relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-gold-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary-400 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-rose-400 rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative z-10 text-center">
           <AnimatedSection>
+            <div className="text-4xl mb-4 infinity-gradient font-bold inline-block">∞</div>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
-              Precisa de Orientação Jurídica?
+              Precisa de Orientação Previdenciária?
             </h2>
             <p className="text-primary-200 text-lg max-w-2xl mx-auto mb-8">
-              Entre em contato com o escritório Cerbelera & Oliveira para uma
-              consulta. Estamos prontos para defender seus direitos com ética e
-              profissionalismo.
+              Entre em contato para uma consulta personalizada. Sua luta é a
+              minha luta — por justiça, inclusão e dignidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="btn-gold text-base">
+              <Link href="/contato" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-medium rounded-md hover:from-lavender-400 hover:to-lavender-500 transition-all duration-300 shadow-lg text-base">
                 Agende uma Consulta
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || '5518996101884'}`}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || '5565999990000'}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline border-primary-300 text-primary-100 hover:bg-primary-100/10 hover:text-white text-base"
@@ -297,7 +356,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center justify-center gap-2 mt-8 text-primary-400 text-sm">
               <MapPin className="w-4 h-4" />
-              Presidente Prudente, SP • OAB/SP
+              Lucas do Rio Verde, MT • OAB/MT 7973-B • OAP Portugal
             </div>
           </AnimatedSection>
         </div>

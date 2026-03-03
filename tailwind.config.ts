@@ -9,37 +9,62 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Deep Purple — Neurodiversidade, Inclusão, Força
         primary: {
-          50: '#f4f7f5',
-          100: '#dce5df',
-          200: '#b5c9bb',
-          300: '#8aab93',
-          400: '#5e8c6a',
-          500: '#1a2e1f',
-          600: '#162718',
-          700: '#121f14',
-          800: '#0e1810',
-          900: '#0a110b',
-          950: '#050905',
+          50: '#f5f3ff',
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#2d1b4e',
+          600: '#241542',
+          700: '#1c1036',
+          800: '#150c2a',
+          900: '#0e081e',
+          950: '#07040f',
         },
+        // Warm neutrals
         secondary: {
           50: '#fafaf9',
-          100: '#f3f2f0',
-          200: '#e7e5e2',
-          300: '#d4d0cb',
-          400: '#b8b2aa',
-          500: '#8a8279',
-          600: '#6b635a',
-          700: '#4a453f',
-          800: '#2d2a26',
-          900: '#1a1816',
+          100: '#f5f3f0',
+          200: '#e8e4df',
+          300: '#d6d0c8',
+          400: '#b8b0a5',
+          500: '#8a7f72',
+          600: '#6b5f52',
+          700: '#4a4139',
+          800: '#2d2824',
+          900: '#1a1715',
         },
+        // Amber Gold — Profissionalismo & Justiça
         gold: {
-          300: '#e0c76e',
-          400: '#c9a84c',
-          500: '#b8942e',
-          600: '#9a7b20',
-          700: '#7c6318',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+        },
+        // Rose accent — Luta feminina, coragem
+        rose: {
+          300: '#fda4af',
+          400: '#fb7185',
+          500: '#f43f5e',
+          600: '#e11d48',
+        },
+        // Lavender — Neurodiversidade, autismo awareness
+        lavender: {
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#8b5cf6',
+          600: '#7c3aed',
+        },
+        // Infinity symbol colors (autism awareness)
+        autism: {
+          red: '#e74c3c',
+          gold: '#f1c40f',
+          blue: '#3498db',
+          green: '#2ecc71',
+          purple: '#9b59b6',
         },
       },
       fontFamily: {
@@ -50,6 +75,8 @@ const config: Config = {
         'fade-in': 'fadeIn 0.6s ease-out',
         'slide-up': 'slideUp 0.6s ease-out',
         'slide-in-left': 'slideInLeft 0.6s ease-out',
+        'rainbow-shift': 'rainbowShift 6s ease-in-out infinite',
+        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -63,6 +90,14 @@ const config: Config = {
         slideInLeft: {
           '0%': { opacity: '0', transform: 'translateX(-30px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        rainbowShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        pulseSoft: {
+          '0%, 100%': { opacity: '0.6' },
+          '50%': { opacity: '1' },
         },
       },
     },

@@ -1,14 +1,12 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cerbeleraeoliveiraadv.vercel.app';
-
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/painel/'],
+      disallow: ['/painel/', '/api/'],
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: 'https://dralucianajrpinho.vercel.app/sitemap.xml',
   };
 }

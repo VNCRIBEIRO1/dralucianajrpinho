@@ -1,78 +1,58 @@
 import type { Metadata } from 'next';
+import { Calculator, Scale } from 'lucide-react';
+import AnimatedSection from '@/components/AnimatedSection';
 import CalculadoraClient from './CalculadoraClient';
 
 export const metadata: Metadata = {
-  title: 'Calculadora de Direitos Trabalhistas | Insalubridade e Periculosidade | Advogado em Presidente Prudente',
+  title: 'Simulador Previdenciário',
   description:
-    'Descubra gratuitamente se você tem direito a adicional de insalubridade ou periculosidade. Calculadora online do escritório Cerbelera & Oliveira Advogados em Presidente Prudente/SP. Me. Diogo Cerbelera, Mestre em Direito.',
-  keywords: [
-    'calculadora direitos trabalhistas',
-    'insalubridade',
-    'periculosidade',
-    'adicional insalubridade',
-    'adicional periculosidade',
-    'direitos trabalhistas',
-    'advogado trabalhista Presidente Prudente',
-    'advogado em Presidente Prudente',
-    'advogado Presidente Prudente SP',
-    'direito trabalhista Presidente Prudente',
-    'escritório advocacia Presidente Prudente',
-    'EPI',
-    'NR-15',
-    'NR-16',
-    'Cerbelera Oliveira advogados',
-  ],
-  openGraph: {
-    title: 'Calculadora de Direitos Trabalhistas — Você Tem Direito?',
-    description:
-      'Verifique gratuitamente se você tem direito a adicionais de insalubridade ou periculosidade. Advogado especialista em Presidente Prudente/SP.',
-    type: 'website',
-    url: '/calculadora-de-direitos',
-  },
-  alternates: {
-    canonical: '/calculadora-de-direitos',
-  },
-};
-
-// Schema.org structured data for SEO
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Calculadora de Direitos Trabalhistas',
-  description:
-    'Ferramenta gratuita para verificar direitos a adicionais de insalubridade e periculosidade',
-  url: 'https://cerbeleraeoliveiraadv.vercel.app/calculadora-de-direitos',
-  applicationCategory: 'LegalService',
-  operatingSystem: 'Web',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'BRL',
-  },
-  provider: {
-    '@type': 'LegalService',
-    name: 'Cerbelera & Oliveira Advogados Associados',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'R. Francisco Machado de Campos, 393',
-      addressLocality: 'Presidente Prudente',
-      addressRegion: 'SP',
-      postalCode: '19010-300',
-      addressCountry: 'BR',
-    },
-    telephone: '+551899610-1884',
-    url: 'https://cerbeleraeoliveiraadv.vercel.app',
-  },
+    'Simulador de benefícios previdenciários. Calcule uma estimativa do seu benefício do INSS com a Dra. Luciana Pinho.',
 };
 
 export default function CalculadoraPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <CalculadoraClient />
+      {/* Hero */}
+      <section className="pt-32 pb-20 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-autism-red via-autism-gold to-autism-blue" />
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
+        </div>
+        <div className="container-custom relative z-10">
+          <AnimatedSection>
+            <span className="inline-flex items-center gap-2 bg-lavender-500/20 text-lavender-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Scale className="w-4 h-4" />
+              Ferramenta Gratuita
+            </span>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+              Simulador <span className="text-lavender-400">Previdenciário</span>
+            </h1>
+            <p className="text-primary-200 text-lg max-w-2xl">
+              Calcule uma estimativa do seu benefício previdenciário. Esta
+              ferramenta é informativa — para um cálculo preciso, agende uma
+              consulta de planejamento previdenciário.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Calculadora */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <CalculadoraClient />
+        </div>
+      </section>
+
+      {/* Aviso */}
+      <section className="py-8 bg-secondary-50">
+        <div className="container-custom text-center">
+          <p className="text-secondary-500 text-sm">
+            Os valores calculados são estimativas baseadas na legislação vigente
+            e servem apenas como referência. Para um planejamento previdenciário
+            preciso, consulte a Dra. Luciana Pinho.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

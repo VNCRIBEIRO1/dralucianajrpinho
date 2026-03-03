@@ -18,7 +18,7 @@
   }
 
   ::selection {
-    @apply bg-gold-500 text-white;
+    @apply bg-lavender-500 text-white;
   }
 }
 
@@ -31,14 +31,14 @@
     @apply inline-flex items-center justify-center px-6 py-3 
            bg-primary-500 text-white font-medium rounded-md
            hover:bg-primary-600 transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2;
+           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
   }
 
   .btn-outline {
     @apply inline-flex items-center justify-center px-6 py-3
            border-2 border-primary-500 text-primary-500 font-medium rounded-md
            hover:bg-primary-500 hover:text-white transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2;
+           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
   }
 
   .btn-gold {
@@ -46,6 +46,13 @@
            bg-gold-500 text-white font-medium rounded-md
            hover:bg-gold-600 transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
+  }
+
+  .btn-lavender {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-lavender-500 text-white font-medium rounded-md
+           hover:bg-lavender-600 transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
   }
 
   .section-title {
@@ -69,8 +76,28 @@
 
   .input-field {
     @apply w-full px-4 py-3 border border-secondary-300 rounded-md
-           focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-500
+           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:border-lavender-500
            transition-all duration-200 text-secondary-800 placeholder:text-secondary-400;
+  }
+
+  /* Infinity symbol animation - Autism awareness */
+  .infinity-gradient {
+    background: linear-gradient(
+      270deg,
+      #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c
+    );
+    background-size: 600% 600%;
+    animation: rainbowShift 6s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .neurodiversity-border {
+    border-image: linear-gradient(
+      90deg,
+      #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6
+    ) 1;
   }
 }
 
@@ -83,19 +110,19 @@
 /* ─── CMS Panel Utilities ─── */
 @layer components {
   .painel-card {
-    @apply bg-[#0e1810] border border-[#1e3323] rounded-2xl shadow-lg shadow-black/20;
+    @apply bg-[#150c2a] border border-[#2d1b4e] rounded-2xl shadow-lg shadow-black/20;
   }
 
   .painel-card-header {
-    @apply px-6 py-4 border-b border-[#1e3323] flex items-center justify-between;
+    @apply px-6 py-4 border-b border-[#2d1b4e] flex items-center justify-between;
   }
 
   .painel-card-body {
-    @apply divide-y divide-[#1e3323]/50;
+    @apply divide-y divide-[#2d1b4e]/50;
   }
 
   .painel-card-row {
-    @apply px-6 py-4 hover:bg-[#1a2e1f]/40 transition-colors;
+    @apply px-6 py-4 hover:bg-[#241542]/40 transition-colors;
   }
 
   .painel-heading {
@@ -103,7 +130,7 @@
   }
 
   .painel-subheading {
-    @apply text-[#7a9f7e] text-sm font-medium tracking-wide;
+    @apply text-[#a78bfa] text-sm font-medium tracking-wide;
   }
 
   .painel-section-title {
@@ -111,31 +138,31 @@
   }
 
   .painel-label {
-    @apply text-sm font-medium text-[#b0c4b4] mb-1.5 block;
+    @apply text-sm font-medium text-[#c4b5fd] mb-1.5 block;
   }
 
   .painel-input {
-    @apply w-full px-4 py-2.5 bg-[#111a13] border border-[#1e3323] rounded-xl text-white text-sm 
-           placeholder-[#4a6b4e] focus:outline-none focus:border-[#c9a84c]/50 focus:ring-1 focus:ring-[#c9a84c]/20
+    @apply w-full px-4 py-2.5 bg-[#0e081e] border border-[#2d1b4e] rounded-xl text-white text-sm 
+           placeholder-[#6b5f8a] focus:outline-none focus:border-[#a78bfa]/50 focus:ring-1 focus:ring-[#a78bfa]/20
            transition-all duration-200;
   }
 
   .painel-btn-primary {
-    @apply px-5 py-2.5 bg-gradient-to-r from-[#c9a84c] to-[#b8942e] text-white text-sm font-semibold 
-           rounded-xl hover:from-[#d4b55a] hover:to-[#c9a84c] transition-all duration-200 
-           shadow-lg shadow-[#c9a84c]/15 active:scale-[0.98];
+    @apply px-5 py-2.5 bg-gradient-to-r from-[#8b5cf6] to-[#7c3aed] text-white text-sm font-semibold 
+           rounded-xl hover:from-[#a78bfa] hover:to-[#8b5cf6] transition-all duration-200 
+           shadow-lg shadow-[#8b5cf6]/15 active:scale-[0.98];
   }
 
   .painel-btn-outline {
-    @apply px-4 py-2 text-sm bg-[#0e1810] border border-[#1e3323] text-[#8a9f8e] rounded-xl 
-           hover:text-white hover:border-[#c9a84c]/30 transition-all duration-200;
+    @apply px-4 py-2 text-sm bg-[#150c2a] border border-[#2d1b4e] text-[#a78bfa] rounded-xl 
+           hover:text-white hover:border-[#8b5cf6]/30 transition-all duration-200;
   }
 
   .painel-link {
-    @apply text-[#c9a84c] hover:text-[#d4b55a] transition-colors text-sm font-medium;
+    @apply text-[#a78bfa] hover:text-[#c4b5fd] transition-colors text-sm font-medium;
   }
 
   .painel-divider {
-    @apply border-[#1e3323];
+    @apply border-[#2d1b4e];
   }
 }

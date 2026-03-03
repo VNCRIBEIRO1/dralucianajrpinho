@@ -7,34 +7,37 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://cerbeleraeoliveiraadv.vercel.app'
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://dralucianajrpinho.vercel.app'
   ),
   title: {
-    default:
-      'Cerbelera & Oliveira | Advogados em Presidente Prudente - SP',
-    template: '%s | Cerbelera & Oliveira Advogados',
+    default: 'Dra. Luciana Pinho | Advogada Previdenciarista — Lucas do Rio Verde, MT',
+    template: '%s | Dra. Luciana Pinho — Advocacia Previdenciária',
   },
   description:
-    'Cerbelera & Oliveira Advogados Associados – Escritório de Advocacia em Presidente Prudente, SP. Atuação estratégica e humanizada em Direito Trabalhista, Criminal, Civil, Empresarial e Administrativo.',
+    'Dra. Luciana J. R. Pinho — Advogada Previdenciarista com 23 anos de carreira em Lucas do Rio Verde, MT. Especialista em Direitos Humanos, ESG e Inclusão de PCDs. OAB/MT 7973-B.',
   keywords: [
-    'advogado Presidente Prudente',
-    'escritório de advocacia',
-    'direito trabalhista',
-    'direito criminal',
-    'direito civil',
-    'direito empresarial',
-    'direito administrativo',
-    'Cerbelera Oliveira',
-    'advogado SP',
+    'advogada previdenciarista',
+    'direito previdenciário',
+    'aposentadoria',
+    'BPC LOAS',
+    'INSS',
+    'direitos humanos',
+    'ESG',
+    'PCD',
+    'autismo',
+    'neurodiversidade',
+    'Lucas do Rio Verde',
+    'Mato Grosso',
+    'OAP Portugal',
   ],
-  authors: [{ name: 'Cerbelera & Oliveira Advogados Associados' }],
+  authors: [{ name: 'Dra. Luciana de Jesus Ribeiro Pinho' }],
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    siteName: 'Cerbelera & Oliveira Advogados',
-    title: 'Cerbelera & Oliveira | Advogados em Presidente Prudente - SP',
+    siteName: 'Dra. Luciana Pinho — Advocacia Previdenciária',
+    title: 'Dra. Luciana Pinho | Advogada Previdenciarista — Lucas do Rio Verde, MT',
     description:
-      'Escritório de Advocacia em Presidente Prudente. Atuação estratégica e humanizada em Direito Trabalhista, Criminal, Civil, Empresarial e Administrativo.',
+      'Advocacia Previdenciária, Direitos Humanos e ESG. 23 anos transformando vidas com justiça e inclusão.',
   },
   robots: {
     index: true,
@@ -47,9 +50,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'JdhatxU36ZDViOKcIKyHf89T9AhWbUJ2Va_v5Kc5yFA',
-  },
 };
 
 export default function RootLayout({
@@ -61,7 +61,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={inter.className}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="theme-color" content="#1a1a1a" />
+        <meta name="theme-color" content="#2d1b4e" />
       </head>
       <body className="min-h-screen flex flex-col">
         <LayoutContent>{children}</LayoutContent>

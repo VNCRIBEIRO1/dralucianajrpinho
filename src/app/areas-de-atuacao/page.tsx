@@ -14,6 +14,9 @@ import {
   FileText,
   Handshake,
   Gavel,
+  Heart,
+  Globe,
+  Puzzle,
   LucideIcon,
 } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
@@ -30,98 +33,102 @@ const iconMap: Record<string, LucideIcon> = {
   FileText,
   Handshake,
   Gavel,
+  Heart,
+  Globe,
+  Puzzle,
+  Shield: ShieldCheck,
 };
 
 const areas = [
   {
-    iconName: 'Users',
-    title: 'Direito Trabalhista',
+    iconName: 'Shield',
+    title: 'Direito Previdenciário',
     description:
-      'Atuação estratégica na defesa dos direitos do trabalhador e do empregador. Assessoria completa em todas as fases do processo trabalhista, desde a negociação até o julgamento final.',
+      'Principal área de atuação com 23 anos de experiência. Planejamento previdenciário estratégico, revisão de benefícios, aposentadorias, pensões e defesa integral junto ao INSS.',
     topics: [
-      'Rescisão Contratual',
-      'Verbas Rescisórias',
-      'Assédio Moral e Sexual',
-      'Horas Extras e Adicionais',
-      'Acidentes de Trabalho',
-      'Reclamações Trabalhistas',
+      'Planejamento Previdenciário',
+      'Aposentadoria por Tempo/Idade',
+      'Aposentadoria Especial',
+      'Revisão de Benefícios',
+      'Pensão por Morte',
+      'Auxílio-Doença / Acidente',
     ],
-    color: 'from-[#1a2e1f] to-[#2d4a35]',
+    color: 'from-[#2d1b4e] to-[#4a2d7a]',
   },
   {
-    iconName: 'ShieldCheck',
-    title: 'Direito Criminal',
+    iconName: 'Heart',
+    title: 'Direitos Humanos',
     description:
-      'Defesa criminal robusta e estratégica em todas as instâncias. Atuação em inquéritos policiais, audiências de custódia, habeas corpus, recursos e acompanhamento processual completo.',
+      'Defesa intransigente da dignidade humana. Combate à discriminação, promoção da igualdade e proteção dos direitos fundamentais de grupos vulneráveis.',
     topics: [
-      'Defesa Criminal',
-      'Habeas Corpus',
-      'Audiência de Custódia',
-      'Crimes contra o Patrimônio',
-      'Crimes contra a Pessoa',
-      'Recursos Criminais',
+      'Dignidade da Pessoa Humana',
+      'Combate à Discriminação',
+      'Proteção de Vulneráveis',
+      'Direitos Fundamentais',
+      'Ações contra o Estado',
+      'Inclusão e Igualdade',
     ],
-    color: 'from-[#1a1a1a] to-[#333333]',
+    color: 'from-[#4a1942] to-[#7a2d6e]',
   },
   {
-    iconName: 'Briefcase',
-    title: 'Direito Civil',
+    iconName: 'Puzzle',
+    title: 'Direitos PCD & Neurodiversidade',
     description:
-      'Orientação e representação em questões civis como contratos, responsabilidade civil, indenizações, cobranças judiciais e direito das obrigações.',
+      'BPC/LOAS, inclusão escolar e laboral, cotas, acessibilidade e combate ao capacitismo. Experiência pessoal como autista — a luta é pessoal e profissional.',
     topics: [
-      'Contratos e Obrigações',
-      'Responsabilidade Civil',
-      'Indenizações por Danos',
-      'Direito das Sucessões',
-      'Cobranças Judiciais',
-      'Ações de Reparação',
+      'BPC/LOAS para PCDs',
+      'Inclusão Escolar',
+      'Cotas e Acessibilidade',
+      'Direitos do Autista',
+      'Combate ao Capacitismo',
+      'Lei Brasileira de Inclusão',
     ],
-    color: 'from-[#1a2e1f] to-[#3a5a42]',
+    color: 'from-[#1b2d4e] to-[#2d4a7a]',
   },
   {
-    iconName: 'Building2',
-    title: 'Direito Empresarial',
+    iconName: 'Globe',
+    title: 'ESG & Sustentabilidade',
     description:
-      'Assessoria jurídica completa para empresas de todos os portes. Desde a constituição da empresa até a resolução de conflitos societários, contratos comerciais e recuperação judicial.',
+      'Consultoria jurídica em práticas ambientais, sociais e de governança corporativa. Integração de responsabilidade social com compliance jurídico.',
     topics: [
-      'Constituição de Empresas',
-      'Contratos Comerciais',
-      'Recuperação Judicial',
-      'Questões Societárias',
-      'Compliance Empresarial',
-      'Falência',
+      'Compliance Ambiental',
+      'Governança Corporativa',
+      'Responsabilidade Social',
+      'Due Diligence ESG',
+      'Relatórios de Sustentabilidade',
+      'Políticas de Inclusão',
     ],
-    color: 'from-[#8b7320] to-[#b8942e]',
-  },
-  {
-    iconName: 'Landmark',
-    title: 'Direito Administrativo',
-    description:
-      'Atuação em questões envolvendo a Administração Pública, licitações, contratos administrativos, concursos públicos, mandados de segurança e processos disciplinares.',
-    topics: [
-      'Licitações e Contratos',
-      'Mandado de Segurança',
-      'Concursos Públicos',
-      'Processos Disciplinares',
-      'Responsabilidade do Estado',
-      'Improbidade Administrativa',
-    ],
-    color: 'from-[#1a1a1a] to-[#2a2a2a]',
+    color: 'from-[#1b4e2d] to-[#2d7a4a]',
   },
   {
     iconName: 'Scale',
-    title: 'Cálculos Judiciais',
+    title: 'BPC/LOAS',
     description:
-      'Elaboração e conferência de cálculos judiciais com precisão e rigor técnico. Liquidação de sentenças, atualização de débitos judiciais e perícias contábeis para diversas áreas do Direito.',
+      'Benefício de Prestação Continuada para pessoas com deficiência e idosos de baixa renda. Assessoria completa desde o requerimento administrativo até recurso judicial.',
     topics: [
-      'Liquidação de Sentenças',
-      'Atualização de Débitos',
-      'Perícias Contábeis',
-      'Cálculos Trabalhistas',
-      'Cálculos Cíveis',
-      'Impugnação de Cálculos',
+      'Requerimento Administrativo',
+      'Recurso ao CRPS',
+      'Ação Judicial BPC',
+      'Revisão de Benefício',
+      'BPC na Escola',
+      'BPC Trabalho',
     ],
-    color: 'from-[#7c6318] to-[#c9a84c]',
+    color: 'from-[#4e1b1b] to-[#7a2d2d]',
+  },
+  {
+    iconName: 'Briefcase',
+    title: 'Aposentadorias',
+    description:
+      'Análise completa do histórico contributivo e cálculos para o melhor benefício possível. Todas as modalidades de aposentadoria, incluindo rural e especial.',
+    topics: [
+      'Tempo de Contribuição',
+      'Idade',
+      'Especial (Insalubridade)',
+      'Rural',
+      'Invalidez',
+      'Cálculos Previdenciários',
+    ],
+    color: 'from-[#4e3d1b] to-[#7a5e2d]',
   },
 ];
 
@@ -129,93 +136,93 @@ export default function AreasPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#050905] via-[#0e1810] to-[#1a2e1f] relative overflow-hidden">
+      <section className="pt-32 pb-20 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-autism-red via-autism-gold to-autism-blue" />
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-gold-500 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-2 bg-gold-500/20 text-gold-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Gavel className="w-4 h-4" />
-              Áreas de Atuação
+            <span className="inline-flex items-center gap-2 bg-lavender-500/20 text-lavender-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Scale className="w-4 h-4" />
+              Especialidades
             </span>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Nossas <span className="text-gold-400">Áreas de Atuação</span>
+              Áreas de <span className="text-lavender-400">Atuação</span>
             </h1>
             <p className="text-primary-200 text-lg max-w-2xl">
-              Atuação estratégica e humanizada em diversas áreas do Direito,
-              sempre com ética e compromisso com resultados.
+              Especialização em Direito Previdenciário com atuação multidisciplinar em Direitos
+              Humanos, ESG e inclusão de PCDs. 23 anos de experiência a seu serviço.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Áreas detalhadas */}
+      {/* Áreas Detalhadas */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="space-y-20">
+          <div className="space-y-16">
             {areas.map((area, index) => {
-              const AreaIcon = iconMap[area.iconName] || Briefcase;
+              const IconComponent = iconMap[area.iconName] || Scale;
+              const areaImage = AREA_IMAGES[area.title] || DEFAULT_IMAGE;
+              const isReversed = index % 2 !== 0;
+
               return (
-                <AnimatedSection key={area.title}>
+                <AnimatedSection key={area.title} delay={0.1}>
                   <div
                     className={`grid lg:grid-cols-2 gap-12 items-center ${
-                      index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                      isReversed ? 'lg:grid-flow-dense' : ''
                     }`}
                   >
-                    <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                      <div className="flex items-center gap-4 mb-6">
+                    <div className={isReversed ? 'lg:col-start-2' : ''}>
+                      <div className="aspect-video rounded-2xl overflow-hidden shadow-xl relative">
+                        <Image
+                          src={areaImage}
+                          alt={area.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
                         <div
-                          className={`w-14 h-14 bg-gradient-to-br ${area.color} rounded-xl flex items-center justify-center`}
-                        >
-                          <AreaIcon className="w-7 h-7 text-white" />
+                          className={`absolute inset-0 bg-gradient-to-t ${area.color} opacity-60`}
+                        />
+                        <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                            <IconComponent className="w-6 h-6 text-white" />
+                          </div>
+                          <h3 className="text-white font-serif font-bold text-xl">
+                            {area.title}
+                          </h3>
                         </div>
-                        <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary-500">
-                          {area.title}
-                        </h2>
                       </div>
+                    </div>
 
-                      <p className="text-secondary-600 leading-relaxed mb-8">
+                    <div>
+                      <p className="text-secondary-600 leading-relaxed mb-6">
                         {area.description}
                       </p>
-
-                      <div className="grid grid-cols-2 gap-3 mb-8">
+                      <div className="grid grid-cols-2 gap-3 mb-6">
                         {area.topics.map((topic) => (
-                          <div key={topic} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-gold-500 flex-shrink-0" />
+                          <div
+                            key={topic}
+                            className="flex items-center gap-2"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-lavender-500 flex-shrink-0" />
                             <span className="text-secondary-700 text-sm">
                               {topic}
                             </span>
                           </div>
                         ))}
                       </div>
-
                       <Link
                         href="/contato"
-                        className="btn-primary inline-flex items-center text-sm"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-lavender-600 hover:text-lavender-500 transition-colors"
                       >
-                        Saiba Mais
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                        Consulte sobre {area.title}
+                        <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
-
-                    <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                      <div className="aspect-[4/3] rounded-2xl shadow-lg overflow-hidden relative">
-                        <Image
-                          src={AREA_IMAGES[area.title] || DEFAULT_IMAGE}
-                          alt={area.title}
-                          fill
-                          className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                      </div>
-                    </div>
                   </div>
-
-                  {index < areas.length - 1 && (
-                    <div className="border-b border-secondary-200 mt-20" />
-                  )}
                 </AnimatedSection>
               );
             })}
@@ -224,18 +231,21 @@ export default function AreasPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-[#050905] via-[#0e1810] to-[#1a2e1f]">
-        <div className="container-custom text-center">
+      <section className="py-20 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
+        </div>
+        <div className="container-custom relative z-10 text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
-              Precisa de Orientação?
+              Precisa de Orientação Especializada?
             </h2>
             <p className="text-primary-200 text-lg max-w-2xl mx-auto mb-8">
-              Entre em contato para esclarecer suas dúvidas. Nosso atendimento é
-              estratégico, humanizado e segue as normas éticas da OAB.
+              Com 23 anos de experiência, estou pronta para analisar seu caso
+              com a atenção e o cuidado que ele merece.
             </p>
-            <Link href="/contato" className="btn-gold text-base">
-              Agende uma Consulta
+            <Link href="/contato" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-medium rounded-md hover:from-lavender-400 hover:to-lavender-500 transition-all shadow-lg text-base">
+              Fale Comigo
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </AnimatedSection>
