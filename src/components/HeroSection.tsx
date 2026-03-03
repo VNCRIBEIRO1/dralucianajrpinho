@@ -134,62 +134,78 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Badge — 23+ Anos */}
+              {/* Badge — 23+ Anos (oculto no mobile) */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="absolute -top-3 -right-3 md:-right-6 bg-white rounded-2xl px-4 py-3 shadow-xl shadow-black/15 border border-inclusion-lilac/30"
+                className="hidden md:block absolute -top-3 -right-3 md:-right-5 bg-white rounded-xl px-3 py-2 shadow-lg shadow-black/10 border border-inclusion-lilac/30"
               >
-                <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 bg-gradient-to-br from-autism-blue/15 to-autism-purple/15 rounded-xl flex items-center justify-center">
-                    <Award className="w-5 h-5 text-lavender-600" />
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 bg-gradient-to-br from-autism-blue/15 to-autism-purple/15 rounded-lg flex items-center justify-center">
+                    <Award className="w-4 h-4 text-lavender-600" />
                   </div>
                   <div>
-                    <p className="text-secondary-800 font-bold text-sm leading-tight">23+ Anos</p>
-                    <p className="text-secondary-500 text-[11px]">de Experiência</p>
+                    <p className="text-secondary-800 font-bold text-xs leading-tight">23+ Anos</p>
+                    <p className="text-secondary-500 text-[10px]">de Experiência</p>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Badge — Pioneira */}
+              {/* Badge — Pioneira (oculto no mobile) */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.9 }}
-                className="absolute top-1/4 -left-4 md:-left-8 bg-white rounded-2xl px-4 py-3 shadow-xl shadow-black/15 border border-inclusion-blush/40"
+                className="hidden md:block absolute top-1/4 -left-3 md:-left-7 bg-white rounded-xl px-3 py-2 shadow-lg shadow-black/10 border border-inclusion-blush/40"
               >
-                <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 bg-gradient-to-br from-autism-red/15 to-rose-500/15 rounded-xl flex items-center justify-center">
-                    <Heart className="w-5 h-5 text-autism-red" />
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 bg-gradient-to-br from-autism-red/15 to-rose-500/15 rounded-lg flex items-center justify-center">
+                    <Heart className="w-4 h-4 text-autism-red" />
                   </div>
                   <div>
-                    <p className="text-secondary-800 font-bold text-sm leading-tight">Pioneira</p>
-                    <p className="text-secondary-500 text-[11px]">Direito + Impacto Social</p>
+                    <p className="text-secondary-800 font-bold text-xs leading-tight">Pioneira</p>
+                    <p className="text-secondary-500 text-[10px]">Direito + Impacto Social</p>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Badge — ALFAA/Neurodiversidade */}
+              {/* Badge — ALFAA/Neurodiversidade (oculto no mobile) */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.1 }}
-                className="absolute bottom-20 -left-4 md:-left-8 bg-white rounded-2xl px-4 py-3 shadow-xl shadow-black/15 border border-inclusion-lilac/30"
+                className="hidden md:block absolute bottom-20 -left-3 md:-left-7 bg-white rounded-xl px-3 py-2 shadow-lg shadow-black/10 border border-inclusion-lilac/30"
               >
-                <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 bg-gradient-to-br from-autism-red/15 via-autism-gold/15 to-autism-blue/15 rounded-xl flex items-center justify-center">
-                    <Puzzle className="w-5 h-5 text-autism-purple" />
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 bg-gradient-to-br from-autism-red/15 via-autism-gold/15 to-autism-blue/15 rounded-lg flex items-center justify-center">
+                    <Puzzle className="w-4 h-4 text-autism-purple" />
                   </div>
                   <div>
-                    <p className="text-secondary-800 font-bold text-sm leading-tight">ALFAA</p>
-                    <p className="text-secondary-500 text-[11px]">Neurodiversidade</p>
+                    <p className="text-secondary-800 font-bold text-xs leading-tight">ALFAA</p>
+                    <p className="text-secondary-500 text-[10px]">Neurodiversidade</p>
                   </div>
                 </div>
               </motion.div>
 
+              {/* Mobile: badges compactos em linha (substituem os floating no mobile) */}
+              <div className="flex md:hidden justify-center gap-2 mt-3 flex-wrap">
+                <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-md border border-inclusion-lilac/30">
+                  <Award className="w-3.5 h-3.5 text-lavender-600" />
+                  <span className="text-secondary-700 font-semibold text-[11px]">23+ Anos</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-md border border-inclusion-blush/40">
+                  <Heart className="w-3.5 h-3.5 text-autism-red" />
+                  <span className="text-secondary-700 font-semibold text-[11px]">Pioneira</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-md border border-inclusion-lilac/30">
+                  <Puzzle className="w-3.5 h-3.5 text-autism-purple" />
+                  <span className="text-secondary-700 font-semibold text-[11px]">ALFAA</span>
+                </div>
+              </div>
+
               {/* Rainbow bar embaixo da foto — 6 cores */}
-              <div className="mt-4 h-1.5 rounded-full rainbow-bar opacity-80" />
+              <div className="mt-3 h-1.5 rounded-full rainbow-bar opacity-80" />
             </div>
           </motion.div>
         </div>

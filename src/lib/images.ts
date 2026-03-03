@@ -51,6 +51,10 @@ export const IMAGES = {
   ctaBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/cta-inclusion-bg',
   logoComposite: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-composite',
   areasSectionBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/areas-section-bg',
+
+  // Logos profissionais gerados por IA (novo header)
+  logoHeader: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-header',
+  logoHeaderHorizontal: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-header-horizontal',
 } as const;
 
 // Imagens por área de atuação
