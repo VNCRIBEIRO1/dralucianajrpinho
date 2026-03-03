@@ -1,57 +1,69 @@
-// Mapeamento central de imagens — Dra. Luciana J. R. Pinho
+// ============================================================
+// MAPEAMENTO DE IMAGENS — CLOUDINARY CDN
+// Dra. Luciana J. R. Pinho
+// Cloud: dwyrt2g1k
+// Gerado automaticamente por scripts/upload-cloudinary.ts
+// ============================================================
+
+const CLOUD_NAME = 'dwyrt2g1k';
+const BASE = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
+
+/** Helper: gera URL Cloudinary com transformações */
+export function cldUrl(publicId: string, transforms = 'f_auto,q_auto'): string {
+  return `${BASE}/${transforms}/${publicId}`;
+}
+
+/** Helper: gera URL com largura específica */
+export function cldUrlW(publicId: string, width: number, quality = 'auto'): string {
+  return `${BASE}/f_auto,q_${quality},w_${width},c_limit/${publicId}`;
+}
 
 export const IMAGES = {
   // Foto da advogada (perfil)
-  lawyer: '/images/dra_luciana_photo.jpg',
+  lawyer: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
 
   // Foto braços cruzados (profissional)
-  lawyerAlt: '/images/dra_luciana_bracos_cruzados.jpg',
+  lawyerAlt: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_bracos_cruzados',
 
-  // Foto na Comissão MT em Brasília (honorários INSS)
-  comissao: '/images/dra_luciana_comissao_mt.jpg',
+  // Foto na Comissão MT em Brasília
+  comissao: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_comissao_mt',
 
   // Hero background — escritório jurídico
-  hero: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80',
+  hero: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-escritorio',
 
   // Escritório
-  office: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
+  office: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/office',
 
-  // Logo (usa foto de perfil como fallback se não houver logo)
-  logo: '/images/dra_luciana_photo.jpg',
-  logoAlt: '/images/dra_luciana_bracos_cruzados.jpg',
-  logoMini: '/images/dra_luciana_photo.jpg',
+  // Logo (usa foto de perfil como fallback)
+  logo: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
+  logoAlt: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_bracos_cruzados',
+  logoMini: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
 } as const;
 
 // Imagens por área de atuação
 export const AREA_IMAGES: Record<string, string> = {
-  'Direito Previdenciário':
-    'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80',
-  'Direitos Humanos':
-    'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80',
-  'Direitos PCD & Neurodiversidade':
-    'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80',
-  'ESG & Sustentabilidade':
-    'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=800&q=80',
-  'BPC/LOAS':
-    'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80',
-  'Aposentadorias':
-    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80',
+  'Direito Previdenciário': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-previdenciario',
+  'Direitos Humanos': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-direitos-humanos',
+  'Direitos PCD & Neurodiversidade': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-pcd-neurodiversidade',
+  'ESG & Sustentabilidade': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-esg-sustentabilidade',
+  'BPC/LOAS': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-bpc-loas',
+  'Aposentadorias': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-aposentadorias',
 };
 
 // Imagens por categoria de blog
 export const BLOG_IMAGES: Record<string, string> = {
   ...AREA_IMAGES,
-  'Direito Previdenciário':
-    'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80',
-  Direito:
-    'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800&q=80',
+  'Direito Previdenciário': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-previdenciario',
+  Direito: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/default-juridico',
 };
 
 // Imagem padrão (fallback)
-export const DEFAULT_IMAGE =
-  'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800&q=80';
+export const DEFAULT_IMAGE = 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/default-juridico';
 
-// Helper
+// Helper para obter imagem por categoria
 export function getCategoryImage(category: string): string {
   return BLOG_IMAGES[category] || AREA_IMAGES[category] || DEFAULT_IMAGE;
 }
+
+// OG Image para redes sociais (com transformação Cloudinary)
+export const OG_IMAGE = cldUrl('dralucianajrpinho/dra_luciana_photo', 'f_jpg,q_90,w_1200,h_630,c_fill,g_face');

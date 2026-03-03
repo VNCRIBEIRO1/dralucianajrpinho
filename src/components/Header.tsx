@@ -68,7 +68,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative h-14 w-auto flex items-center gap-2">
               <CanvasLogo
-                src="/images/dra_luciana_logo.webp"
+                src="https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto,w_400/dralucianajrpinho/dra_luciana_photo"
                 alt="Dra. Luciana Pinho"
                 width={200}
                 height={56}

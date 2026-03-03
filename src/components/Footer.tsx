@@ -33,7 +33,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <CanvasLogo
-                src="/images/dra_luciana_logo.webp"
+                src="https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto,w_80,h_80,c_fill,g_face/dralucianajrpinho/dra_luciana_photo"
                 alt="Dra. Luciana Pinho"
                 width={40}
                 height={40}

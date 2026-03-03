@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import LayoutContent from '@/components/LayoutContent';
+import { OG_IMAGE } from '@/lib/images';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
@@ -38,6 +39,20 @@ export const metadata: Metadata = {
     title: 'Dra. Luciana Pinho | Advogada Previdenciarista — Lucas do Rio Verde, MT',
     description:
       'Advocacia Previdenciária, Direitos Humanos e ESG. 23 anos transformando vidas com justiça e inclusão.',
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'Dra. Luciana Pinho — Advogada Previdenciarista',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dra. Luciana Pinho | Advogada Previdenciarista',
+    description: 'Pioneira na integração de conhecimentos jurídicos com compromisso social. 23 anos de experiência.',
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
@@ -76,7 +91,7 @@ export default function RootLayout({
               url: 'https://dralucianajrpinho.vercel.app',
               telephone: '+5565999885275',
               email: 'contato@lucianapinho.adv.br',
-              image: 'https://dralucianajrpinho.vercel.app/images/dra_luciana_photo.jpg',
+              image: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_jpg,q_90,w_1200,h_630,c_fill,g_face/dralucianajrpinho/dra_luciana_photo',
               priceRange: '$$',
               address: {
                 '@type': 'PostalAddress',

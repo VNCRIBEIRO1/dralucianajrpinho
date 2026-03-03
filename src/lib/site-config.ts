@@ -110,14 +110,14 @@ export const SITE_CONFIG = {
   cnpj: '31.430.307/0001-56',
 
   imagens: {
-    advogado: '/images/dra_luciana_photo.jpg',
-    advogadoAlt: '/images/dra_luciana_bracos_cruzados.jpg',
-    comissao: '/images/dra_luciana_comissao_mt.jpg',
-    hero: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80',
-    escritorio: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
-    logo: '/images/dra_luciana_photo.jpg',
-    logoAlt: '/images/dra_luciana_bracos_cruzados.jpg',
-    logoMini: '/images/dra_luciana_photo.jpg',
+    advogado: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
+    advogadoAlt: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_bracos_cruzados',
+    comissao: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_comissao_mt',
+    hero: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-escritorio',
+    escritorio: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/office',
+    logo: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
+    logoAlt: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_bracos_cruzados',
+    logoMini: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto,w_80,h_80,c_fill,g_face/dralucianajrpinho/dra_luciana_photo',
   },
 
   googleMapsApiKey: '',
