@@ -24,7 +24,7 @@ const valores: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: Scale,
     title: 'Justiça Social',
-    desc: 'Advocacia que vai além do tribunal — lutando por direitos e transformando realidades.',
+    desc: 'Pioneira na região em integrar Direito com impacto social — advocacia que transforma realidades e rompe barreiras.',
   },
   {
     icon: Heart,
@@ -72,9 +72,10 @@ export default function SobrePage() {
               <span className="text-lavender-400">Dra. Luciana Pinho</span>
             </h1>
             <p className="text-primary-200 text-lg max-w-2xl">
-              23 anos de carreira dedicados à Justiça Social, Direitos
-              Previdenciários e à luta incansável pela inclusão de Pessoas com
-              Deficiência.
+              Pioneira em sua região na integração de conhecimentos jurídicos
+              com compromisso social. 23 anos de carreira dedicados à Justiça
+              Social, Direitos Previdenciários e à luta incansável pela
+              inclusão de Pessoas com Deficiência.
             </p>
           </AnimatedSection>
         </div>
@@ -112,21 +113,23 @@ export default function SobrePage() {
                 Uma História de Luta e Transformação
               </span>
               <h2 className="section-title">
-                Advocacia que <span className="text-lavender-500">Transforma</span> Vidas
+                Pioneira na Integração do Direito com <span className="text-lavender-500">Impacto Social</span>
               </h2>
               <div className="space-y-4 text-secondary-600 leading-relaxed mb-6">
                 <p>
                   A Dra. Luciana de Jesus Ribeiro Pinho é uma advogada
                   previdenciarista de destaque em Mato Grosso, com 23 anos de
-                  carreira iniciada em 06/02/2003. Desde Lucas do Rio Verde,
-                  construiu uma reputação sólida baseada em competência técnica e
-                  profunda empatia.
+                  carreira iniciada em 06/02/2003. Pioneira em sua região na
+                  integração de conhecimentos jurídicos com compromisso social,
+                  construiu desde Lucas do Rio Verde uma reputação sólida baseada
+                  em competência técnica e profunda empatia.
                 </p>
                 <p>
                   Especialista em planejamento previdenciário, direitos humanos e
-                  ESG, é pioneira na integração de conhecimentos jurídicos com
-                  compromisso social. Sua atuação não se limita aos tribunais — ela
-                  transforma a vida de cada cliente que a procura.
+                  ESG, foi a primeira advogada da região a integrar de forma
+                  sistemática o Direito ao compromisso social e à inclusão. Sua
+                  atuação não se limita aos tribunais — ela transforma a vida de
+                  cada cliente que a procura.
                 </p>
                 <p>
                   Como autista com diagnóstico tardio, a Dra. Luciana traz uma

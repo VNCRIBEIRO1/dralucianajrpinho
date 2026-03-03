@@ -1,19 +1,25 @@
 // Mapeamento central de imagens — Dra. Luciana J. R. Pinho
 
 export const IMAGES = {
-  // Foto da advogada
+  // Foto da advogada (perfil)
   lawyer: '/images/dra_luciana_photo.jpg',
 
-  // Hero background
+  // Foto braços cruzados (profissional)
+  lawyerAlt: '/images/dra_luciana_bracos_cruzados.jpg',
+
+  // Foto na Comissão MT em Brasília (honorários INSS)
+  comissao: '/images/dra_luciana_comissao_mt.jpg',
+
+  // Hero background — escritório jurídico
   hero: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80',
 
   // Escritório
   office: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
 
-  // Logo
-  logo: '/images/dra_luciana_logo.webp',
-  logoAlt: '/images/dra_luciana_logo.webp',
-  logoMini: '/images/dra_luciana_logo.webp',
+  // Logo (usa foto de perfil como fallback se não houver logo)
+  logo: '/images/dra_luciana_photo.jpg',
+  logoAlt: '/images/dra_luciana_bracos_cruzados.jpg',
+  logoMini: '/images/dra_luciana_photo.jpg',
 } as const;
 
 // Imagens por área de atuação

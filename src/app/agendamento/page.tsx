@@ -7,17 +7,17 @@ import EmailFormClient from './EmailFormClient';
 
 export const metadata: Metadata = {
   title: 'Agende sua Consulta',
-  description: 'Agende sua consulta com Cerbelera & Oliveira Advogados Associados. Atendimento humanizado e personalizado em Presidente Prudente.',
+  description: 'Agende sua consulta com a Dra. Luciana J. R. Pinho. Atendimento humanizado em Direito Previdenciário, Direitos Humanos e PCD em Lucas do Rio Verde, MT.',
 };
 
 export default function AgendamentoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#050905] via-[#0e1810] to-[#1a2e1f] relative overflow-hidden">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-gold-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-56 h-56 bg-primary-400 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-56 h-56 bg-gold-400 rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10 text-center">
           <AnimatedSection>
@@ -84,8 +84,8 @@ export default function AgendamentoPage() {
             {/* Card 2 — Assistente Virtual (ChatBot) */}
             <AnimatedSection delay={0.1}>
               <div className="card pt-8 pb-8 px-6 h-full border border-secondary-200 hover:border-gold-300 transition-all duration-300 hover:shadow-xl">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#1a2e1f] to-[#2d4a35] rounded-xl flex items-center justify-center mb-5">
-                  <Bot className="w-7 h-7 text-gold-400" />
+                <div className="w-14 h-14 bg-gradient-to-br from-[#150c2a] to-[#2d1b4e] rounded-xl flex items-center justify-center mb-5">
+                  <Bot className="w-7 h-7 text-lavender-400" />
                 </div>
                 <h2 className="text-lg font-serif font-bold text-primary-500 mb-2">
                   Assistente Virtual
@@ -108,8 +108,8 @@ export default function AgendamentoPage() {
                 </div>
                 <button
                   id="btn-abrir-chatbot"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1a2e1f] to-[#2d4a35] hover:from-[#243a28] hover:to-[#3a5e40] text-white rounded-xl font-medium transition-all text-sm shadow-lg shadow-primary-900/20 abrir-chatbot-btn">
-                  <Bot className="w-4 h-4 text-gold-400" />
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#150c2a] to-[#2d1b4e] hover:from-[#1e1238] hover:to-[#3a2563] text-white rounded-xl font-medium transition-all text-sm shadow-lg shadow-lavender-900/20 abrir-chatbot-btn">
+                  <Bot className="w-4 h-4 text-lavender-400" />
                   Falar com Assistente
                   <ArrowRight className="w-4 h-4" />
                 </button>
@@ -141,16 +141,16 @@ export default function AgendamentoPage() {
                   ))}
                 </div>
                 <div className="space-y-2.5">
-                  <a href="https://wa.me/5518996101884?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
+                  <a href="https://wa.me/5565999885275?text=Ol%C3%A1%2C%20Dra.%20Luciana!%20Gostaria%20de%20agendar%20uma%20consulta."
                     target="_blank" rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl font-medium transition-colors text-sm">
                     <MessageCircle className="w-4 h-4" />
                     WhatsApp
                   </a>
-                  <a href="tel:+5518996101884"
+                  <a href="tel:+5565999885275"
                     className="w-full flex items-center justify-center gap-2 px-6 py-2.5 border-2 border-secondary-200 text-secondary-600 rounded-xl font-medium hover:border-primary-300 hover:text-primary-500 transition-colors text-sm">
                     <Phone className="w-4 h-4" />
-                    (18) 99610-1884
+                    (65) 99988-5275
                   </a>
                 </div>
               </div>
@@ -203,7 +203,7 @@ export default function AgendamentoPage() {
                   <MapPin className="w-6 h-6 text-primary-500" />
                 </div>
                 <h3 className="font-serif font-bold text-primary-500 text-sm mb-1">Endereço</h3>
-                <p className="text-secondary-600 text-xs">R. Francisco Machado de Campos, 393<br />Vila Nova - Presidente Prudente/SP</p>
+                <p className="text-secondary-600 text-xs">Av. Brasil, 200s<br />Alvorada - Lucas do Rio Verde/MT</p>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
@@ -220,8 +220,8 @@ export default function AgendamentoPage() {
                 <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <Scale className="w-6 h-6 text-primary-500" />
                 </div>
-                <h3 className="font-serif font-bold text-primary-500 text-sm mb-1">Estacionamento</h3>
-                <p className="text-secondary-600 text-xs">🅿️ Estacionamento próprio<br />para sua comodidade</p>
+                <h3 className="font-serif font-bold text-primary-500 text-sm mb-1">Acessibilidade</h3>
+                <p className="text-secondary-600 text-xs">♿ Espaço acessível<br />e ambiente inclusivo</p>
               </div>
             </AnimatedSection>
           </div>

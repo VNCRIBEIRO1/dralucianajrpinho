@@ -21,9 +21,9 @@ export const SITE_CONFIG = {
   ],
 
   // === CONTATO ===
-  telefone: '(65) 99999-0000',
-  telefoneLink: '5565999990000',
-  whatsapp: '5565999990000',
+  telefone: '(65) 99988-5275',
+  telefoneLink: '5565999885275',
+  whatsapp: '5565999885275',
   email: 'contato@lucianapinho.adv.br',
 
   // === ENDEREÇO ===
@@ -111,11 +111,13 @@ export const SITE_CONFIG = {
 
   imagens: {
     advogado: '/images/dra_luciana_photo.jpg',
+    advogadoAlt: '/images/dra_luciana_bracos_cruzados.jpg',
+    comissao: '/images/dra_luciana_comissao_mt.jpg',
     hero: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80',
     escritorio: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
-    logo: '/images/dra_luciana_logo.webp',
-    logoAlt: '/images/dra_luciana_logo.webp',
-    logoMini: '/images/dra_luciana_logo.webp',
+    logo: '/images/dra_luciana_photo.jpg',
+    logoAlt: '/images/dra_luciana_bracos_cruzados.jpg',
+    logoMini: '/images/dra_luciana_photo.jpg',
   },
 
   googleMapsApiKey: '',

@@ -51,11 +51,11 @@ export default function Header() {
               OAB/MT 7973-B • Advocacia Previdenciária & Direitos Humanos
             </span>
             <a
-              href="tel:+5565999990000"
+              href="tel:+5565999885275"
               className="flex items-center gap-1.5 text-white hover:text-white/80 transition-colors font-medium"
             >
               <Phone className="w-3 h-3" />
-              (65) 99999-0000
+              (65) 99988-5275
             </a>
           </div>
         </div>

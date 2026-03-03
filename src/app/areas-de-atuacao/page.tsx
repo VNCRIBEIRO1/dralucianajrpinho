@@ -151,8 +151,10 @@ export default function AreasPage() {
               Áreas de <span className="text-lavender-400">Atuação</span>
             </h1>
             <p className="text-primary-200 text-lg max-w-2xl">
-              Especialização em Direito Previdenciário com atuação multidisciplinar em Direitos
-              Humanos, ESG e inclusão de PCDs. 23 anos de experiência a seu serviço.
+              Pioneira em sua região na integração de conhecimentos jurídicos
+              com compromisso social. Especialização em Direito Previdenciário
+              com atuação multidisciplinar em Direitos Humanos, ESG e inclusão
+              de PCDs. 23 anos de experiência a seu serviço.
             </p>
           </AnimatedSection>
         </div>

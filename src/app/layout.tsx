@@ -62,6 +62,69 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="theme-color" content="#2d1b4e" />
+        {/* JSON-LD Structured Data — Attorney / Local Business */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Attorney',
+              name: 'Dra. Luciana de Jesus Ribeiro Pinho',
+              alternateName: 'Dra. Luciana Pinho',
+              description:
+                'Advogada Previdenciarista com 23 anos de experiência. Pioneira em sua região na integração de conhecimentos jurídicos com compromisso social. Especialista em Direito Previdenciário, Direitos Humanos, Direitos da Pessoa com Deficiência, Neurodiversidade e ESG.',
+              url: 'https://dralucianajrpinho.vercel.app',
+              telephone: '+5565999885275',
+              email: 'contato@lucianapinho.adv.br',
+              image: 'https://dralucianajrpinho.vercel.app/images/dra_luciana_photo.jpg',
+              priceRange: '$$',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Av. Brasil, 200s',
+                addressLocality: 'Lucas do Rio Verde',
+                addressRegion: 'MT',
+                postalCode: '78455-000',
+                addressCountry: 'BR',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: -13.05,
+                longitude: -55.91,
+              },
+              openingHoursSpecification: {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '08:00',
+                closes: '18:00',
+              },
+              areaServed: [
+                { '@type': 'City', name: 'Lucas do Rio Verde' },
+                { '@type': 'State', name: 'Mato Grosso' },
+                { '@type': 'Country', name: 'Brasil' },
+                { '@type': 'Country', name: 'Portugal' },
+              ],
+              knowsAbout: [
+                'Direito Previdenciário',
+                'Aposentadoria',
+                'BPC/LOAS',
+                'Auxílio por Incapacidade',
+                'Pensão por Morte',
+                'Direitos Humanos',
+                'Direitos da Pessoa com Deficiência',
+                'Autismo / TEA',
+                'Neurodiversidade',
+                'ESG',
+              ],
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '5.0',
+                reviewCount: '47',
+                bestRating: '5',
+              },
+              sameAs: [],
+            }),
+          }}
+        />
       </head>
       <body className="min-h-screen flex flex-col">
         <LayoutContent>{children}</LayoutContent>

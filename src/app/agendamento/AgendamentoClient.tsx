@@ -5,13 +5,13 @@ import { useSearchParams } from 'next/navigation';
 import { Calendar, Clock, ChevronLeft, ChevronRight, CheckCircle2, Loader2, MessageCircle, User, Phone, FileText, AlertCircle, Ban, Info } from 'lucide-react';
 
 const TIPOS_CONSULTA = [
-  { value: 'trabalhista', label: 'Direito Trabalhista', icon: '⚖️' },
-  { value: 'previdenciario', label: 'Direito Previdenciário', icon: '🏛️' },
-  { value: 'civil', label: 'Direito Civil', icon: '📜' },
-  { value: 'familia', label: 'Direito de Família', icon: '👨‍👩‍👧' },
-  { value: 'consumidor', label: 'Direito do Consumidor', icon: '🛒' },
-  { value: 'empresarial', label: 'Direito Empresarial', icon: '🏢' },
-  { value: 'imobiliario', label: 'Direito Imobiliário', icon: '🏠' },
+  { value: 'previdenciario', label: 'Aposentadoria / Previdenciário', icon: '🏛️' },
+  { value: 'bpc-loas', label: 'BPC/LOAS', icon: '🤝' },
+  { value: 'auxilio', label: 'Auxílio-Doença / Incapacidade', icon: '🏥' },
+  { value: 'pensao', label: 'Pensão por Morte', icon: '💜' },
+  { value: 'pcd', label: 'Direitos PCD & Autismo', icon: '🧩' },
+  { value: 'direitos-humanos', label: 'Direitos Humanos', icon: '⚖️' },
+  { value: 'esg', label: 'ESG & Sustentabilidade', icon: '🌱' },
   { value: 'outro', label: 'Outro Assunto', icon: '📋' },
 ];
 
@@ -29,15 +29,16 @@ interface HorariosData {
 
 // Mapear área do chatbot → tipo do agendamento
 const AREA_PARA_TIPO: Record<string, string> = {
-  'Direito Trabalhista': 'trabalhista',
+  'Aposentadoria / Previdenciário': 'previdenciario',
   'Direito Previdenciário': 'previdenciario',
-  'Direito Civil': 'civil',
-  'Direito de Família': 'familia',
-  'Direito do Consumidor': 'consumidor',
-  'Direito Empresarial': 'empresarial',
-  'Direito Imobiliário': 'imobiliario',
-  'Direito Criminal': 'outro',
-  'Direito Administrativo': 'outro',
+  'BPC/LOAS': 'bpc-loas',
+  'Auxílio-Doença / Incapacidade': 'auxilio',
+  'Auxílio por Incapacidade': 'auxilio',
+  'Pensão por Morte': 'pensao',
+  'Direitos PCD & Autismo': 'pcd',
+  'Direitos PCD & Neurodiversidade': 'pcd',
+  'Direitos Humanos': 'direitos-humanos',
+  'ESG & Sustentabilidade': 'esg',
 };
 
 export default function AgendamentoClient() {

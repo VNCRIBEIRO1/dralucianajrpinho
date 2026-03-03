@@ -32,8 +32,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Telefone / WhatsApp',
-    lines: ['(65) 99999-0000'],
-    href: 'tel:+5565999990000',
+    lines: ['(65) 99988-5275'],
+    href: 'tel:+5565999885275',
   },
   {
     icon: Mail,

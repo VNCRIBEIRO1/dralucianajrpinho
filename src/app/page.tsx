@@ -107,7 +107,7 @@ export default function HomePage() {
               Advocacia com <span className="text-lavender-500">Propósito</span>
             </h2>
             <p className="section-subtitle mx-auto">
-              Cada caso é uma história. Cada vitória é uma vida transformada.
+              Pioneira em sua região na integração de conhecimentos jurídicos com compromisso social. Cada caso é uma história. Cada vitória é uma vida transformada.
             </p>
           </AnimatedSection>
 
@@ -217,14 +217,15 @@ export default function HomePage() {
                 Sobre a Dra. Luciana Pinho
               </span>
               <h2 className="section-title">
-                Uma Advogada que Luta com o <span className="text-lavender-500">Coração</span> e a <span className="text-gold-500">Lei</span>
+                Pioneira na Integração do <span className="text-lavender-500">Direito</span> com <span className="text-gold-500">Impacto Social</span>
               </h2>
               <p className="text-secondary-600 leading-relaxed mb-6">
                 A Dra. Luciana de Jesus Ribeiro Pinho é uma advogada previdenciarista
-                de destaque em Mato Grosso, com 23 anos de carreira dedicada à
-                justiça social em Lucas do Rio Verde. Sua atuação une conhecimento
-                técnico profundo com uma sensibilidade única — moldada por sua
-                própria vivência como autista com diagnóstico tardio.
+                de destaque em Mato Grosso, pioneira em sua região na integração de
+                conhecimentos jurídicos com compromisso social. Com 23 anos de carreira
+                em Lucas do Rio Verde, sua atuação une excelência técnica com uma
+                sensibilidade única — moldada por sua própria vivência como autista
+                com diagnóstico tardio.
               </p>
 
               <ul className="space-y-4 mb-8">
@@ -233,7 +234,7 @@ export default function HomePage() {
                   '5+ pós-graduações em múltiplas áreas do Direito',
                   'Inscrição na OAP — Atuação internacional em Portugal',
                   'Membro ativo da ALFAA — Combate ao capacitismo',
-                  'Pioneira em ESG e Direitos Humanos na região',
+                  'Pioneira na região: Direito integrado a impacto social, ESG e Direitos Humanos',
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-lavender-500 flex-shrink-0" />
@@ -269,7 +270,7 @@ export default function HomePage() {
               { number: '23', label: 'Anos de Carreira', hasStar: false },
               { number: '500+', label: 'Processos Conduzidos', hasStar: false },
               { number: '5+', label: 'Pós-Graduações', hasStar: false },
-              { number: '100%', label: 'Compromisso com Inclusão', hasStar: false },
+              { number: '1ª', label: 'Pioneira — Direito + Impacto Social na Região', hasStar: false },
             ].map((stat, index) => (
               <AnimatedSection
                 key={stat.label}
@@ -337,8 +338,9 @@ export default function HomePage() {
               Precisa de Orientação Previdenciária?
             </h2>
             <p className="text-primary-200 text-lg max-w-2xl mx-auto mb-8">
-              Entre em contato para uma consulta personalizada. Sua luta é a
-              minha luta — por justiça, inclusão e dignidade.
+              Pioneira na integração de conhecimentos jurídicos com compromisso
+              social. Entre em contato para uma consulta personalizada. Sua luta
+              é a minha luta — por justiça, inclusão e dignidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contato" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-medium rounded-md hover:from-lavender-400 hover:to-lavender-500 transition-all duration-300 shadow-lg text-base">
@@ -346,7 +348,7 @@ export default function HomePage() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || '5565999990000'}`}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || '5565999885275'}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline border-primary-300 text-primary-100 hover:bg-primary-100/10 hover:text-white text-base"

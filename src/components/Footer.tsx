@@ -49,9 +49,9 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-primary-300 text-sm leading-relaxed mb-4">
-              23 anos de carreira dedicados à Justiça Social, Direitos
-              Previdenciários e à luta incansável pela inclusão. Uma advocacia
-              que transforma vidas.
+              Pioneira em sua região na integração de conhecimentos jurídicos
+              com compromisso social. 23 anos de carreira dedicados à Justiça
+              Social e à inclusão. Uma advocacia que transforma vidas.
             </p>
             <div className="flex items-center gap-2 text-sm mb-2">
               <span className="text-lavender-400 font-medium">OAB/MT 7973-B</span>
@@ -122,11 +122,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+5565999990000"
+                  href="tel:+5565999885275"
                   className="flex items-center gap-3 text-primary-300 hover:text-lavender-400 transition-colors text-sm"
                 >
                   <Phone className="w-5 h-5 text-lavender-400 flex-shrink-0" />
-                  (65) 99999-0000
+                  (65) 99988-5275
                 </a>
               </li>
               <li>

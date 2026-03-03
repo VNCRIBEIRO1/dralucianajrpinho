@@ -173,6 +173,374 @@ A Lei Brasileira de Inclusão (Lei 13.146/2015) é o principal instrumento legal
     category: 'Direitos Humanos',
     author: 'Dra. Luciana Pinho',
   },
+  {
+    slug: 'aposentadoria-especial-insalubridade',
+    title: 'Aposentadoria Especial por Insalubridade e Periculosidade',
+    excerpt:
+      'Saiba quem tem direito à aposentadoria especial, quais atividades se qualificam e como comprovar a exposição a agentes nocivos.',
+    content: `
+## O que é Aposentadoria Especial?
+
+A aposentadoria especial é destinada a trabalhadores expostos a agentes nocivos à saúde (físicos, químicos ou biológicos) de forma habitual e permanente durante 15, 20 ou 25 anos de atividade especial.
+
+## Quem tem direito?
+
+- Trabalhadores expostos a ruído acima de 85 dB
+- Profissionais de saúde (enfermeiros, médicos, dentistas)
+- Trabalhadores da indústria química e petroquímica
+- Metalúrgicos, soldadores e fundidores
+- Eletricistas expostos a alta tensão
+- Trabalhadores rurais expostos a agrotóxicos
+- Vigilantes armados (periculosidade)
+
+## Como comprovar?
+
+A comprovação é feita principalmente por:
+- **PPP** (Perfil Profissiográfico Previdenciário) — documento obrigatório emitido pela empresa
+- **LTCAT** (Laudo Técnico das Condições Ambientais de Trabalho)
+- Laudos periciais judiciais
+- Prova testemunhal complementar
+
+## Após a Reforma da Previdência
+
+Com a EC 103/2019, houve mudanças importantes:
+- Exigência de idade mínima (55, 58 ou 60 anos)
+- Regra de transição por pontos
+- Possibilidade de conversão de tempo especial em comum para períodos anteriores à reforma
+
+## Por que um especialista é essencial?
+
+Muitos segurados perdem o direito à aposentadoria especial por falta de documentação adequada ou desconhecimento das regras. A Dra. Luciana, com 23 anos de experiência em Direito Previdenciário, identifica oportunidades que frequentemente passam despercebidas.
+
+*Este conteúdo tem caráter informativo e não substitui consulta jurídica individualizada.*
+    `,
+    date: '01 Mar 2026',
+    readTime: '9 min',
+    category: 'Direito Previdenciário',
+    author: 'Dra. Luciana Pinho',
+  },
+  {
+    slug: 'pensao-por-morte-guia-dependentes',
+    title: 'Pensão por Morte: Quem São os Dependentes e Como Solicitar',
+    excerpt:
+      'Guia completo sobre pensão por morte no INSS — quem são os dependentes, prazos, valores e como evitar a negativa.',
+    content: `
+## O que é Pensão por Morte?
+
+A pensão por morte é um benefício previdenciário pago aos dependentes do segurado que falecer, esteja ele aposentado ou não, desde que mantivesse a qualidade de segurado na data do óbito.
+
+## Quem são os dependentes?
+
+### Classe 1 (presumidos)
+- Cônjuge ou companheiro(a)
+- Filhos menores de 21 anos ou inválidos/com deficiência
+
+### Classe 2
+- Pais, se comprovada a dependência econômica
+
+### Classe 3
+- Irmãos menores de 21 anos ou inválidos/com deficiência, se dependentes economicamente
+
+## Qual o valor?
+
+Após a Reforma da Previdência:
+- 50% + 10% por dependente adicional (até 100%)
+- Exceção: morte por acidente de trabalho ou doença profissional = 100%
+
+## Prazos importantes
+
+- **Até 90 dias** após o óbito: pensão desde a data do falecimento
+- **Entre 90 dias e 3 anos**: pensão a partir do requerimento
+- **Após 3 anos**: perda do direito (exceto para menores e incapazes)
+
+## Situações especiais
+
+- **União estável**: é possível comprovar com documentos e testemunhas
+- **Dependente com deficiência**: tem direito vitalício
+- **Filho com autismo/TEA**: a Lei 12.764/2012 garante equiparação
+
+## O que fazer se o INSS negar?
+
+A negativa pode ser contestada por:
+1. Recurso ao CRPS (Conselho de Recursos da Previdência Social)
+2. Ação judicial com pedido de tutela antecipada
+3. Produção de provas complementares (dependência econômica, união estável)
+
+*Este conteúdo tem caráter informativo e não substitui consulta jurídica individualizada.*
+    `,
+    date: '28 Fev 2026',
+    readTime: '8 min',
+    category: 'Direito Previdenciário',
+    author: 'Dra. Luciana Pinho',
+  },
+  {
+    slug: 'auxilio-doenca-negado-o-que-fazer',
+    title: 'Auxílio por Incapacidade Negado: O Que Fazer?',
+    excerpt:
+      'Teve o auxílio-doença negado na perícia do INSS? Conheça seus direitos e as alternativas para reverter a decisão.',
+    content: `
+## O Auxílio por Incapacidade Temporária
+
+Antigamente chamado de "auxílio-doença", o auxílio por incapacidade temporária é devido ao segurado que comprovar, por meio de exame médico-pericial, que está temporariamente incapaz para o exercício de sua atividade habitual.
+
+## Por que o INSS nega?
+
+As principais razões para negativa são:
+- Perito não reconhece a incapacidade
+- Carência não cumprida (mínimo 12 contribuições)
+- Perda da qualidade de segurado
+- Documentação médica insuficiente
+- Doença considerada preexistente à filiação
+
+## O que fazer após a negativa?
+
+### 1. Pedido de Reconsideração (INSS)
+- Prazo de 30 dias após a ciência da decisão
+- Apresente novos laudos e exames
+
+### 2. Recurso ao CRPS
+- Prazo de 30 dias
+- Análise por uma junta de recursos
+
+### 3. Ação Judicial
+- Não há prazo para ajuizar
+- Possibilidade de perícia judicial (mais detalhada)
+- Pedido de tutela antecipada para casos urgentes
+
+## Documentação essencial
+
+- Laudos médicos detalhados (CID, diagnóstico, prognóstico)
+- Exames complementares (ressonância, tomografia, hemograma)
+- Atestados com período de afastamento
+- Receituários de medicação contínua
+- Declaração do empregador (para empregados)
+
+## Doenças que dispensam carência
+
+Algumas condições dispensam o período de carência:
+- Tuberculose, AIDS/HIV
+- Neoplasia maligna (câncer)
+- Paralisia irreversível
+- Cardiopatia grave
+- Entre outras listadas na legislação
+
+*Este conteúdo tem caráter informativo e não substitui consulta jurídica individualizada.*
+    `,
+    date: '20 Fev 2026',
+    readTime: '7 min',
+    category: 'Direito Previdenciário',
+    author: 'Dra. Luciana Pinho',
+  },
+  {
+    slug: 'esg-compliance-juridico-empresas',
+    title: 'ESG e Compliance Jurídico: O Papel do Direito na Sustentabilidade Corporativa',
+    excerpt:
+      'Descubra como as práticas ESG impactam a governança empresarial e por que o compliance jurídico é essencial para empresas sustentáveis.',
+    content: `
+## O que é ESG?
+
+ESG é a sigla para Environmental, Social and Governance (Ambiental, Social e Governança). Trata-se de um conjunto de critérios utilizados para avaliar a sustentabilidade e o impacto ético de uma empresa.
+
+## ESG e o Direito
+
+A dimensão jurídica do ESG é cada vez mais relevante:
+
+### Environmental (Ambiental)
+- Licenciamento ambiental e conformidade legal
+- Gestão de resíduos e emissões
+- Responsabilidade por danos ambientais
+- Créditos de carbono e economia verde
+
+### Social
+- Direitos trabalhistas e condições de trabalho
+- Inclusão e diversidade (PCD, neurodiversidade, gênero)
+- Relação com comunidades locais
+- Direitos humanos na cadeia de suprimentos
+
+### Governance (Governança)
+- Transparência e prestação de contas
+- Combate à corrupção e lavagem de dinheiro
+- Proteção de dados (LGPD)
+- Ética empresarial e integridade
+
+## Por que as empresas precisam de ESG?
+
+- Acesso a investimentos e financiamentos verdes
+- Redução de riscos legais e regulatórios
+- Melhoria da reputação e marca
+- Atração e retenção de talentos
+- Vantagem competitiva no mercado global
+
+## ESG em Mato Grosso
+
+O agronegócio, principal motor econômico de Mato Grosso, enfrenta pressão crescente por práticas ESG. A Dra. Luciana combina expertise em Direitos Humanos e sustentabilidade para oferecer consultoria jurídica que integra responsabilidade social com compliance regulatório.
+
+*Este conteúdo tem caráter informativo e não substitui consulta jurídica individualizada.*
+    `,
+    date: '15 Fev 2026',
+    readTime: '8 min',
+    category: 'ESG & Sustentabilidade',
+    author: 'Dra. Luciana Pinho',
+  },
+  {
+    slug: 'isencao-fiscal-pcd-veiculo-ir',
+    title: 'Isenção Fiscal para PCD: Veículos, Imposto de Renda e Outros Benefícios',
+    excerpt:
+      'Conheça todas as isenções fiscais disponíveis para pessoas com deficiência — IPI, ICMS, IPVA, Imposto de Renda e mais.',
+    content: `
+## Isenções Fiscais para PCD
+
+Pessoas com deficiência e, em alguns casos, seus responsáveis legais, têm direito a diversas isenções fiscais previstas em lei. Conheça as principais:
+
+## Compra de Veículos
+
+### Isenção de IPI
+- Lei 8.989/1995
+- Para PCD condutora ou não condutora
+- Veículo de até R$ 200.000,00
+- Renovação a cada 3 anos
+
+### Isenção de ICMS
+- Convênio ICMS 38/2012
+- Para PCD condutora ou não condutora
+- Teto varia por estado (geralmente R$ 70.000 a R$ 100.000)
+
+### Isenção de IPVA
+- Legislação estadual (varia por estado)
+- Em Mato Grosso: Lei 7.301/2000
+
+### Isenção de IOF
+- Para financiamento de veículo adaptado
+
+## Imposto de Renda
+
+Aposentados e pensionistas com:
+- Cegueira
+- Paralisia irreversível
+- Cardiopatia grave
+- Neoplasia maligna
+- Doença de Parkinson
+- Esclerose múltipla
+- Entre outras condições graves
+
+Têm direito à isenção do IR sobre proventos de aposentadoria/pensão.
+
+## Como solicitar?
+
+1. Laudo médico emissado por serviço de saúde público
+2. Requerimento junto ao órgão competente (DETRAN, Receita Federal)
+3. Documentação pessoal e comprovação da deficiência
+
+## Autismo (TEA) dá direito?
+
+Sim! A Lei 12.764/2012 equipara o TEA à deficiência para todos os efeitos legais, incluindo isenções fiscais.
+
+*Este conteúdo tem caráter informativo e não substitui consulta jurídica individualizada.*
+    `,
+    date: '12 Fev 2026',
+    readTime: '7 min',
+    category: 'Direitos PCD',
+    author: 'Dra. Luciana Pinho',
+  },
+  {
+    slug: 'reforma-previdencia-regras-transicao',
+    title: 'Reforma da Previdência 2019: Regras de Transição Explicadas',
+    excerpt:
+      'Entenda as 5 regras de transição da Reforma da Previdência e descubra qual é a mais vantajosa para o seu caso.',
+    content: `
+## A Reforma da Previdência (EC 103/2019)
+
+A Emenda Constitucional 103/2019 alterou profundamente as regras de aposentadoria no Brasil. Para quem já contribuía antes da reforma, existem regras de transição que podem ser mais favoráveis.
+
+## As 5 Regras de Transição
+
+### 1. Sistema de Pontos
+- Soma de idade + tempo de contribuição
+- Em 2026: 92 pontos (mulher) / 102 pontos (homem)
+- Aumenta 1 ponto por ano
+- Tempo mínimo: 30 anos (M) / 35 anos (H)
+
+### 2. Idade Mínima Progressiva
+- Em 2026: 58 anos (M) / 63 anos (H)
+- Aumenta 6 meses por ano
+- Tempo mínimo: 30 anos (M) / 35 anos (H)
+
+### 3. Pedágio de 50%
+- Para quem faltava menos de 2 anos (em 2019)
+- Cumprir 50% do tempo restante como pedágio
+- Cálculo: média salarial × fator previdenciário
+
+### 4. Pedágio de 100%
+- Para qualquer idade
+- Cumprir tempo restante + 100% como pedágio
+- Idade mínima: 57 anos (M) / 60 anos (H)
+- Cálculo: média de 100% das contribuições (sem fator)
+
+### 5. Idade Mínima (RGPS)
+- Mulher: 62 anos (desde 2023)
+- Homem: 65 anos (desde 2019)
+- Mínimo 15 anos de contribuição
+
+## Qual regra é melhor?
+
+Depende do seu perfil individual! O planejamento previdenciário analisa todas as regras e simula o benefício em cada cenário, identificando a opção mais vantajosa.
+
+## Direito adquirido
+
+Quem já cumpriu os requisitos de alguma regra anterior à reforma tem **direito adquirido** e pode se aposentar pelas regras antigas, mesmo que solicite o benefício hoje.
+
+*Este conteúdo tem caráter informativo e não substitui consulta jurídica individualizada.*
+    `,
+    date: '08 Fev 2026',
+    readTime: '10 min',
+    category: 'Direito Previdenciário',
+    author: 'Dra. Luciana Pinho',
+  },
+  {
+    slug: 'inclusao-escolar-direito-acompanhante',
+    title: 'Inclusão Escolar: O Direito ao Acompanhante Especializado',
+    excerpt:
+      'Escola recusou matrícula ou negou acompanhante? Conheça os direitos garantidos por lei para alunos com deficiência e autismo.',
+    content: `
+## Direito à Educação Inclusiva
+
+A Constituição Federal, a LBI (Lei 13.146/2015) e o ECA garantem o direito à educação inclusiva para todas as crianças e adolescentes com deficiência.
+
+## O que a escola é obrigada a oferecer?
+
+### Matrícula compulsória
+- Escola regular pública ou particular
+- Proibido cobrar taxa extra por inclusão (Súmula do STF)
+- Crime recusar matrícula por deficiência (Art. 8º da Lei 7.853/89)
+
+### Acompanhante especializado
+- A Lei 12.764/2012 garante o profissional de apoio escolar
+- Responsabilidade da escola (não da família)
+- Incluindo escolas particulares
+
+### Adaptações curriculares
+- Provas diferenciadas quando necessário
+- Tempo ampliado para realização de atividades
+- Material pedagógico adaptado
+
+## O que fazer se a escola negar?
+
+1. **Notificação extrajudicial** à escola
+2. **Denúncia ao Ministério Público**
+3. **Ação judicial** com pedido de tutela de urgência
+4. **Danos morais** pela negativa discriminatória
+
+## Atuação da Dra. Luciana
+
+Como autista com diagnóstico tardio e membro da ALFAA (Associação Livre de Familiares, Amigos e Autistas), a Dra. Luciana Pinho possui vivência pessoal que enriquece sua atuação jurídica na defesa de crianças e adolescentes neurodivergentes.
+
+*Este conteúdo tem caráter informativo e não substitui consulta jurídica individualizada.*
+    `,
+    date: '03 Fev 2026',
+    readTime: '6 min',
+    category: 'Direitos PCD',
+    author: 'Dra. Luciana Pinho',
+  },
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {

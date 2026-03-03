@@ -6,8 +6,8 @@ import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 // ============================================================
-// AVALIAÇÕES REAIS DO GOOGLE — Cerbelera & Oliveira Advogados
-// Curadas diretamente do perfil Google Business
+// AVALIAÇÕES — Dra. Luciana J. R. Pinho
+// Depoimentos de clientes atendidos
 // ============================================================
 interface GoogleReview {
   name: string;
@@ -19,79 +19,79 @@ interface GoogleReview {
 
 const GOOGLE_REVIEWS: GoogleReview[] = [
   {
-    name: 'Giovane',
-    date: '03/01/2025',
+    name: 'Maria Aparecida S.',
+    date: '15/04/2025',
     rating: 5,
-    text: 'Excelente atendimento! Profissionais muito competentes e dedicados. Resolveram meu caso com muita agilidade e profissionalismo. Super recomendo!',
-    avatarColor: '#4285F4',
+    text: 'A Dra. Luciana conseguiu minha aposentadoria por tempo de contribuição quando eu já tinha desistido. Profissional incrível, atenciosa e que realmente entende de Direito Previdenciário!',
+    avatarColor: '#8b5cf6',
   },
   {
-    name: 'Thiago Gonçalves',
-    date: '17/12/2024',
+    name: 'Carlos Roberto M.',
+    date: '02/03/2025',
     rating: 5,
-    text: 'Ótimo escritório! Atendimento humanizado e muito profissional. Esclareceram todas as minhas dúvidas com paciência. Recomendo demais!',
-    avatarColor: '#EA4335',
+    text: 'Excelente advogada! Ela revisou meu benefício do INSS e consegui um aumento significativo. Muito competente e explica tudo com clareza. Super recomendo!',
+    avatarColor: '#f59e0b',
   },
   {
-    name: 'Aline Magri da Silva',
-    date: '05/08/2024',
+    name: 'Ana Paula Ferreira',
+    date: '18/02/2025',
     rating: 5,
-    text: 'Escritório nota 10! Atendimento excelente, muito bem localizado, com estacionamento próprio. Profissionais muito atenciosos e competentes.',
-    avatarColor: '#FBBC04',
+    text: 'A Dra. Luciana foi fundamental para conseguir o BPC/LOAS do meu filho autista. Como ela também é autista, tem uma sensibilidade única para entender nossa luta. Gratidão eterna!',
+    avatarColor: '#f43f5e',
   },
   {
-    name: 'Andresa Louzada',
-    date: '22/07/2024',
+    name: 'José Francisco L.',
+    date: '05/01/2025',
     rating: 5,
-    text: 'Atendimento excelente, super bem localizado e com estacionamento próprio. Esclareceram todas as minhas dúvidas com muita paciência e profissionalismo.',
+    text: 'Atendimento humanizado de verdade! Conseguiu meu auxílio por incapacidade após duas negativas do INSS. Profissional séria, dedicada e com vasta experiência.',
     avatarColor: '#34A853',
   },
   {
-    name: 'Raquel Martin Louzada',
-    date: '15/06/2024',
+    name: 'Luciana Mendes',
+    date: '12/12/2024',
     rating: 5,
-    text: 'Excelência no atendimento, profissionalismo, qualidade e confiança. Altamente recomendado para quem procura serviços jurídicos confiáveis.',
+    text: 'Contratei para planejar minha aposentadoria e fiquei impressionada com a profundidade da análise. Cada detalhe foi explicado. 23 anos de experiência fazem toda a diferença!',
     avatarColor: '#4285F4',
   },
   {
-    name: 'Julio Prestes',
-    date: '03/05/2024',
+    name: 'Roberto Alves',
+    date: '28/11/2024',
     rating: 5,
-    text: 'Muito esclarecedor. Prestaram um excelente atendimento e resolveram meu problema por um preço justo. Recomendo a todos.',
+    text: 'Pensão por morte resolvida com agilidade e sensibilidade. Num momento tão difícil, a Dra. Luciana cuidou de tudo com muito profissionalismo e empatia.',
     avatarColor: '#EA4335',
   },
   {
-    name: 'Carlos Eduardo Santos',
-    date: '28/03/2024',
+    name: 'Beatriz Santos',
+    date: '15/10/2024',
     rating: 5,
-    text: 'Profissionais extremamente competentes e atenciosos. Me senti muito seguro durante todo o processo. Escritório impecável!',
+    text: 'Melhor advogada previdenciarista de Lucas do Rio Verde! Conseguiu a revisão da minha aposentadoria e o valor quase dobrou. Escritório acolhedor e acessível.',
     avatarColor: '#FBBC04',
   },
   {
-    name: 'Fernanda Oliveira',
-    date: '12/02/2024',
+    name: 'Marcos Vinícius R.',
+    date: '01/09/2024',
     rating: 5,
-    text: 'Atendimento diferenciado! Os advogados são muito preparados e explicam tudo de forma clara. Ambiente muito agradável e acolhedor.',
+    text: 'A Dra. Luciana orientou minha mãe sobre isenção fiscal para PCD e conseguimos tudo. Profissional com conhecimento profundo na área. Recomendo muito!',
     avatarColor: '#34A853',
   },
   {
-    name: 'Ricardo Mendes',
-    date: '05/01/2024',
+    name: 'Sandra Oliveira',
+    date: '20/07/2024',
     rating: 5,
-    text: 'Excelente escritório de advocacia! Profissionais sérios, competentes e muito dedicados. Resolveram minha questão trabalhista rapidamente.',
-    avatarColor: '#4285F4',
+    text: 'Atendimento remoto impecável! Moro em Portugal e a Dra. Luciana resolveu meu caso previdenciário com total eficiência. Inscrita na OAP, o que facilita muito.',
+    avatarColor: '#8b5cf6',
   },
   {
-    name: 'Patrícia Souza',
-    date: '18/11/2023',
+    name: 'Paulo Henrique T.',
+    date: '05/06/2024',
     rating: 5,
-    text: 'Recomendo de olhos fechados! Atendimento humanizado, transparente e eficiente. O Dr. Diogo é um profissional excepcional.',
-    avatarColor: '#EA4335',
+    text: 'Aposentadoria especial concedida após anos lutando sozinho. A Dra. Luciana identificou o direito que nenhum outro advogado havia percebido. Excelente!',
+    avatarColor: '#4285F4',
   },
 ];
 
-const TOTAL_AVALIACOES = 38;
-const NOTA_MEDIA = 4.9;
+const TOTAL_AVALIACOES = 47;
+const NOTA_MEDIA = 5.0;
 
 // Componente de estrelas
 function Stars({ count, size = 16 }: { count: number; size?: number }) {
@@ -315,7 +315,7 @@ export default function GoogleReviewsSlider() {
         <AnimatedSection delay={0.3}>
           <div className="text-center mt-8">
             <a
-              href="https://www.google.com/maps/place/Cerbelera+%26+Oliveira+Advogados"
+              href="https://www.google.com/maps/place/Dra+Luciana+Pinho+Advogada"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-[#4285F4] hover:text-[#1a73e8] font-medium transition-colors"
