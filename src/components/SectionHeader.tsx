@@ -22,10 +22,10 @@ export default function SectionHeader({
     <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
       {badge && (
         <span
-          className={`inline-block text-sm font-medium px-4 py-1.5 rounded-full mb-4 ${
+          className={`inline-flex items-center gap-2 text-sm font-medium px-5 py-2 rounded-full mb-4 ${
             light
-              ? 'bg-white/20 text-white'
-              : 'bg-primary-50 text-primary-500'
+              ? 'bg-white/20 text-white border border-white/10'
+              : 'bg-gradient-to-r from-inclusion-lilac/30 via-inclusion-blush/20 to-inclusion-sky/30 text-lavender-600 border border-inclusion-lilac/20'
           }`}
         >
           {badge}

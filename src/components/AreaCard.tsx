@@ -25,12 +25,14 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const colorMap: Record<string, string> = {
-  Users: 'from-[#1a2e1f] to-[#2d4a35]',
-  ShieldCheck: 'from-[#1a1a1a] to-[#333333]',
-  Briefcase: 'from-[#1a2e1f] to-[#3a5a42]',
-  Building2: 'from-[#8b7320] to-[#b8942e]',
-  Landmark: 'from-[#1a1a1a] to-[#2a2a2a]',
-  Scale: 'from-[#7c6318] to-[#c9a84c]',
+  Users: 'from-autism-purple to-lavender-600',
+  ShieldCheck: 'from-autism-blue to-autism-purple',
+  Briefcase: 'from-autism-green to-autism-blue',
+  Building2: 'from-autism-gold to-autism-orange',
+  Landmark: 'from-lavender-500 to-lavender-700',
+  Scale: 'from-gold-500 to-gold-600',
+  Shield: 'from-autism-blue to-lavender-600',
+  Heart: 'from-autism-red to-rose-500',
 };
 
 interface AreaCardProps {
@@ -54,9 +56,9 @@ export default function AreaCard({
   return (
     <AnimatedSection delay={delay}>
       <Link href={href} className="block group">
-        <div className="card p-0 h-full border border-secondary-100 hover:border-gold-400/50 group-hover:-translate-y-1 overflow-hidden">
+        <div className="card p-0 h-full border border-inclusion-lilac/30 hover:border-lavender-400/50 group-hover:-translate-y-1 overflow-hidden">
           {/* Decorative header bar */}
-          <div className={`h-2 bg-gradient-to-r ${gradient}`} />
+          <div className={`h-1.5 bg-gradient-to-r ${gradient}`} />
 
           <div className="p-8">
             <div className={`w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>

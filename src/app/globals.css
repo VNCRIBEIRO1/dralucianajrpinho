@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply font-sans text-secondary-800 bg-white;
+    @apply font-sans text-secondary-800 bg-inclusion-cream;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -29,29 +29,40 @@
 
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 
-           bg-primary-500 text-white font-medium rounded-md
-           hover:bg-primary-600 transition-all duration-300
+           bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-semibold rounded-xl
+           hover:from-lavender-400 hover:to-lavender-500 transition-all duration-300
+           shadow-lg shadow-lavender-500/20 hover:shadow-lavender-500/30 hover:-translate-y-0.5
            focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
   }
 
   .btn-outline {
     @apply inline-flex items-center justify-center px-6 py-3
-           border-2 border-primary-500 text-primary-500 font-medium rounded-md
-           hover:bg-primary-500 hover:text-white transition-all duration-300
+           border-2 border-lavender-500 text-lavender-600 font-semibold rounded-xl
+           hover:bg-lavender-500 hover:text-white transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
   }
 
   .btn-gold {
     @apply inline-flex items-center justify-center px-6 py-3
-           bg-gold-500 text-white font-medium rounded-md
-           hover:bg-gold-600 transition-all duration-300
+           bg-gradient-to-r from-gold-400 to-gold-500 text-white font-semibold rounded-xl
+           hover:from-gold-500 hover:to-gold-600 transition-all duration-300
+           shadow-lg shadow-gold-500/20 hover:shadow-gold-500/30 hover:-translate-y-0.5
            focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
   }
 
   .btn-lavender {
     @apply inline-flex items-center justify-center px-6 py-3
-           bg-lavender-500 text-white font-medium rounded-md
-           hover:bg-lavender-600 transition-all duration-300
+           bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-semibold rounded-xl
+           hover:from-lavender-400 hover:to-lavender-500 transition-all duration-300
+           shadow-lg shadow-lavender-500/20
+           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
+  }
+
+  .btn-inclusion {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-gradient-to-r from-autism-blue via-lavender-500 to-autism-purple text-white font-semibold rounded-xl
+           hover:opacity-90 transition-all duration-300
+           shadow-lg shadow-lavender-500/20
            focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
   }
 
@@ -64,29 +75,36 @@
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-md hover:shadow-xl 
-           transition-all duration-300 overflow-hidden;
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl 
+           transition-all duration-300 overflow-hidden border border-inclusion-lilac/30;
   }
 
   .card-elevated {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl
            transition-all duration-300 overflow-hidden
-           border border-secondary-100;
+           border border-inclusion-lilac/40;
+  }
+
+  .card-inclusion {
+    @apply bg-gradient-to-br from-white to-inclusion-cream rounded-2xl shadow-md hover:shadow-xl 
+           transition-all duration-300 overflow-hidden
+           border border-inclusion-lilac/30;
   }
 
   .input-field {
-    @apply w-full px-4 py-3 border border-secondary-300 rounded-md
+    @apply w-full px-4 py-3 border border-inclusion-lilac/40 rounded-xl
            focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:border-lavender-500
-           transition-all duration-200 text-secondary-800 placeholder:text-secondary-400;
+           transition-all duration-200 text-secondary-800 placeholder:text-secondary-400
+           bg-white;
   }
 
   /* Infinity symbol animation - Autism awareness */
   .infinity-gradient {
     background: linear-gradient(
       270deg,
-      #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c
+      #e74c3c, #e67e22, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c
     );
-    background-size: 600% 600%;
+    background-size: 700% 700%;
     animation: rainbowShift 6s ease-in-out infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -96,8 +114,18 @@
   .neurodiversity-border {
     border-image: linear-gradient(
       90deg,
-      #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6
+      #e74c3c, #e67e22, #f1c40f, #2ecc71, #3498db, #9b59b6
     ) 1;
+  }
+
+  /* Rainbow bar de 6 cores */
+  .rainbow-bar {
+    background: linear-gradient(to right, #e74c3c, #e67e22, #f1c40f, #2ecc71, #3498db, #9b59b6);
+  }
+
+  /* Puzzle piece decorative pattern */
+  .puzzle-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c-2.5 0-4.5 2-4.5 4.5S27.5 14 30 14s4.5-2 4.5-4.5S32.5 5 30 5z' fill='%239b59b6' fill-opacity='0.05'/%3E%3C/svg%3E");
   }
 }
 

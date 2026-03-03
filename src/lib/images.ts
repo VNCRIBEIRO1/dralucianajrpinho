@@ -3,6 +3,7 @@
 // Dra. Luciana J. R. Pinho
 // Cloud: dwyrt2g1k
 // Gerado automaticamente por scripts/upload-cloudinary.ts
+// Imagens de artigos geradas por IA (Flux 2 DEV via apifree.ai)
 // ============================================================
 
 const CLOUD_NAME = 'dwyrt2g1k';
@@ -34,10 +35,22 @@ export const IMAGES = {
   // Escritório
   office: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/office',
 
-  // Logo (usa foto de perfil como fallback)
+  // Logo crianças autismo
+  logoGirl: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-girl-autism',
+  logoBoy: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-boy-autism',
+
+  // Fallbacks antigos
   logo: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
   logoAlt: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_bracos_cruzados',
   logoMini: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
+
+  // Imagens temáticas (backgrounds decorativos)
+  heroInclusionBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-inclusion-bg',
+  patternLight: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/pattern-inclusion-light',
+  patternDark: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/pattern-inclusion-dark',
+  ctaBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/cta-inclusion-bg',
+  logoComposite: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-composite',
+  areasSectionBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/areas-section-bg',
 } as const;
 
 // Imagens por área de atuação
@@ -48,6 +61,21 @@ export const AREA_IMAGES: Record<string, string> = {
   'ESG & Sustentabilidade': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-esg-sustentabilidade',
   'BPC/LOAS': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-bpc-loas',
   'Aposentadorias': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-aposentadorias',
+};
+
+// Imagens por slug de artigo (geradas por IA)
+export const ARTICLE_IMAGES: Record<string, string> = {
+  'bpc-loas-guia-completo': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-bpc-loas',
+  'autismo-e-direitos': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-autismo-direitos',
+  'planejamento-previdenciario': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-planejamento-previdenciario',
+  'capacitismo-o-que-e': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-capacitismo',
+  'aposentadoria-especial-insalubridade': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-aposentadoria-especial',
+  'pensao-por-morte-guia-dependentes': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-pensao-morte',
+  'auxilio-doenca-negado-o-que-fazer': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-auxilio-doenca',
+  'esg-compliance-juridico-empresas': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-esg-compliance',
+  'isencao-fiscal-pcd-veiculo-ir': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-isencao-fiscal-pcd',
+  'reforma-previdencia-regras-transicao': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-reforma-previdencia',
+  'inclusao-escolar-direito-acompanhante': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/blog-inclusao-escolar',
 };
 
 // Imagens por categoria de blog
@@ -63,6 +91,11 @@ export const DEFAULT_IMAGE = 'https://res.cloudinary.com/dwyrt2g1k/image/upload/
 // Helper para obter imagem por categoria
 export function getCategoryImage(category: string): string {
   return BLOG_IMAGES[category] || AREA_IMAGES[category] || DEFAULT_IMAGE;
+}
+
+// Helper para obter imagem por slug do artigo
+export function getArticleImage(slug: string): string {
+  return ARTICLE_IMAGES[slug] || DEFAULT_IMAGE;
 }
 
 // OG Image para redes sociais (com transformação Cloudinary)

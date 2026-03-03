@@ -589,7 +589,7 @@ export default function CalculadoraClient() {
                   Nova Simulação
                 </button>
                 <a
-                  href="https://wa.me/5565999885275?text=Olá%2C%20Dra.%20Luciana!%20Fiz%20uma%20simulação%20no%20site%20e%20gostaria%20de%20agendar%20um%20planejamento%20previdenciário."
+                  href="https://wa.me/556599113429?text=Olá%2C%20Dra.%20Luciana!%20Fiz%20uma%20simulação%20no%20site%20e%20gostaria%20de%20agendar%20um%20planejamento%20previdenciário."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 btn-lavender py-3 flex items-center justify-center gap-2"

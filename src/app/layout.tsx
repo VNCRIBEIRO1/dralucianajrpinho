@@ -89,7 +89,7 @@ export default function RootLayout({
               description:
                 'Advogada Previdenciarista com 23 anos de experiência. Pioneira em sua região na integração de conhecimentos jurídicos com compromisso social. Especialista em Direito Previdenciário, Direitos Humanos, Direitos da Pessoa com Deficiência, Neurodiversidade e ESG.',
               url: 'https://dralucianajrpinho.vercel.app',
-              telephone: '+5565999885275',
+              telephone: '+556599113429',
               email: 'contato@lucianapinho.adv.br',
               image: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_jpg,q_90,w_1200,h_630,c_fill,g_face/dralucianajrpinho/dra_luciana_photo',
               priceRange: '$$',

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Calendar, Clock, Scale, User } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
-import { getCategoryImage } from '@/lib/images';
+import { getArticleImage } from '@/lib/images';
 import { getAllArticles, getArticleBySlug } from '@/lib/articles';
 
 export async function generateMetadata({
@@ -13,9 +13,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
+  const image = getArticleImage(slug);
   return {
     title: article?.title || 'Artigo não encontrado',
     description: article?.excerpt || '',
+    openGraph: {
+      title: article?.title,
+      description: article?.excerpt,
+      images: [{ url: image, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article?.title,
+      description: article?.excerpt,
+      images: [image],
+    },
   };
 }
 
@@ -89,8 +101,8 @@ export default async function BlogPostPage({
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-autism-red via-autism-gold to-autism-blue" />
         <div className="absolute inset-0">
           <Image
-            src={getCategoryImage(article.category)}
-            alt={article.category}
+            src={getArticleImage(slug)}
+            alt={article.title}
             fill
             className="object-cover opacity-[0.08]"
             sizes="100vw"

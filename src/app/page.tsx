@@ -96,15 +96,19 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Seção Destaque: Causas que importam */}
-      <section className="py-16 bg-gradient-to-r from-lavender-500/5 via-rose-500/5 to-gold-500/5">
-        <div className="container-custom">
+      <section className="py-16 bg-inclusion-cream relative overflow-hidden">
+        {/* Subtle pattern background */}
+        <div className="absolute inset-0 opacity-[0.08]">
+          <Image src={IMAGES.patternLight} alt="" fill className="object-cover" sizes="100vw" />
+        </div>
+        <div className="container-custom relative z-10">
           <AnimatedSection className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-lavender-600 bg-lavender-500/10 px-4 py-1.5 rounded-full mb-4">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-lavender-600 bg-gradient-to-r from-inclusion-lilac/30 via-inclusion-blush/30 to-inclusion-sky/30 px-5 py-2 rounded-full mb-4 border border-inclusion-lilac/20">
               <span className="text-lg infinity-gradient font-bold">∞</span>
               O Que Nos Move
             </span>
             <h2 className="section-title">
-              Advocacia com <span className="text-lavender-500">Propósito</span>
+              Advocacia com <span className="infinity-gradient">Propósito</span>
             </h2>
             <p className="section-subtitle mx-auto">
               Pioneira em sua região na integração de conhecimentos jurídicos com compromisso social. Cada caso é uma história. Cada vitória é uma vida transformada.
@@ -117,28 +121,31 @@ export default function HomePage() {
                 icon: Puzzle,
                 title: 'Neurodiversidade',
                 desc: 'Como autista com diagnóstico tardio, a Dra. Luciana entende na pele as barreiras que pessoas neurodivergentes enfrentam. Sua luta é pessoal e profissional.',
-                color: 'from-lavender-500 to-lavender-600',
-                bgIcon: 'bg-lavender-500/10',
+                gradient: 'from-autism-purple/10 to-inclusion-lilac/20',
+                iconColor: 'text-autism-purple',
+                borderColor: 'border-autism-purple/20',
               },
               {
                 icon: Heart,
                 title: 'Inclusão Social',
                 desc: 'Membro ativa da ALFAA, defende o acesso igualitário a direitos, combatendo o capacitismo e promovendo políticas de inclusão em Lucas do Rio Verde e região.',
-                color: 'from-rose-500 to-rose-600',
-                bgIcon: 'bg-rose-500/10',
+                gradient: 'from-autism-red/10 to-inclusion-blush/20',
+                iconColor: 'text-autism-red',
+                borderColor: 'border-autism-red/20',
               },
               {
                 icon: Globe,
                 title: 'Alcance Global',
                 desc: 'Com inscrição na OAP (Portugal, 2023), atende brasileiros em qualquer lugar do mundo. A justiça não tem fronteiras.',
-                color: 'from-gold-500 to-gold-600',
-                bgIcon: 'bg-gold-500/10',
+                gradient: 'from-autism-blue/10 to-inclusion-sky/20',
+                iconColor: 'text-autism-blue',
+                borderColor: 'border-autism-blue/20',
               },
             ].map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.15}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-secondary-100 h-full">
-                  <div className={`w-14 h-14 ${item.bgIcon} rounded-xl flex items-center justify-center mb-6`}>
-                    <item.icon className={`w-7 h-7 bg-gradient-to-r ${item.color} bg-clip-text text-transparent`} style={{ color: item.color.includes('lavender') ? '#8b5cf6' : item.color.includes('rose') ? '#f43f5e' : '#f59e0b' }} />
+                <div className={`bg-gradient-to-br ${item.gradient} rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border ${item.borderColor} h-full backdrop-blur-sm`}>
+                  <div className={`w-14 h-14 bg-white/80 rounded-xl flex items-center justify-center mb-6 shadow-sm`}>
+                    <item.icon className={`w-7 h-7 ${item.iconColor}`} />
                   </div>
                   <h3 className="text-xl font-serif font-bold text-primary-500 mb-3">{item.title}</h3>
                   <p className="text-secondary-600 text-sm leading-relaxed">{item.desc}</p>
@@ -150,8 +157,12 @@ export default function HomePage() {
       </section>
 
       {/* Áreas de Atuação */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background image decorativa */}
+        <div className="absolute inset-0 opacity-[0.06]">
+          <Image src={IMAGES.areasSectionBg} alt="" fill className="object-cover" sizes="100vw" />
+        </div>
+        <div className="container-custom relative z-10">
           <AnimatedSection>
             <SectionHeader
               badge="Áreas de Atuação"
@@ -185,39 +196,45 @@ export default function HomePage() {
       </section>
 
       {/* Sobre - Prévia */}
-      <section className="py-20 bg-secondary-50">
+      <section className="py-20 bg-gradient-to-br from-inclusion-cream via-inclusion-lilac/10 to-inclusion-blush/10">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
               <div className="relative">
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative border-4 border-transparent" style={{ borderImage: 'linear-gradient(135deg, #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6) 1' }}>
-                  <Image
-                    src={IMAGES.lawyer}
-                    alt="Dra. Luciana de Jesus Ribeiro Pinho"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative">
+                  {/* Rainbow border via wrapper */}
+                  <div className="absolute inset-0 rounded-2xl p-[3px] bg-gradient-to-br from-autism-red via-autism-gold to-autism-blue">
+                    <div className="w-full h-full rounded-2xl overflow-hidden bg-white">
+                      <Image
+                        src={IMAGES.lawyer}
+                        alt="Dra. Luciana de Jesus Ribeiro Pinho"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                    </div>
+                  </div>
                 </div>
                 {/* Stats badge */}
-                <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-lavender-500 to-lavender-600 text-white p-6 rounded-xl shadow-xl">
+                <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-lavender-500 to-lavender-600 text-white p-6 rounded-2xl shadow-xl shadow-lavender-500/20">
                   <p className="text-3xl font-bold">23</p>
                   <p className="text-sm font-medium">Anos de Carreira</p>
                   <p className="text-xs opacity-80 mt-1">Desde 2003</p>
                 </div>
                 {/* Autism awareness badge */}
-                <div className="absolute -top-4 -left-4 bg-white text-primary-500 p-3 rounded-xl shadow-lg">
+                <div className="absolute -top-4 -left-4 bg-white text-primary-500 p-3 rounded-2xl shadow-lg border border-inclusion-lilac/30">
                   <span className="text-2xl infinity-gradient font-bold">∞</span>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <span className="inline-block text-sm font-medium text-lavender-600 bg-lavender-500/10 px-4 py-1.5 rounded-full mb-4">
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-lavender-600 bg-gradient-to-r from-inclusion-lilac/30 to-inclusion-blush/30 px-4 py-1.5 rounded-full mb-4 border border-inclusion-lilac/20">
+                <Puzzle className="w-3.5 h-3.5 text-autism-purple" />
                 Sobre a Dra. Luciana Pinho
               </span>
               <h2 className="section-title">
-                Pioneira na Integração do <span className="text-lavender-500">Direito</span> com <span className="text-gold-500">Impacto Social</span>
+                Pioneira na Integração do <span className="infinity-gradient">Direito</span> com <span className="text-gold-500">Impacto Social</span>
               </h2>
               <p className="text-secondary-600 leading-relaxed mb-6">
                 A Dra. Luciana de Jesus Ribeiro Pinho é uma advogada previdenciarista
@@ -230,15 +247,15 @@ export default function HomePage() {
 
               <ul className="space-y-4 mb-8">
                 {[
-                  'Mais de 500 processos conduzidos com excelência',
-                  '5+ pós-graduações em múltiplas áreas do Direito',
-                  'Inscrição na OAP — Atuação internacional em Portugal',
-                  'Membro ativo da ALFAA — Combate ao capacitismo',
-                  'Pioneira na região: Direito integrado a impacto social, ESG e Direitos Humanos',
+                  { text: 'Mais de 500 processos conduzidos com excelência', color: 'text-autism-blue' },
+                  { text: '5+ pós-graduações em múltiplas áreas do Direito', color: 'text-autism-green' },
+                  { text: 'Inscrição na OAP — Atuação internacional em Portugal', color: 'text-autism-gold' },
+                  { text: 'Membro ativo da ALFAA — Combate ao capacitismo', color: 'text-autism-purple' },
+                  { text: 'Pioneira na região: Direito integrado a impacto social, ESG e Direitos Humanos', color: 'text-autism-red' },
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-lavender-500 flex-shrink-0" />
-                    <span className="text-secondary-700">{item}</span>
+                  <li key={item.text} className="flex items-center gap-3">
+                    <CheckCircle2 className={`w-5 h-5 ${item.color} flex-shrink-0`} />
+                    <span className="text-secondary-700">{item.text}</span>
                   </li>
                 ))}
               </ul>
@@ -254,37 +271,26 @@ export default function HomePage() {
 
       {/* Estatísticas */}
       <section className="py-16 bg-gradient-to-r from-[#07040f] via-[#150c2a] to-[#07040f] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <pattern id="stats-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M40 0H0v40" fill="none" stroke="white" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#stats-grid)" />
-          </svg>
+        {/* Pattern dark background */}
+        <div className="absolute inset-0 opacity-[0.15]">
+          <Image src={IMAGES.patternDark} alt="" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '23', label: 'Anos de Carreira', hasStar: false },
-              { number: '500+', label: 'Processos Conduzidos', hasStar: false },
-              { number: '5+', label: 'Pós-Graduações', hasStar: false },
-              { number: '1ª', label: 'Pioneira — Direito + Impacto Social na Região', hasStar: false },
+              { number: '23', label: 'Anos de Carreira', color: 'text-autism-blue' },
+              { number: '500+', label: 'Processos Conduzidos', color: 'text-autism-green' },
+              { number: '5+', label: 'Pós-Graduações', color: 'text-autism-gold' },
+              { number: '1ª', label: 'Pioneira — Direito + Impacto Social na Região', color: 'text-autism-red' },
             ].map((stat, index) => (
               <AnimatedSection
                 key={stat.label}
                 delay={index * 0.1}
                 className="text-center"
               >
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <p className="text-3xl md:text-4xl font-bold text-lavender-400">
-                    {stat.number}
-                  </p>
-                  {stat.hasStar && (
-                    <Star className="w-6 h-6 fill-lavender-400 text-lavender-400" />
-                  )}
-                </div>
+                <p className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                  {stat.number}
+                </p>
                 <p className="text-primary-200 text-sm">{stat.label}</p>
               </AnimatedSection>
             ))}
@@ -296,7 +302,7 @@ export default function HomePage() {
       <GoogleReviewsSlider />
 
       {/* Blog */}
-      <section className="py-20 bg-secondary-50">
+      <section className="py-20 bg-gradient-to-br from-inclusion-cream to-inclusion-lilac/10">
         <div className="container-custom">
           <AnimatedSection>
             <SectionHeader
@@ -326,10 +332,14 @@ export default function HomePage() {
 
       {/* CTA Final */}
       <section className="py-20 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-rose-400 rounded-full blur-3xl" />
+        {/* CTA background image */}
+        <div className="absolute inset-0 opacity-[0.15]">
+          <Image src={IMAGES.ctaBg} alt="" fill className="object-cover" sizes="100vw" />
         </div>
+        {/* Colorful glows */}
+        <div className="absolute top-10 right-10 w-72 h-72 bg-autism-blue/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-autism-red/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-64 h-64 bg-autism-gold/10 rounded-full blur-3xl" />
 
         <div className="container-custom relative z-10 text-center">
           <AnimatedSection>
@@ -343,15 +353,16 @@ export default function HomePage() {
               é a minha luta — por justiça, inclusão e dignidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-medium rounded-md hover:from-lavender-400 hover:to-lavender-500 transition-all duration-300 shadow-lg text-base">
+              <Link href="/contato" className="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-semibold rounded-xl hover:from-lavender-400 hover:to-lavender-500 transition-all duration-300 shadow-lg shadow-lavender-500/25 hover:shadow-lavender-500/40 hover:-translate-y-0.5 text-base">
+                <Puzzle className="w-5 h-5 mr-2" />
                 Agende uma Consulta
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || '5565999885275'}`}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || '556599113429'}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline border-primary-300 text-primary-100 hover:bg-primary-100/10 hover:text-white text-base"
+                className="inline-flex items-center justify-center px-7 py-3.5 border-2 border-autism-green/40 text-primary-100 rounded-xl font-semibold hover:bg-autism-green/10 hover:border-autism-green/60 transition-all duration-300 text-base"
               >
                 WhatsApp
               </a>

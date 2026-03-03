@@ -21,9 +21,9 @@ export const SITE_CONFIG = {
   ],
 
   // === CONTATO ===
-  telefone: '(65) 99988-5275',
-  telefoneLink: '5565999885275',
-  whatsapp: '5565999885275',
+  telefone: '(65) 9911-3429',
+  telefoneLink: '556599113429',
+  whatsapp: '556599113429',
   email: 'contato@lucianapinho.adv.br',
 
   // === ENDEREÇO ===

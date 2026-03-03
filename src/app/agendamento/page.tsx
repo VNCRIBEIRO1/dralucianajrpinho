@@ -141,16 +141,16 @@ export default function AgendamentoPage() {
                   ))}
                 </div>
                 <div className="space-y-2.5">
-                  <a href="https://wa.me/5565999885275?text=Ol%C3%A1%2C%20Dra.%20Luciana!%20Gostaria%20de%20agendar%20uma%20consulta."
+                  <a href="https://wa.me/556599113429?text=Ol%C3%A1%2C%20Dra.%20Luciana!%20Gostaria%20de%20agendar%20uma%20consulta."
                     target="_blank" rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl font-medium transition-colors text-sm">
                     <MessageCircle className="w-4 h-4" />
                     WhatsApp
                   </a>
-                  <a href="tel:+5565999885275"
+                  <a href="tel:+556599113429"
                     className="w-full flex items-center justify-center gap-2 px-6 py-2.5 border-2 border-secondary-200 text-secondary-600 rounded-xl font-medium hover:border-primary-300 hover:text-primary-500 transition-colors text-sm">
                     <Phone className="w-4 h-4" />
-                    (65) 99988-5275
+                    (65) 9911-3429
                   </a>
                 </div>
               </div>

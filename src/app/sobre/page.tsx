@@ -63,7 +63,7 @@ export default function SobrePage() {
         </div>
         <div className="container-custom relative z-10">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-2 bg-lavender-500/20 text-lavender-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-autism-blue/20 via-lavender-500/20 to-autism-purple/20 text-lavender-300 border border-lavender-500/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Puzzle className="w-4 h-4" />
               Sobre a Advogada
             </span>
@@ -167,7 +167,7 @@ export default function SobrePage() {
       </section>
 
       {/* Valores */}
-      <section className="py-20 bg-secondary-50">
+      <section className="py-20 bg-gradient-to-br from-inclusion-cream to-inclusion-lilac/10">
         <div className="container-custom">
           <AnimatedSection>
             <SectionHeader
@@ -180,7 +180,7 @@ export default function SobrePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {valores.map((valor, index) => (
               <AnimatedSection key={valor.title} delay={index * 0.1}>
-                <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 text-center h-full border border-secondary-100">
+                <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 text-center h-full border border-inclusion-lilac/30">
                   <div className="w-14 h-14 bg-lavender-500/10 rounded-xl flex items-center justify-center mx-auto mb-6">
                     <valor.icon className="w-7 h-7 text-lavender-500" />
                   </div>
@@ -249,7 +249,7 @@ export default function SobrePage() {
               direitos com dedicação, técnica e coração.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-medium rounded-md hover:from-lavender-400 hover:to-lavender-500 transition-all shadow-lg text-base">
+              <Link href="/contato" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-medium rounded-xl hover:from-lavender-400 hover:to-lavender-500 transition-all shadow-lg text-base">
                 Agende uma Consulta
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>

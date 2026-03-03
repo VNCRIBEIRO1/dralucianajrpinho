@@ -372,7 +372,7 @@ const AREAS: Opcao[] = [
   { label: '🧮 Simulador INSS', valor: 'calculadora' },
 ];
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '5565999885275';
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '556599113429';
 
 const getUrgenciaMarcador = (nivel: string) => {
   switch (nivel) {

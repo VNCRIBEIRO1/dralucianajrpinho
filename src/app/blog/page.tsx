@@ -25,7 +25,7 @@ export default function BlogPage() {
         </div>
         <div className="container-custom relative z-10">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-2 bg-lavender-500/20 text-lavender-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-autism-blue/20 via-lavender-500/20 to-autism-purple/20 text-lavender-300 border border-lavender-500/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <BookOpen className="w-4 h-4" />
               Blog Jurídico
             </span>
@@ -73,7 +73,7 @@ export default function BlogPage() {
       </section>
 
       {/* Aviso */}
-      <section className="py-8 bg-secondary-50">
+      <section className="py-8 bg-gradient-to-br from-inclusion-cream to-inclusion-lilac/10">
         <div className="container-custom text-center">
           <p className="text-secondary-500 text-sm">
             Este blog tem caráter meramente informativo, nos termos do Provimento 205/2021 da OAB.

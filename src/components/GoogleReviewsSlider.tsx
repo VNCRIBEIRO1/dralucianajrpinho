@@ -173,12 +173,12 @@ export default function GoogleReviewsSlider() {
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-inclusion-cream">
       <div className="container-custom">
         <AnimatedSection>
           {/* Header com badge EXCELENTE e logo Google */}
           <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 bg-primary-50 text-primary-500 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-inclusion-lilac/30 to-inclusion-blush/30 text-lavender-600 border border-inclusion-lilac/20 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
               <Star className="w-4 h-4 fill-gold-500 text-gold-500" />
               Avaliações no Google
             </span>
@@ -246,7 +246,7 @@ export default function GoogleReviewsSlider() {
                     className="flex-shrink-0"
                     style={{ width: `calc(${100 / visibleCards}% - ${((visibleCards - 1) * 24) / visibleCards}px)` }}
                   >
-                    <div className="bg-white border border-secondary-200 rounded-xl p-6 h-full shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-white border border-inclusion-lilac/30 rounded-xl p-6 h-full shadow-sm hover:shadow-md transition-shadow">
                       {/* Header: Avatar + Nome + Data + Badge */}
                       <div className="flex items-center gap-3 mb-4">
                         {/* Avatar com inicial */}

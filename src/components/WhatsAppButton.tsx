@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function WhatsAppButton() {
   const whatsappNumber =
-    process.env.NEXT_PUBLIC_WHATSAPP || '5565999885275';
+    process.env.NEXT_PUBLIC_WHATSAPP || '556599113429';
   const message = encodeURIComponent(
     'Olá, Dra. Luciana! Gostaria de informações sobre seus serviços advocatícios.'
   );

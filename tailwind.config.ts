@@ -11,10 +11,10 @@ const config: Config = {
       colors: {
         // Deep Purple — Neurodiversidade, Inclusão, Força
         primary: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
+          50: '#f8f5ff',
+          100: '#f0eaff',
+          200: '#e2d6ff',
+          300: '#c9b3ff',
           400: '#a78bfa',
           500: '#2d1b4e',
           600: '#241542',
@@ -23,13 +23,13 @@ const config: Config = {
           900: '#0e081e',
           950: '#07040f',
         },
-        // Warm neutrals
+        // Warm neutrals — mais quentes
         secondary: {
-          50: '#fafaf9',
-          100: '#f5f3f0',
-          200: '#e8e4df',
-          300: '#d6d0c8',
-          400: '#b8b0a5',
+          50: '#fefcf9',
+          100: '#fdf8f0',
+          200: '#f5ede0',
+          300: '#e8dbc8',
+          400: '#c4b49d',
           500: '#8a7f72',
           600: '#6b5f52',
           700: '#4a4139',
@@ -44,7 +44,7 @@ const config: Config = {
           600: '#d97706',
           700: '#b45309',
         },
-        // Rose accent — Luta feminina, coragem
+        // Rose accent — Luta feminina, coragem, acolhimento
         rose: {
           300: '#fda4af',
           400: '#fb7185',
@@ -57,14 +57,25 @@ const config: Config = {
           400: '#a78bfa',
           500: '#8b5cf6',
           600: '#7c3aed',
+          700: '#6d28d9',
         },
-        // Infinity symbol colors (autism awareness)
+        // Infinity symbol colors (autism awareness) — mais vibrantes
         autism: {
           red: '#e74c3c',
+          orange: '#e67e22',
           gold: '#f1c40f',
-          blue: '#3498db',
           green: '#2ecc71',
+          blue: '#3498db',
           purple: '#9b59b6',
+        },
+        // Inclusão — tons quentes de acolhimento
+        inclusion: {
+          cream: '#fef9ef',
+          peach: '#fed7aa',
+          sky: '#bae6fd',
+          mint: '#a7f3d0',
+          blush: '#fce7f3',
+          lilac: '#e9d5ff',
         },
       },
       fontFamily: {
@@ -77,6 +88,8 @@ const config: Config = {
         'slide-in-left': 'slideInLeft 0.6s ease-out',
         'rainbow-shift': 'rainbowShift 6s ease-in-out infinite',
         'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'puzzle-spin': 'puzzleSpin 12s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -99,6 +112,19 @@ const config: Config = {
           '0%, 100%': { opacity: '0.6' },
           '50%': { opacity: '1' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        puzzleSpin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      backgroundImage: {
+        'rainbow-bar': 'linear-gradient(to right, #e74c3c, #e67e22, #f1c40f, #2ecc71, #3498db, #9b59b6)',
+        'inclusion-warm': 'linear-gradient(135deg, #fef9ef 0%, #f0eaff 50%, #fce7f3 100%)',
+        'inclusion-gradient': 'linear-gradient(135deg, #e9d5ff 0%, #bae6fd 50%, #a7f3d0 100%)',
       },
     },
   },

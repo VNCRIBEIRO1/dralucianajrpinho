@@ -32,8 +32,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Telefone / WhatsApp',
-    lines: ['(65) 99988-5275'],
-    href: 'tel:+5565999885275',
+    lines: ['(65) 9911-3429'],
+    href: 'tel:+556599113429',
   },
   {
     icon: Mail,
@@ -59,7 +59,7 @@ export default function ContatoPage() {
         </div>
         <div className="container-custom relative z-10">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-2 bg-lavender-500/20 text-lavender-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-autism-blue/20 via-lavender-500/20 to-autism-purple/20 text-lavender-300 border border-lavender-500/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <MessageCircle className="w-4 h-4" />
               Fale Comigo
             </span>
@@ -81,7 +81,7 @@ export default function ContatoPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {contactInfo.map((info, index) => (
               <AnimatedSection key={info.title} delay={index * 0.1}>
-                <div className="bg-secondary-50 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 h-full border border-secondary-100">
+                <div className="bg-inclusion-cream rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 h-full border border-inclusion-lilac/30">
                   <div className="w-12 h-12 bg-lavender-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <info.icon className="w-6 h-6 text-lavender-500" />
                   </div>
@@ -140,7 +140,7 @@ export default function ContatoPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <div className="bg-secondary-50 rounded-2xl p-8 h-full border border-secondary-100">
+              <div className="bg-inclusion-cream rounded-2xl p-8 h-full border border-inclusion-lilac/30">
                 <h3 className="font-serif font-bold text-primary-500 text-xl mb-6">
                   Localização
                 </h3>
