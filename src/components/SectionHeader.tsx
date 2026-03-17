@@ -22,10 +22,10 @@ export default function SectionHeader({
     <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
       {badge && (
         <span
-          className={`inline-flex items-center gap-2 text-sm font-medium px-5 py-2 rounded-full mb-4 ${
+          className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase px-5 py-2 rounded-full mb-4 ${
             light
-              ? 'bg-white/20 text-white border border-white/10'
-              : 'bg-gradient-to-r from-gold-100/50 via-secondary-100 to-gold-100/50 text-gold-700 border border-gold-200/30'
+              ? 'bg-gold-400/10 text-gold-400 border border-gold-400/20'
+              : 'bg-gold-100/50 text-gold-700 border border-gold-200/30'
           }`}
         >
           {badge}
@@ -33,7 +33,7 @@ export default function SectionHeader({
       )}
       <h2
         className={`section-title ${
-          light ? 'text-white' : ''
+          light ? '!text-white' : ''
         } ${centered ? 'mx-auto' : ''}`}
       >
         {title}
@@ -41,7 +41,7 @@ export default function SectionHeader({
       {subtitle && (
         <p
           className={`section-subtitle ${
-            light ? 'text-secondary-300' : ''
+            light ? '!text-warm-400/60' : ''
           } ${centered ? 'mx-auto' : ''}`}
         >
           {subtitle}

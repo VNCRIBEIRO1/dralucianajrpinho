@@ -178,7 +178,7 @@ export default function GoogleReviewsSlider() {
         <AnimatedSection>
           {/* Header com badge EXCELENTE e logo Google */}
           <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-100/50 to-secondary-100 text-gold-700 border border-gold-200/30 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-gold-100/50 text-gold-700 border border-gold-200/30 px-4 py-1.5 rounded-full text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               <Star className="w-4 h-4 fill-gold-500 text-gold-500" />
               Avaliações no Google
             </span>
@@ -186,7 +186,7 @@ export default function GoogleReviewsSlider() {
             <div className="flex flex-col items-center gap-4">
               {/* Badge EXCELENTE */}
               <div className="flex flex-col items-center gap-2">
-                <span className="text-2xl font-bold text-primary-800 tracking-wide uppercase">
+                <span className="text-2xl font-serif font-bold text-primary-900 tracking-wide uppercase">
                   Excelente
                 </span>
                 <div className="flex items-center gap-3">
@@ -219,18 +219,18 @@ export default function GoogleReviewsSlider() {
             {/* Botões de navegação */}
             <button
               onClick={prevSlide}
-              className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg border border-secondary-200 flex items-center justify-center hover:bg-secondary-50 transition-colors"
+              className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg border border-warm-300/50 flex items-center justify-center hover:border-gold-400/30 transition-colors"
               aria-label="Avaliação anterior"
             >
-              <ChevronLeft className="w-5 h-5 text-secondary-600" />
+              <ChevronLeft className="w-5 h-5 text-primary-700" />
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg border border-secondary-200 flex items-center justify-center hover:bg-secondary-50 transition-colors"
+              className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg border border-warm-300/50 flex items-center justify-center hover:border-gold-400/30 transition-colors"
               aria-label="Próxima avaliação"
             >
-              <ChevronRight className="w-5 h-5 text-secondary-600" />
+              <ChevronRight className="w-5 h-5 text-primary-700" />
             </button>
 
             {/* Cards container */}
@@ -246,7 +246,7 @@ export default function GoogleReviewsSlider() {
                     className="flex-shrink-0"
                     style={{ width: `calc(${100 / visibleCards}% - ${((visibleCards - 1) * 24) / visibleCards}px)` }}
                   >
-                    <div className="bg-white border border-secondary-200 rounded-xl p-6 h-full shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-white border border-warm-300/50 rounded-xl p-6 h-full shadow-sm hover:shadow-md hover:border-gold-400/30 transition-all">
                       {/* Header: Avatar + Nome + Data + Badge */}
                       <div className="flex items-center gap-3 mb-4">
                         {/* Avatar com inicial */}
@@ -258,7 +258,7 @@ export default function GoogleReviewsSlider() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-1.5">
-                            <p className="font-medium text-secondary-800 text-sm truncate">
+                            <p className="font-medium text-primary-800 text-sm truncate">
                               {review.name}
                             </p>
                             {/* Google verification badge */}
@@ -302,7 +302,7 @@ export default function GoogleReviewsSlider() {
                   className={`w-2 h-2 rounded-full transition-all ${
                     i === currentIndex
                       ? 'bg-gold-500 w-6'
-                      : 'bg-secondary-300 hover:bg-secondary-400'
+                      : 'bg-warm-400 hover:bg-gold-400/50'
                   }`}
                   aria-label={`Ir para avaliação ${i + 1}`}
                 />

@@ -23,9 +23,9 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-primary-900 to-primary-950 text-secondary-300 relative overflow-hidden">
-      {/* Accent bar top — nogueira + dourado */}
-      <div className="h-1 bg-gradient-to-r from-primary-800 via-gold-500 to-primary-800" />
+    <footer className="bg-primary-950 text-warm-400/70 relative overflow-hidden">
+      {/* Accent bar top — gold */}
+      <div className="h-[2px] bg-gradient-to-r from-transparent via-gold-400 to-transparent" />
 
       {/* Conteúdo principal */}
       <div className="container-custom py-16 relative z-10">
@@ -33,27 +33,27 @@ export default function Footer() {
           {/* Coluna 1 - Sobre */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold-500 to-gold-600 flex items-center justify-center shadow-lg">
-                <Scale className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold-400 to-gold-500 flex items-center justify-center shadow-lg shadow-gold-400/20">
+                <Scale className="w-6 h-6 text-primary-950" />
               </div>
               <div>
-                <h3 className="text-white font-serif font-bold text-lg">
+                <h3 className="text-white font-serif font-bold text-lg tracking-tight">
                   Dra. Luciana Pinho
                 </h3>
-                <p className="text-xs tracking-wider uppercase text-gold-400 font-semibold">
+                <p className="text-xs tracking-[0.2em] uppercase text-gold-400 font-semibold">
                   Advocacia Previdenciária
                 </p>
               </div>
             </div>
-            <p className="text-secondary-400 text-sm leading-relaxed mb-4">
+            <p className="text-warm-500/60 text-sm leading-relaxed mb-4">
               23 anos de carreira dedicados à defesa dos direitos
               previdenciários e à Justiça Social. Uma advocacia
               comprometida com resultados e com o bem-estar de seus clientes.
             </p>
             <div className="flex items-center gap-2 text-sm mb-2">
-              <span className="text-gold-400 font-medium">OAB/MT 7973-B</span>
-              <span className="text-primary-600">•</span>
-              <span className="text-gold-300 font-medium flex items-center gap-1">
+              <span className="text-gold-400 font-medium tracking-wide">OAB/MT 7973-B</span>
+              <span className="text-gold-400/30">•</span>
+              <span className="text-gold-400/80 font-medium flex items-center gap-1 tracking-wide">
                 <Globe className="w-3 h-3" /> OAP Portugal
               </span>
             </div>
@@ -61,7 +61,7 @@ export default function Footer() {
 
           {/* Coluna 2 - Links */}
           <div>
-            <h4 className="text-white font-serif font-bold text-lg mb-6">
+            <h4 className="text-white font-serif font-bold text-lg mb-6 tracking-tight">
               Navegação
             </h4>
             <ul className="space-y-3">
@@ -69,7 +69,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-secondary-400 hover:text-gold-400 transition-colors text-sm"
+                    className="text-warm-500/60 hover:text-gold-400 transition-colors text-sm tracking-wide"
                   >
                     {link.name}
                   </Link>
@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* Coluna 3 - Áreas */}
           <div>
-            <h4 className="text-white font-serif font-bold text-lg mb-6">
+            <h4 className="text-white font-serif font-bold text-lg mb-6 tracking-tight">
               Áreas de Atuação
             </h4>
             <ul className="space-y-3">
@@ -88,7 +88,7 @@ export default function Footer() {
                 <li key={area}>
                   <Link
                     href="/areas-de-atuacao"
-                    className="text-secondary-400 hover:text-gold-400 transition-colors text-sm"
+                    className="text-warm-500/60 hover:text-gold-400 transition-colors text-sm tracking-wide"
                   >
                     {area}
                   </Link>
@@ -99,13 +99,13 @@ export default function Footer() {
 
           {/* Coluna 4 - Contato */}
           <div>
-            <h4 className="text-white font-serif font-bold text-lg mb-6">
+            <h4 className="text-white font-serif font-bold text-lg mb-6 tracking-tight">
               Contato
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" />
-                <span className="text-secondary-400 text-sm">
+                <MapPin className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                <span className="text-warm-500/60 text-sm">
                   Av. Brasil, 200s
                   <br />
                   Alvorada
@@ -116,24 +116,24 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+556599113429"
-                  className="flex items-center gap-3 text-secondary-400 hover:text-gold-400 transition-colors text-sm"
+                  className="flex items-center gap-3 text-warm-500/60 hover:text-gold-400 transition-colors text-sm"
                 >
-                  <Phone className="w-5 h-5 text-gold-500 flex-shrink-0" />
+                  <Phone className="w-5 h-5 text-gold-400 flex-shrink-0" />
                   (65) 9911-3429
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:contato@lucianapinho.adv.br"
-                  className="flex items-center gap-3 text-secondary-400 hover:text-gold-400 transition-colors text-sm"
+                  className="flex items-center gap-3 text-warm-500/60 hover:text-gold-400 transition-colors text-sm"
                 >
-                  <Mail className="w-5 h-5 text-gold-500 flex-shrink-0" />
+                  <Mail className="w-5 h-5 text-gold-400 flex-shrink-0" />
                   contato@lucianapinho.adv.br
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" />
-                <span className="text-secondary-400 text-sm">
+                <Clock className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                <span className="text-warm-500/60 text-sm">
                   Seg a Sex, 08:00 às 18:00
                 </span>
               </li>
@@ -143,33 +143,33 @@ export default function Footer() {
       </div>
 
       {/* Barra inferior */}
-      <div className="border-t border-primary-700/30 relative z-10">
+      <div className="border-t border-gold-400/10 relative z-10">
         <div className="container-custom py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-secondary-500 text-xs text-center md:text-left">
+          <p className="text-warm-500/40 text-xs text-center md:text-left tracking-wide">
             © {new Date().getFullYear()} Dra. Luciana J. R. Pinho. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/politica-privacidade"
-              className="text-secondary-500 hover:text-gold-400 text-xs transition-colors"
+              className="text-warm-500/40 hover:text-gold-400 text-xs transition-colors"
             >
               Política de Privacidade
             </Link>
             <Link
               href="/termos-de-uso"
-              className="text-secondary-500 hover:text-gold-400 text-xs transition-colors"
+              className="text-warm-500/40 hover:text-gold-400 text-xs transition-colors"
             >
               Termos de Uso
             </Link>
           </div>
-          <p className="text-secondary-600 text-xs">
+          <p className="text-warm-500/30 text-xs tracking-wide">
             Este site tem caráter informativo, nos termos do Provimento 205/2021 da OAB.
           </p>
         </div>
       </div>
 
       {/* Accent bar bottom */}
-      <div className="h-1 bg-gradient-to-r from-primary-800 via-gold-500 to-primary-800" />
+      <div className="h-[2px] bg-gradient-to-r from-transparent via-gold-400 to-transparent" />
     </footer>
   );
 }

@@ -17,6 +17,7 @@ import AreaCard from '@/components/AreaCard';
 import BlogCard from '@/components/BlogCard';
 import AnimatedSection from '@/components/AnimatedSection';
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider';
+import GoldParticles from '@/components/GoldParticles';
 import { IMAGES } from '@/lib/images';
 
 const areas = [
@@ -95,60 +96,50 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Seção Destaque: Causas que importam */}
-      <section className="py-16 bg-gradient-to-br from-warm-100 via-warm-50 to-warm-100 relative overflow-hidden">
-        {/* Decorative gradient orbs */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gold-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary-200/15 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
-        {/* Subtle line accent */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-300/40 to-transparent" />
+      <section className="py-20 bg-warm-100 relative overflow-hidden">
+        {/* Subtle gold line top */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
         <div className="container-custom relative z-10">
-          <AnimatedSection className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-gold-700 bg-gradient-to-r from-gold-100/50 via-secondary-100 to-gold-100/50 px-5 py-2 rounded-full mb-4 border border-gold-200/30">
-              <Scale className="w-4 h-4 text-gold-600" />
+          <AnimatedSection className="text-center mb-14">
+            <span className="inline-flex items-center gap-2.5 text-xs font-semibold text-gold-600 tracking-[0.2em] uppercase bg-gold-400/8 px-6 py-2.5 rounded-full mb-5 border border-gold-400/15">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold-400" />
               O Que Nos Move
             </span>
             <h2 className="section-title">
-              Advocacia com <span className="text-gold-600">Propósito</span>
+              Advocacia com <span className="text-gold-500">Propósito</span>
             </h2>
             <p className="section-subtitle mx-auto">
               23 anos dedicados à defesa dos seus direitos. Cada caso é uma história. Cada vitória é uma vida transformada.
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
                 icon: Shield,
                 title: 'Experiência Sólida',
                 desc: 'Com mais de duas décadas de atuação em Direito Previdenciário, a Dra. Luciana possui profundo conhecimento das nuances jurídicas que fazem a diferença para seu caso.',
-                gradient: 'from-primary-800/10 to-primary-700/15',
-                iconColor: 'text-primary-700',
-                borderColor: 'border-primary-200',
               },
               {
                 icon: Heart,
                 title: 'Compromisso Social',
                 desc: 'Defesa intransigente dos direitos das pessoas com deficiência, combate ao capacitismo e promoção da igualdade de acesso à justiça em Lucas do Rio Verde e região.',
-                gradient: 'from-gold-400/10 to-gold-500/15',
-                iconColor: 'text-gold-600',
-                borderColor: 'border-gold-200',
               },
               {
                 icon: Globe,
                 title: 'Alcance Internacional',
                 desc: 'Com inscrição na OAP (Portugal, 2023), atende brasileiros em qualquer lugar do mundo. A justiça não tem fronteiras.',
-                gradient: 'from-secondary-200/30 to-secondary-100/20',
-                iconColor: 'text-primary-600',
-                borderColor: 'border-secondary-200',
               },
             ].map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.15}>
-                <div className={`bg-gradient-to-br ${item.gradient} rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border ${item.borderColor} h-full backdrop-blur-sm`}>
-                  <div className={`w-14 h-14 bg-white/80 rounded-xl flex items-center justify-center mb-6 shadow-sm`}>
-                    <item.icon className={`w-7 h-7 ${item.iconColor}`} />
+                <div className="group relative bg-white rounded-2xl p-8 border border-warm-300/60 hover:border-gold-400/40 transition-all duration-500 h-full shadow-sm hover:shadow-xl hover:-translate-y-1">
+                  {/* Top gold accent line */}
+                  <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-gold-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="w-14 h-14 bg-primary-950 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-gold-400/20 transition-shadow duration-500">
+                    <item.icon className="w-6 h-6 text-gold-400" />
                   </div>
-                  <h3 className="text-xl font-serif font-bold text-primary-800 mb-3">{item.title}</h3>
-                  <p className="text-secondary-600 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-serif font-bold text-primary-950 mb-3">{item.title}</h3>
+                  <p className="text-secondary-500 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -157,11 +148,13 @@ export default function HomePage() {
       </section>
 
       {/* Áreas de Atuação */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Decorative accents */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-gold-100/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-primary-100/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-200/30 to-transparent" />
+      <section className="py-24 bg-primary-950 relative overflow-hidden">
+        {/* Canvas particles */}
+        <GoldParticles particleCount={25} maxSize={1.5} color="gold" />
+        {/* Radial glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-400/[0.06] via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
         <div className="container-custom relative z-10">
           <AnimatedSection>
             <SectionHeader
@@ -196,7 +189,8 @@ export default function HomePage() {
       </section>
 
       {/* Sobre - Prévia */}
-      <section className="py-20 bg-gradient-to-br from-warm-100 via-secondary-50 to-warm-200">
+      <section className="py-24 bg-warm-100 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent" />
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
@@ -216,25 +210,25 @@ export default function HomePage() {
                   </div>
                 </div>
                 {/* Stats badge */}
-                <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-primary-800 to-primary-700 text-white p-6 rounded-2xl shadow-xl shadow-primary-900/20">
-                  <p className="text-3xl font-bold">23</p>
-                  <p className="text-sm font-medium">Anos de Carreira</p>
-                  <p className="text-xs opacity-80 mt-1">Desde 2003</p>
+                <div className="absolute -bottom-6 -right-6 bg-primary-950 text-white p-6 rounded-2xl shadow-xl shadow-black/30 border border-gold-400/20">
+                  <p className="text-3xl font-bold text-gold-400">23</p>
+                  <p className="text-sm font-medium text-warm-300">Anos de Carreira</p>
+                  <p className="text-xs text-gold-400/60 mt-1">Desde 2003</p>
                 </div>
                 {/* Scale badge */}
-                <div className="absolute -top-4 -left-4 bg-white text-gold-600 p-3 rounded-2xl shadow-lg border border-secondary-200">
+                <div className="absolute -top-4 -left-4 bg-primary-950 text-gold-400 p-3 rounded-2xl shadow-lg border border-gold-400/20">
                   <Scale className="w-6 h-6" />
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-gold-700 bg-gradient-to-r from-gold-100/50 to-secondary-100 px-4 py-1.5 rounded-full mb-4 border border-gold-200/30">
-                <Award className="w-3.5 h-3.5 text-gold-600" />
+              <span className="inline-flex items-center gap-2.5 text-xs font-semibold text-gold-600 tracking-[0.2em] uppercase bg-gold-400/8 px-6 py-2.5 rounded-full mb-5 border border-gold-400/15">
+                <Award className="w-3.5 h-3.5 text-gold-500" />
                 Sobre a Dra. Luciana Pinho
               </span>
               <h2 className="section-title">
-                Excelência em <span className="text-gold-600">Direito Previdenciário</span> com <span className="text-primary-700">Compromisso Social</span>
+                Excelência em <span className="text-gold-500">Direito Previdenciário</span> com <span className="text-primary-800">Compromisso Social</span>
               </h2>
               <p className="text-secondary-600 leading-relaxed mb-6">
                 A Dra. Luciana de Jesus Ribeiro Pinho é uma advogada previdenciarista
@@ -246,11 +240,11 @@ export default function HomePage() {
 
               <ul className="space-y-4 mb-8">
                 {[
-                  { text: 'Mais de 500 processos conduzidos com excelência', color: 'text-gold-600' },
-                  { text: '5+ pós-graduações em múltiplas áreas do Direito', color: 'text-primary-600' },
-                  { text: 'Inscrição na OAP — Atuação internacional em Portugal', color: 'text-gold-700' },
-                  { text: 'Especialista em Direitos Humanos — Universidade de Coimbra', color: 'text-primary-700' },
-                  { text: 'Atuação multidisciplinar: Previdenciário, PCD, ESG e Direitos Humanos', color: 'text-gold-600' },
+                  { text: 'Mais de 500 processos conduzidos com excelência', color: 'text-gold-500' },
+                  { text: '5+ pós-graduações em múltiplas áreas do Direito', color: 'text-gold-500' },
+                  { text: 'Inscrição na OAP — Atuação internacional em Portugal', color: 'text-gold-500' },
+                  { text: 'Especialista em Direitos Humanos — Universidade de Coimbra', color: 'text-gold-500' },
+                  { text: 'Atuação multidisciplinar: Previdenciário, PCD, ESG e Direitos Humanos', color: 'text-gold-500' },
                 ].map((item) => (
                   <li key={item.text} className="flex items-center gap-3">
                     <CheckCircle2 className={`w-5 h-5 ${item.color} flex-shrink-0`} />
@@ -269,28 +263,29 @@ export default function HomePage() {
       </section>
 
       {/* Estatísticas */}
-      <section className="py-16 bg-gradient-to-r from-primary-900 via-primary-800 to-primary-900 relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-600/8 via-transparent to-transparent" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
+      <section className="py-20 bg-primary-950 relative overflow-hidden">
+        <GoldParticles particleCount={20} maxSize={1.5} color="mixed" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-400/[0.05] via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { number: '23', label: 'Anos de Carreira', color: 'text-gold-400' },
-              { number: '500+', label: 'Processos Conduzidos', color: 'text-gold-300' },
+              { number: '500+', label: 'Processos Conduzidos', color: 'text-gold-400' },
               { number: '5+', label: 'Pós-Graduações', color: 'text-gold-400' },
-              { number: 'OAP', label: 'Atuação Internacional', color: 'text-gold-300' },
+              { number: 'OAP', label: 'Atuação Internacional', color: 'text-gold-400' },
             ].map((stat, index) => (
               <AnimatedSection
                 key={stat.label}
                 delay={index * 0.1}
                 className="text-center"
               >
-                <p className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                <p className={`text-4xl md:text-5xl font-serif font-bold ${stat.color} mb-2`}>
                   {stat.number}
                 </p>
-                <p className="text-secondary-300 text-sm">{stat.label}</p>
+                <div className="w-8 h-[2px] bg-gold-400/40 mx-auto mb-2" />
+                <p className="text-warm-400/70 text-sm tracking-wide">{stat.label}</p>
               </AnimatedSection>
             ))}
           </div>
@@ -301,7 +296,8 @@ export default function HomePage() {
       <GoogleReviewsSlider />
 
       {/* Blog */}
-      <section className="py-20 bg-gradient-to-br from-warm-100 to-secondary-50">
+      <section className="py-24 bg-warm-200 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent" />
         <div className="container-custom">
           <AnimatedSection>
             <SectionHeader
@@ -330,42 +326,39 @@ export default function HomePage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 relative overflow-hidden">
-        {/* Radial gradient overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-600/10 via-transparent to-transparent" />
-        {/* Warm glows */}
-        <div className="absolute top-10 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl" />
-        {/* Border accents */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
+      <section className="py-24 bg-primary-950 relative overflow-hidden">
+        <GoldParticles particleCount={30} maxSize={2} color="gold" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-400/[0.06] via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-400/50 to-transparent" />
 
         <div className="container-custom relative z-10 text-center">
           <AnimatedSection>
-            <Scale className="w-10 h-10 text-gold-400 mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
-              Precisa de Orientação Previdenciária?
+            <div className="w-12 h-12 bg-gold-400/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-gold-400/20">
+              <Scale className="w-6 h-6 text-gold-400" />
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-6 tracking-tight">
+              Precisa de Orientação <span className="text-gold-400">Previdenciária</span>?
             </h2>
-            <p className="text-secondary-300 text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-warm-400/70 text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
               Com 23 anos de experiência em Direito Previdenciário,
               a Dra. Luciana Pinho está pronta para analisar seu caso.
-              Entre em contato para uma consulta personalizada.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold rounded-xl hover:from-gold-400 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-500/25 hover:shadow-gold-500/40 hover:-translate-y-0.5 text-base">
-                <Scale className="w-5 h-5 mr-2" />
+              <Link href="/contato" className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-500 text-primary-950 font-bold rounded-xl hover:from-gold-300 hover:to-gold-400 transition-all duration-500 shadow-xl shadow-gold-500/20 hover:shadow-gold-400/40 hover:-translate-y-1 text-sm tracking-wide uppercase">
+                <Scale className="w-4 h-4 mr-2.5" />
                 Agende uma Consulta
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2.5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || '556599113429'}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-7 py-3.5 border-2 border-gold-500/40 text-warm-100 rounded-xl font-semibold hover:bg-gold-500/10 hover:border-gold-500/60 transition-all duration-300 text-base"
+                className="inline-flex items-center justify-center px-8 py-4 border border-gold-400/25 text-gold-300 rounded-xl font-semibold hover:bg-gold-400/5 hover:border-gold-400/40 transition-all duration-300 text-sm"
               >
                 WhatsApp
               </a>
             </div>
-            <div className="flex items-center justify-center gap-2 mt-8 text-secondary-400 text-sm">
+            <div className="flex items-center justify-center gap-2 mt-10 text-warm-500/50 text-sm tracking-wide">
               <MapPin className="w-4 h-4" />
               Lucas do Rio Verde, MT • OAB/MT 7973-B • OAP Portugal
             </div>

@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Nogueira — Autoridade, Tradição jurídica
+        // Nogueira Escuro — Autoridade, Tradição jurídica
         primary: {
           50: '#EFEBE9',
           100: '#D7CCC8',
@@ -21,7 +21,7 @@ const config: Config = {
           700: '#5D4037',
           800: '#4E342E',
           900: '#3E2723',
-          950: '#2C1A15',
+          950: '#1A0F0A',
         },
         // Cognac — Sofisticação, Elegância
         secondary: {
@@ -36,31 +36,31 @@ const config: Config = {
           800: '#4E342E',
           900: '#3E2723',
         },
-        // Dourado Sóbrio — Detalhes, CTAs
+        // Dourado Ouro — Luxo, Prestígio
         gold: {
-          50: '#FBF7EE',
-          100: '#F5EDD6',
-          200: '#E8D5A3',
-          300: '#D4BC7B',
-          400: '#BFA76A',
-          500: '#A8924F',
-          600: '#8D6B30',
-          700: '#725620',
-          800: '#5C4518',
-          900: '#4A3712',
+          50: '#FFF9E6',
+          100: '#FFF0BF',
+          200: '#FFE699',
+          300: '#FFD966',
+          400: '#D4AF37',
+          500: '#C5A028',
+          600: '#B8860B',
+          700: '#996F0A',
+          800: '#7A5908',
+          900: '#5C4306',
         },
         // Warm whites — Fundos limpos e acolhedores
         warm: {
           50: '#FFFFFF',
-          100: '#FAF8F5',
-          200: '#F5F0EB',
-          300: '#EDE8E3',
-          400: '#E0D6CC',
-          500: '#D1C4B7',
+          100: '#FDFCFA',
+          200: '#FAF7F2',
+          300: '#F5F0E8',
+          400: '#EDE5D8',
+          500: '#D9CFC2',
         },
       },
       fontFamily: {
-        serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        serif: ['Playfair Display', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       animation: {
@@ -69,6 +69,8 @@ const config: Config = {
         'slide-in-left': 'slideInLeft 0.6s ease-out',
         'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
+        'shimmer': 'shimmer 3s linear infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
         fadeIn: {
@@ -91,10 +93,20 @@ const config: Config = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        glow: {
+          '0%': { boxShadow: '0 0 20px rgba(212,175,55,0.15)' },
+          '100%': { boxShadow: '0 0 40px rgba(212,175,55,0.35)' },
+        },
       },
       backgroundImage: {
-        'warm-gradient': 'linear-gradient(135deg, #FAF8F5 0%, #F5F0EB 50%, #EDE8E3 100%)',
-        'wood-gradient': 'linear-gradient(135deg, #EFEBE9 0%, #D7CCC8 50%, #BCAAA4 100%)',
+        'warm-gradient': 'linear-gradient(135deg, #FDFCFA 0%, #FAF7F2 50%, #F5F0E8 100%)',
+        'gold-shimmer': 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.08) 50%, transparent 100%)',
+        'luxury-dark': 'linear-gradient(135deg, #1A0F0A 0%, #2C1A15 40%, #1A0F0A 100%)',
+        'luxury-gold': 'linear-gradient(135deg, #D4AF37 0%, #FFD966 50%, #D4AF37 100%)',
       },
     },
   },
