@@ -307,12 +307,12 @@ export default function CalculadoraClient() {
                       }
                       className={`flex items-start gap-3 p-4 rounded-xl border-2 text-left transition-all ${
                         formData.tipoBeneficio === b.id
-                          ? 'border-lavender-500 bg-lavender-50 shadow-md'
-                          : 'border-secondary-200 hover:border-lavender-300'
+                          ? 'border-gold-400 bg-gold-50 shadow-md'
+                          : 'border-secondary-200 hover:border-gold-300'
                       }`}
                     >
                       <Icon
-                        className={`w-5 h-5 mt-0.5 ${formData.tipoBeneficio === b.id ? 'text-lavender-600' : 'text-secondary-400'}`}
+                        className={`w-5 h-5 mt-0.5 ${formData.tipoBeneficio === b.id ? 'text-gold-600' : 'text-secondary-400'}`}
                       />
                       <div>
                         <span className="font-medium text-secondary-700 text-sm">
@@ -351,7 +351,7 @@ export default function CalculadoraClient() {
                         }
                         className={`px-6 py-2 rounded-lg border-2 font-medium text-sm transition-all ${
                           formData.sexo === s.v
-                            ? 'border-lavender-500 bg-lavender-50 text-lavender-700'
+                            ? 'border-gold-400 bg-gold-50 text-gold-700'
                             : 'border-secondary-200 text-secondary-500'
                         }`}
                       >
@@ -372,10 +372,10 @@ export default function CalculadoraClient() {
                       onChange={(e) =>
                         setFormData({ ...formData, pcd: e.target.checked })
                       }
-                      className="w-5 h-5 text-lavender-600 border-secondary-300 rounded focus:ring-lavender-500"
+                      className="w-5 h-5 text-gold-600 border-secondary-300 rounded focus:ring-gold-400"
                     />
                     <label htmlFor="pcd" className="text-secondary-700">
-                      Pessoa com deficiência (PCD / TEA / Neurodivergente)
+                      Pessoa com deficiência (PCD)
                     </label>
                   </div>
                 )}
@@ -392,7 +392,7 @@ export default function CalculadoraClient() {
                       setFormData({ ...formData, idade: e.target.value })
                     }
                     placeholder="Ex: 55"
-                    className="w-full px-4 py-3 rounded-xl border border-secondary-200 focus:ring-2 focus:ring-lavender-500 focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-xl border border-secondary-200 focus:ring-2 focus:ring-gold-400 focus:border-transparent"
                   />
                 </div>
 
@@ -412,7 +412,7 @@ export default function CalculadoraClient() {
                         })
                       }
                       placeholder="Ex: 25"
-                      className="w-full px-4 py-3 rounded-xl border border-secondary-200 focus:ring-2 focus:ring-lavender-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-secondary-200 focus:ring-2 focus:ring-gold-400 focus:border-transparent"
                     />
                   </div>
                 )}
@@ -433,7 +433,7 @@ export default function CalculadoraClient() {
                         })
                       }
                       placeholder="Ex: 3500"
-                      className="w-full px-4 py-3 rounded-xl border border-secondary-200 focus:ring-2 focus:ring-lavender-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-secondary-200 focus:ring-2 focus:ring-gold-400 focus:border-transparent"
                     />
                   </div>
                 )}
@@ -454,7 +454,7 @@ export default function CalculadoraClient() {
                         })
                       }
                       placeholder={`Até R$ ${(SALARIO_MINIMO / 4).toFixed(2)}`}
-                      className="w-full px-4 py-3 rounded-xl border border-secondary-200 focus:ring-2 focus:ring-lavender-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-secondary-200 focus:ring-2 focus:ring-gold-400 focus:border-transparent"
                     />
                   </div>
                 )}
@@ -462,7 +462,7 @@ export default function CalculadoraClient() {
                 {/* Calcular */}
                 <button
                   onClick={calcular}
-                  className="w-full btn-lavender py-4 text-lg font-semibold flex items-center justify-center gap-2"
+                  className="w-full btn-gold py-4 text-lg font-semibold flex items-center justify-center gap-2"
                 >
                   <Calculator className="w-5 h-5" />
                   Simular Benefício
@@ -515,7 +515,7 @@ export default function CalculadoraClient() {
                   <p className="text-sm text-secondary-500 mb-1">
                     Valor Estimado
                   </p>
-                  <p className="text-4xl font-bold text-lavender-600">
+                  <p className="text-4xl font-bold text-gold-600">
                     R${' '}
                     {resultado.valorEstimado.toLocaleString('pt-BR', {
                       minimumFractionDigits: 2,
@@ -535,7 +535,7 @@ export default function CalculadoraClient() {
                         key={i}
                         className="text-sm text-secondary-600 flex items-start gap-2"
                       >
-                        <span className="text-lavender-500 mt-1">•</span>
+                        <span className="text-gold-500 mt-1">•</span>
                         {r}
                       </li>
                     ))}
@@ -562,14 +562,14 @@ export default function CalculadoraClient() {
               </div>
 
               {/* Aviso importante */}
-              <div className="bg-lavender-50 border border-lavender-200 rounded-xl p-6">
+              <div className="bg-warm-100 border border-secondary-200 rounded-xl p-6">
                 <div className="flex items-start gap-3">
-                  <AlertTriangle className="w-5 h-5 text-lavender-600 mt-0.5" />
+                  <AlertTriangle className="w-5 h-5 text-gold-600 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-lavender-800 mb-1">
+                    <h4 className="font-semibold text-primary-800 mb-1">
                       Simulação Informativa
                     </h4>
-                    <p className="text-sm text-lavender-700">
+                    <p className="text-sm text-secondary-700">
                       Este cálculo é uma estimativa simplificada. O valor real
                       depende de análise completa do CNIS, regras de transição
                       aplicáveis e perícia (quando necessária). Agende um
@@ -592,7 +592,7 @@ export default function CalculadoraClient() {
                   href="https://wa.me/556599113429?text=Olá%2C%20Dra.%20Luciana!%20Fiz%20uma%20simulação%20no%20site%20e%20gostaria%20de%20agendar%20um%20planejamento%20previdenciário."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 btn-lavender py-3 flex items-center justify-center gap-2"
+                  className="flex-1 btn-gold py-3 flex items-center justify-center gap-2"
                 >
                   Falar com a Dra. Luciana
                   <ArrowRight className="w-4 h-4" />

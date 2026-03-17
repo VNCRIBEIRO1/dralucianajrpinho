@@ -37,7 +37,7 @@ export default function TestimonialCard({
           <path
             d="M0 36C0 22 6 12 18 0l6 4C14 14 12 24 12 36v12H0V36Zm34 0C34 22 40 12 52 0l6 4C48 14 46 24 46 36v12H34V36Z"
             fill="currentColor"
-            className="text-primary-500"
+            className="text-primary-800"
           />
         </svg>
 
@@ -53,13 +53,13 @@ export default function TestimonialCard({
         </p>
 
         <div className="flex items-center gap-3">
-          <div className="w-11 h-11 bg-gradient-to-br from-[#1a2e1f] to-[#2d4a35] rounded-full flex items-center justify-center shadow-md">
+          <div className="w-11 h-11 bg-gradient-to-br from-primary-800 to-primary-600 rounded-full flex items-center justify-center shadow-md">
             <span className="text-white font-bold text-sm tracking-wide">
               {initials}
             </span>
           </div>
           <div>
-            <p className="font-medium text-primary-500 text-sm">{author}</p>
+            <p className="font-medium text-primary-800 text-sm">{author}</p>
             <p className="text-secondary-500 text-xs">{role}</p>
           </div>
         </div>

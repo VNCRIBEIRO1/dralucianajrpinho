@@ -54,20 +54,19 @@ export const SITE_CONFIG = {
     'direitos humanos',
     'ESG advocacia',
     'direitos PCD',
-    'autismo direitos',
-    'neurodiversidade',
+    'pessoa com deficiência direitos',
     'advogada OAP Portugal',
     'Luciana Pinho advogada',
-    'ALFAA Lucas do Rio Verde',
+    'direito previdenciário Lucas do Rio Verde',
   ],
 
   sobreResumo:
-    '23 anos de carreira dedicados à Justiça Social, Direitos Previdenciários, Direitos Humanos e à luta incansável pela inclusão de Pessoas com Deficiência.',
+    '23 anos de carreira dedicados à Justiça Social, Direitos Previdenciários, Direitos Humanos e à defesa dos direitos das Pessoas com Deficiência.',
   sobreHistoria: [
     'A Dra. Luciana de Jesus Ribeiro Pinho é uma advogada previdenciarista de destaque em Mato Grosso, com 23 anos de carreira iniciada em 06/02/2003, dedicada ao atendimento humanizado em Lucas do Rio Verde.',
-    'Especialista em planejamento previdenciário, direitos humanos e ESG, é pioneira na integração de conhecimentos jurídicos com compromisso social. Sua atuação vai além do tribunal — ela transforma vidas.',
+    'Especialista em planejamento previdenciário, direitos humanos e ESG, sua atuação integra de forma sistemática o Direito ao compromisso social. Sua atuação vai além do tribunal — ela transforma vidas.',
     'Em 2023, obteve inscrição na Ordem dos Advogados Portugueses (OAP), expandindo seus serviços para atendimento remoto global, incluindo Portugal.',
-    'Membro ativo da ALFAA (Associação Luverdense dos Familiares, Amigos e Autistas), utiliza sua experiência como autista com diagnóstico tardio para promover inclusão e combater o capacitismo.',
+    'Pós-graduada em Direitos Humanos pela Universidade de Coimbra, dedica-se à defesa dos direitos das pessoas com deficiência e ao combate ao capacitismo.',
     'Com mais de 5 pós-graduações e centenas de processos conduzidos com dedicação, encarna a advocacia que faz diferença — técnica, humana e transformadora.',
   ],
 
@@ -89,7 +88,7 @@ export const SITE_CONFIG = {
       role: 'Cliente — Aposentadoria por Tempo de Contribuição',
     },
     {
-      text: 'Como mãe de uma criança autista, encontrar uma advogada que luta por inclusão e também é autista foi transformador. Ela sabe na pele o que estamos passando.',
+      text: 'Como mãe de uma criança com deficiência, encontrar uma advogada que realmente luta pelos direitos dos PCDs foi transformador. Ela entende nossa causa e nos representa com dedicação.',
       author: 'Carla R.',
       role: 'Cliente — BPC/LOAS',
     },

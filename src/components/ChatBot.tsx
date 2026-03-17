@@ -14,7 +14,6 @@ import {
   AlertTriangle,
   Clock,
   CheckCircle,
-  Puzzle,
 } from 'lucide-react';
 
 // ============================================================
@@ -76,7 +75,7 @@ const PERGUNTA_URGENCIA: Pergunta = {
 const FLUXOS: Record<string, Fluxo> = {
   aposentadoria: {
     saudacao:
-      'Entendi! Vamos conversar sobre sua *aposentadoria*. Com 23 anos de experiência e como pioneira na integração do Direito com compromisso social, a Dra. Luciana vai analisar seu caso pessoalmente. Me conte mais:',
+      'Entendi! Vamos conversar sobre sua *aposentadoria*. Com 23 anos de experiência, a Dra. Luciana vai analisar seu caso pessoalmente. Me conte mais:',
     perguntas: [
       {
         id: 'sub',
@@ -137,7 +136,7 @@ const FLUXOS: Record<string, Fluxo> = {
         opcoes: [
           { label: '♿ Pessoa com Deficiência (qualquer idade)', valor: 'BPC para PCD' },
           { label: '🧓 Idoso com 65 anos ou mais', valor: 'BPC para idoso' },
-          { label: '🧩 Pessoa com Autismo / TEA', valor: 'BPC para pessoa com autismo' },
+          { label: '♿ Pessoa com TEA (Transtorno do Espectro Autista)', valor: 'BPC para pessoa com TEA' },
           { label: '👶 Criança com deficiência', valor: 'BPC para criança com deficiência' },
           { label: '❓ Não sei se tenho direito', valor: 'Dúvida sobre direito ao BPC' },
         ],
@@ -188,13 +187,13 @@ const FLUXOS: Record<string, Fluxo> = {
 
   pcd: {
     saudacao:
-      'Você está no lugar certo! 💜 A Dra. Luciana é autista com diagnóstico tardio, membro ativa da ALFAA e *pioneira em sua região na integração de conhecimentos jurídicos com compromisso social*. Ela entende *na pele* as barreiras enfrentadas por PCDs:',
+      'Você está no lugar certo! A Dra. Luciana possui ampla experiência na *defesa dos direitos das pessoas com deficiência*. Com 23 anos de atuação, ela conhece profundamente as barreiras enfrentadas por PCDs:',
     perguntas: [
       {
         id: 'sub',
         texto: 'Qual situação melhor descreve o que você precisa?',
         opcoes: [
-          { label: '🧩 Direitos do Autista (TEA)', valor: 'Direitos da pessoa autista' },
+          { label: '♿ Direitos do Autista (TEA)', valor: 'Direitos da pessoa autista' },
           { label: '📚 Inclusão escolar negada', valor: 'Inclusão escolar negada' },
           { label: '💼 Cotas de emprego / discriminação', valor: 'Cotas PCD / discriminação' },
           { label: '♿ Falta de acessibilidade', valor: 'Falta de acessibilidade' },
@@ -305,7 +304,7 @@ const FLUXOS: Record<string, Fluxo> = {
 
   humanos: {
     saudacao:
-      'A Dra. Luciana é pós-graduada em *Direitos Humanos* pela Universidade de Coimbra e *pioneira em sua região na integração de conhecimentos jurídicos com compromisso social*. Vamos entender seu caso:',
+      'A Dra. Luciana é pós-graduada em *Direitos Humanos* pela Universidade de Coimbra, com vasta experiência na defesa dos direitos fundamentais. Vamos entender seu caso:',
     perguntas: [
       {
         id: 'sub',
@@ -333,7 +332,7 @@ const FLUXOS: Record<string, Fluxo> = {
 
   esg: {
     saudacao:
-      'A Dra. Luciana é especialista em *ESG* e *pioneira na região na integração de sustentabilidade com o Direito*. Vamos entender sua necessidade:',
+      'A Dra. Luciana é especialista em *ESG* e *sustentabilidade aplicada ao Direito*. Vamos entender sua necessidade:',
     perguntas: [
       {
         id: 'sub',
@@ -366,7 +365,7 @@ const AREAS: Opcao[] = [
   { label: '🤝 BPC/LOAS', valor: 'bpc' },
   { label: '🏥 Auxílio-Doença / Acidente', valor: 'auxilio' },
   { label: '💜 Pensão por Morte', valor: 'pensao' },
-  { label: '🧩 Direitos PCD & Autismo', valor: 'pcd' },
+  { label: '♿ Direitos PCD', valor: 'pcd' },
   { label: '⚖️ Direitos Humanos', valor: 'humanos' },
   { label: '🌱 ESG & Sustentabilidade', valor: 'esg' },
   { label: '🧮 Simulador INSS', valor: 'calculadora' },
@@ -444,7 +443,7 @@ export default function ChatBot() {
         setMensagens([{
           id: nextId(),
           tipo: 'bot',
-          texto: 'Olá! 👋 Sou a assistente virtual da *Dra. Luciana Pinho*, advogada previdenciarista com 23 anos de experiência em Lucas do Rio Verde, MT.\n\n🏆 *Pioneira em sua região na integração de conhecimentos jurídicos com compromisso social.*\n\n💜 Especialista em Direito Previdenciário, Direitos Humanos, PCD & Neurodiversidade e ESG.\n\n🧩 Como autista com diagnóstico tardio, a Dra. Luciana entende *na pele* a luta por direitos.\n\nComo posso ajudá-lo(a)?',
+          texto: 'Olá! 👋 Sou a assistente virtual da *Dra. Luciana Pinho*, advogada previdenciarista com 23 anos de experiência em Lucas do Rio Verde, MT.\n\n⚖️ Especialista em *Direito Previdenciário*, Direitos Humanos, defesa de PCDs e ESG.\n\n23 anos de carreira dedicados à *Justiça Social* e à defesa dos seus direitos.\n\nComo posso ajudá-lo(a)?',
           opcoes: AREAS,
           timestamp: new Date(),
         }]);
@@ -519,7 +518,7 @@ export default function ChatBot() {
       await addBotMsg(prox.texto, prox.opcoes);
     } else {
       setEtapa('nome');
-      await addBotMsg('Obrigada pelas informações! 💜 Para a Dra. Luciana retornar seu contato, qual o seu *nome completo*?');
+      await addBotMsg('Obrigada pelas informações! Para a Dra. Luciana retornar seu contato, qual o seu *nome completo*?');
     }
   };
 
@@ -604,16 +603,16 @@ export default function ChatBot() {
             initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}
             transition={{ delay: 1.5, type: 'spring', stiffness: 200 }}
             onClick={() => setAberto(true)}
-            className="fixed bottom-24 right-6 z-50 w-14 h-14 bg-gradient-to-br from-lavender-500 to-lavender-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-lavender-500/40 transition-shadow group"
+            className="fixed bottom-24 right-6 z-50 w-14 h-14 bg-gradient-to-br from-primary-800 to-primary-700 rounded-full flex items-center justify-center shadow-lg hover:shadow-primary-900/40 transition-shadow group"
             aria-label="Abrir assistente virtual da Dra. Luciana Pinho"
             title="Assistente Virtual — Dra. Luciana Pinho"
           >
-            <Puzzle className="w-7 h-7 text-white" />
-            <span className="absolute inset-0 rounded-full bg-lavender-400 animate-ping opacity-20" />
-            <span className="absolute right-full mr-3 bg-white text-secondary-700 text-sm px-4 py-2 rounded-lg shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <Scale className="w-7 h-7 text-white" />
+            <span className="absolute inset-0 rounded-full bg-gold-500 animate-ping opacity-20" />
+            <span className="absolute right-full mr-3 bg-white text-primary-800 text-sm px-4 py-2 rounded-lg shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Fale com a Dra. Luciana
             </span>
-            <span className="absolute -top-1 -right-1 w-5 h-5 bg-rose-500 rounded-full flex items-center justify-center text-[10px] text-white font-bold shadow">1</span>
+            <span className="absolute -top-1 -right-1 w-5 h-5 bg-gold-500 rounded-full flex items-center justify-center text-[10px] text-white font-bold shadow">1</span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -626,32 +625,32 @@ export default function ChatBot() {
             className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] h-[560px] max-h-[calc(100vh-4rem)] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-secondary-200"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#150c2a] via-[#2d1b4e] to-[#150c2a] px-4 py-3 flex items-center gap-3 flex-shrink-0">
-              <div className="w-10 h-10 bg-lavender-500/20 rounded-full flex items-center justify-center">
-                <Puzzle className="w-5 h-5 text-lavender-400" />
+            <div className="bg-gradient-to-r from-primary-900 via-primary-800 to-primary-900 px-4 py-3 flex items-center gap-3 flex-shrink-0">
+              <div className="w-10 h-10 bg-gold-500/20 rounded-full flex items-center justify-center">
+                <Scale className="w-5 h-5 text-gold-400" />
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-white font-semibold text-sm truncate">Dra. Luciana Pinho</h3>
-                <p className="text-primary-300 text-xs flex items-center gap-1">
+                <p className="text-secondary-300 text-xs flex items-center gap-1">
                   <span className="w-2 h-2 bg-green-400 rounded-full inline-block" />
                   Assistente online • OAB/MT 7973-B
                 </p>
               </div>
               <div className="flex items-center gap-1">
-                <button onClick={iniciar} className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-primary-300 hover:text-white" title="Reiniciar"><ArrowLeft className="w-4 h-4" /></button>
-                <button onClick={() => setAberto(false)} className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-primary-300 hover:text-white" title="Fechar"><X className="w-4 h-4" /></button>
+                <button onClick={iniciar} className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-secondary-300 hover:text-white" title="Reiniciar"><ArrowLeft className="w-4 h-4" /></button>
+                <button onClick={() => setAberto(false)} className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-secondary-300 hover:text-white" title="Fechar"><X className="w-4 h-4" /></button>
               </div>
             </div>
-            <div className="h-[2px] bg-gradient-to-r from-transparent via-lavender-500 to-transparent flex-shrink-0" />
+            <div className="h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent flex-shrink-0" />
 
             {/* Chat body */}
             <div ref={chatRef} className="flex-1 overflow-y-auto p-4 space-y-3 bg-gradient-to-b from-secondary-50 to-white">
               {mensagens.map((msg) => (
                 <div key={msg.id}>
                   {msg.texto === '__RESUMO__' ? (
-                    <div className="bg-gradient-to-br from-lavender-50 to-rose-50 border border-lavender-200 rounded-xl p-4 space-y-3">
-                      <p className="font-semibold text-sm text-secondary-800 flex items-center gap-2">
-                        <Scale className="w-4 h-4 text-lavender-600" /> Resumo da Consulta
+                    <div className="bg-gradient-to-br from-warm-100 to-gold-50 border border-secondary-200 rounded-xl p-4 space-y-3">
+                      <p className="font-semibold text-sm text-primary-900 flex items-center gap-2">
+                        <Scale className="w-4 h-4 text-gold-600" /> Resumo da Consulta
                       </p>
                       {dados.urgencia && (
                         <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${getUrgenciaCor(dados.urgencia)}`}>
@@ -671,7 +670,7 @@ export default function ChatBot() {
                         <MessageCircle className="w-5 h-5" /> Enviar para Dra. Luciana <ExternalLink className="w-3.5 h-3.5" />
                       </button>
                       <a href={`/agendamento?tipo=${encodeURIComponent(dados.area)}&nome=${encodeURIComponent(dados.nome)}&telefone=${encodeURIComponent(dados.telefone)}&assunto=${encodeURIComponent(dados.subarea)}#agendar-online`}
-                        className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-lavender-500 to-lavender-600 hover:from-lavender-400 hover:to-lavender-500 text-white font-semibold text-sm py-2.5 rounded-lg transition-colors shadow">
+                        className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-primary-800 to-primary-700 hover:from-primary-700 hover:to-primary-600 text-white font-semibold text-sm py-2.5 rounded-lg transition-colors shadow">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeWidth={2}/><line x1="16" y1="2" x2="16" y2="6" strokeWidth={2}/><line x1="8" y1="2" x2="8" y2="6" strokeWidth={2}/></svg>
                         Agendar Consulta Online
                       </a>
@@ -681,8 +680,8 @@ export default function ChatBot() {
                     </div>
                   ) : msg.tipo === 'bot' ? (
                     <div className="flex gap-2 items-start">
-                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#2d1b4e] to-[#4a2d7a] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Bot className="w-3.5 h-3.5 text-lavender-400" />
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary-800 to-primary-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Bot className="w-3.5 h-3.5 text-gold-300" />
                       </div>
                       <div className="max-w-[85%] space-y-2">
                         <div className="bg-white border border-secondary-100 rounded-2xl rounded-tl-sm px-3.5 py-2.5 shadow-sm">
@@ -693,7 +692,7 @@ export default function ChatBot() {
                           <div className="space-y-1.5">
                             {msg.opcoes.map((op) => (
                               <button key={op.valor} onClick={() => { if (etapa === 'inicio') selecionarArea(op.valor); else responderPergunta(op.valor, op.label); }}
-                                className="block w-full text-left text-sm px-3 py-2 rounded-xl bg-lavender-50 hover:bg-lavender-100 border border-lavender-200 hover:border-lavender-300 text-secondary-700 transition-all hover:shadow-sm">
+                                className="block w-full text-left text-sm px-3 py-2 rounded-xl bg-warm-100 hover:bg-secondary-100 border border-secondary-200 hover:border-gold-400 text-primary-800 transition-all hover:shadow-sm">
                                 {op.label}
                               </button>
                             ))}
@@ -703,7 +702,7 @@ export default function ChatBot() {
                     </div>
                   ) : (
                     <div className="flex justify-end">
-                      <div className="max-w-[80%] bg-gradient-to-br from-[#2d1b4e] to-[#4a2d7a] text-white px-3.5 py-2.5 rounded-2xl rounded-tr-sm shadow-sm">
+                      <div className="max-w-[80%] bg-gradient-to-br from-primary-800 to-primary-700 text-white px-3.5 py-2.5 rounded-2xl rounded-tr-sm shadow-sm">
                         <p className="text-sm leading-relaxed">{msg.texto}</p>
                       </div>
                     </div>
@@ -712,14 +711,14 @@ export default function ChatBot() {
               ))}
               {digitando && (
                 <div className="flex gap-2 items-start">
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#2d1b4e] to-[#4a2d7a] flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-3.5 h-3.5 text-lavender-400" />
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary-800 to-primary-600 flex items-center justify-center flex-shrink-0">
+                    <Bot className="w-3.5 h-3.5 text-gold-300" />
                   </div>
                   <div className="bg-white border border-secondary-100 rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
                     <div className="flex gap-1">
-                      <span className="w-2 h-2 bg-lavender-300 rounded-full animate-bounce [animation-delay:0ms]" />
-                      <span className="w-2 h-2 bg-lavender-300 rounded-full animate-bounce [animation-delay:150ms]" />
-                      <span className="w-2 h-2 bg-lavender-300 rounded-full animate-bounce [animation-delay:300ms]" />
+                      <span className="w-2 h-2 bg-secondary-300 rounded-full animate-bounce [animation-delay:0ms]" />
+                      <span className="w-2 h-2 bg-secondary-300 rounded-full animate-bounce [animation-delay:150ms]" />
+                      <span className="w-2 h-2 bg-secondary-300 rounded-full animate-bounce [animation-delay:300ms]" />
                     </div>
                   </div>
                 </div>
@@ -742,9 +741,9 @@ export default function ChatBot() {
                   <input ref={inputRef} type="text" value={inputTexto} onChange={(e) => setInputTexto(e.target.value)}
                     placeholder={inputAtivo ? (etapa === 'nome' ? 'Digite seu nome completo...' : etapa === 'telefone' ? '(65) 99999-9999' : 'Digite sua resposta...') : 'Selecione uma opção acima'}
                     disabled={!inputAtivo}
-                    className="flex-1 text-sm px-3 py-2.5 rounded-xl border border-secondary-200 focus:border-lavender-400 focus:ring-1 focus:ring-lavender-400 outline-none disabled:bg-secondary-50 disabled:text-secondary-400 transition-colors" />
+                    className="flex-1 text-sm px-3 py-2.5 rounded-xl border border-secondary-200 focus:border-gold-400 focus:ring-1 focus:ring-gold-400 outline-none disabled:bg-secondary-50 disabled:text-secondary-400 transition-colors" />
                   <button type="submit" disabled={!inputAtivo || !inputTexto.trim()}
-                    className="w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-lavender-500 to-lavender-600 text-white disabled:opacity-40 transition-opacity hover:shadow-lg">
+                    className="w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-800 to-primary-700 text-white disabled:opacity-40 transition-opacity hover:shadow-lg">
                     <Send className="w-4 h-4" />
                   </button>
                 </form>

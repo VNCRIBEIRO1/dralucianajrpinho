@@ -14,9 +14,9 @@ export default function AgendamentoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-72 h-72 bg-gold-400 rounded-full blur-3xl" />
           <div className="absolute bottom-10 left-10 w-56 h-56 bg-gold-400 rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10 text-center">
@@ -84,8 +84,8 @@ export default function AgendamentoPage() {
             {/* Card 2 — Assistente Virtual (ChatBot) */}
             <AnimatedSection delay={0.1}>
               <div className="card pt-8 pb-8 px-6 h-full border border-secondary-200 hover:border-gold-300 transition-all duration-300 hover:shadow-xl">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#150c2a] to-[#2d1b4e] rounded-xl flex items-center justify-center mb-5">
-                  <Bot className="w-7 h-7 text-lavender-400" />
+                <div className="w-14 h-14 bg-gradient-to-br from-primary-900 to-primary-800 rounded-xl flex items-center justify-center mb-5">
+                  <Bot className="w-7 h-7 text-gold-400" />
                 </div>
                 <h2 className="text-lg font-serif font-bold text-primary-500 mb-2">
                   Assistente Virtual
@@ -108,8 +108,8 @@ export default function AgendamentoPage() {
                 </div>
                 <button
                   id="btn-abrir-chatbot"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#150c2a] to-[#2d1b4e] hover:from-[#1e1238] hover:to-[#3a2563] text-white rounded-xl font-medium transition-all text-sm shadow-lg shadow-lavender-900/20 abrir-chatbot-btn">
-                  <Bot className="w-4 h-4 text-lavender-400" />
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-900 to-primary-800 hover:from-primary-800 hover:to-primary-700 text-white rounded-xl font-medium transition-all text-sm shadow-lg shadow-primary-900/20 abrir-chatbot-btn">
+                  <Bot className="w-4 h-4 text-gold-400" />
                   Falar com Assistente
                   <ArrowRight className="w-4 h-4" />
                 </button>

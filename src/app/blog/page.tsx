@@ -9,7 +9,7 @@ import { getAllArticles } from '@/lib/articles';
 export const metadata: Metadata = {
   title: 'Blog Jurídico',
   description:
-    'Artigos informativos sobre Direito Previdenciário, Direitos Humanos, Neurodiversidade e inclusão. Conteúdo da Dra. Luciana J. R. Pinho.',
+    'Artigos informativos sobre Direito Previdenciário, Direitos Humanos, Direitos PCD e legislação social. Conteúdo da Dra. Luciana J. R. Pinho.',
 };
 
 export default function BlogPage() {
@@ -18,23 +18,23 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-autism-red via-autism-gold to-autism-blue" />
+      <section className="pt-32 pb-20 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-800 via-gold-500 to-primary-800" />
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-72 h-72 bg-gold-500 rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-autism-blue/20 via-lavender-500/20 to-autism-purple/20 text-lavender-300 border border-lavender-500/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-gold-500/10 text-gold-300 border border-gold-500/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <BookOpen className="w-4 h-4" />
               Blog Jurídico
             </span>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Artigos <span className="text-lavender-400">Informativos</span>
+              Artigos <span className="text-gold-400">Informativos</span>
             </h1>
-            <p className="text-primary-200 text-lg max-w-2xl">
-              Conteúdo educativo sobre seus direitos previdenciários, inclusão,
-              neurodiversidade e mais. Informação de qualidade para empoderar você.
+            <p className="text-secondary-300 text-lg max-w-2xl">
+              Conteúdo educativo sobre seus direitos previdenciários, direitos PCD
+              e legislação social. Informação de qualidade para empoderar você.
             </p>
           </AnimatedSection>
         </div>
@@ -73,7 +73,7 @@ export default function BlogPage() {
       </section>
 
       {/* Aviso */}
-      <section className="py-8 bg-gradient-to-br from-inclusion-cream to-inclusion-lilac/10">
+      <section className="py-8 bg-gradient-to-br from-warm-100 to-secondary-50">
         <div className="container-custom text-center">
           <p className="text-secondary-500 text-sm">
             Este blog tem caráter meramente informativo, nos termos do Provimento 205/2021 da OAB.

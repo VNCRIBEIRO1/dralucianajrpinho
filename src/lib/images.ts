@@ -35,16 +35,13 @@ export const IMAGES = {
   // Escritório
   office: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/office',
 
-  // Logo crianças autismo
-  logoGirl: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-girl-autism',
-  logoBoy: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-boy-autism',
-
   // Fallbacks antigos
   logo: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
   logoAlt: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_bracos_cruzados',
   logoMini: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
 
   // Imagens temáticas (backgrounds decorativos)
+  heroBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-inclusion-bg',
   heroInclusionBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-inclusion-bg',
   patternLight: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/pattern-inclusion-light',
   patternDark: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/pattern-inclusion-dark',
@@ -61,7 +58,7 @@ export const IMAGES = {
 export const AREA_IMAGES: Record<string, string> = {
   'Direito Previdenciário': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-previdenciario',
   'Direitos Humanos': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-direitos-humanos',
-  'Direitos PCD & Neurodiversidade': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-pcd-neurodiversidade',
+  'Direitos PCD': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-pcd-neurodiversidade',
   'ESG & Sustentabilidade': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-esg-sustentabilidade',
   'BPC/LOAS': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-bpc-loas',
   'Aposentadorias': 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/area-aposentadorias',

@@ -84,7 +84,7 @@ export default async function BlogPostPage({
           <h1 className="text-3xl font-serif font-bold text-secondary-800 mb-4">
             Artigo não encontrado
           </h1>
-          <Link href="/blog" className="text-lavender-600 hover:underline">
+          <Link href="/blog" className="text-gold-600 hover:underline">
             Voltar para o Blog
           </Link>
         </div>
@@ -97,8 +97,8 @@ export default async function BlogPostPage({
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-autism-red via-autism-gold to-autism-blue" />
+      <section className="pt-32 pb-16 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600" />
         <div className="absolute inset-0">
           <Image
             src={getArticleImage(slug)}
@@ -112,13 +112,13 @@ export default async function BlogPostPage({
           <AnimatedSection>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-primary-200 hover:text-lavender-400 transition-colors text-sm mb-8"
+              className="inline-flex items-center gap-2 text-primary-200 hover:text-gold-400 transition-colors text-sm mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
               Voltar para o Blog
             </Link>
 
-            <span className="inline-block text-xs font-medium text-lavender-400 bg-lavender-500/20 px-3 py-1 rounded-full mb-4">
+            <span className="inline-block text-xs font-medium text-gold-400 bg-gold-500/20 px-3 py-1 rounded-full mb-4">
               {article.category}
             </span>
 
@@ -154,13 +154,13 @@ export default async function BlogPostPage({
                   item.type === 'h2' ? (
                     <h2
                       key={index}
-                      className="text-2xl font-serif font-bold text-secondary-800 mt-10 mb-4 pb-2 border-b border-lavender-200"
+                      className="text-2xl font-serif font-bold text-secondary-800 mt-10 mb-4 pb-2 border-b border-secondary-200"
                     >
                       {item.text}
                     </h2>
                   ) : item.type === 'li' ? (
                     <div key={index} className="flex items-start gap-2 mb-2 text-secondary-600">
-                      <span className="text-lavender-500 mt-1.5">•</span>
+                      <span className="text-gold-500 mt-1.5">•</span>
                       <span>{item.text}</span>
                     </div>
                   ) : (
@@ -174,14 +174,14 @@ export default async function BlogPostPage({
                 )}
               </article>
 
-              <div className="mt-12 bg-lavender-50 border border-lavender-200 rounded-xl p-6">
+              <div className="mt-12 bg-warm-100 border border-secondary-200 rounded-xl p-6">
                 <div className="flex items-start gap-3">
-                  <Scale className="w-5 h-5 text-lavender-600 flex-shrink-0 mt-1" />
+                  <Scale className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-medium text-lavender-700 mb-1">
+                    <p className="font-medium text-primary-800 mb-1">
                       Aviso Legal
                     </p>
-                    <p className="text-lavender-600 text-sm">
+                    <p className="text-secondary-700 text-sm">
                       Este artigo tem caráter meramente informativo e educativo,
                       nos termos do Provimento 205/2021 da OAB. Não constitui
                       aconselhamento jurídico. Para orientação específica,
@@ -195,7 +195,7 @@ export default async function BlogPostPage({
                 <p className="text-secondary-600 mb-4">
                   Ficou com dúvidas sobre este tema?
                 </p>
-                <Link href="/contato" className="btn-lavender inline-block px-8 py-3">
+                <Link href="/contato" className="btn-gold inline-block px-8 py-3">
                   Fale com a Dra. Luciana
                 </Link>
               </div>

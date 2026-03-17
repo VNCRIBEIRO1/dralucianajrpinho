@@ -39,11 +39,11 @@ export default function CookieBanner() {
           <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl border border-secondary-200 p-6 md:p-8">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Shield className="w-6 h-6 text-primary-500" />
+                <Shield className="w-6 h-6 text-primary-700" />
               </div>
 
               <div className="flex-1">
-                <h3 className="text-lg font-serif font-bold text-primary-500 mb-2">
+                <h3 className="text-lg font-serif font-bold text-primary-800 mb-2">
                   Privacidade e Cookies
                 </h3>
                 <p className="text-secondary-600 text-sm leading-relaxed mb-4">
@@ -53,7 +53,7 @@ export default function CookieBanner() {
                   mais informações, consulte nossa{' '}
                   <Link
                     href="/politica-privacidade"
-                    className="text-primary-500 underline hover:text-gold-500"
+                    className="text-gold-600 underline hover:text-gold-700"
                   >
                     Política de Privacidade
                   </Link>

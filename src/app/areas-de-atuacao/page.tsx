@@ -16,7 +16,6 @@ import {
   Gavel,
   Heart,
   Globe,
-  Puzzle,
   LucideIcon,
 } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
@@ -35,7 +34,6 @@ const iconMap: Record<string, LucideIcon> = {
   Gavel,
   Heart,
   Globe,
-  Puzzle,
   Shield: ShieldCheck,
 };
 
@@ -53,7 +51,7 @@ const areas = [
       'Pensão por Morte',
       'Auxílio-Doença / Acidente',
     ],
-    color: 'from-[#2d1b4e] to-[#4a2d7a]',
+    color: 'from-primary-900 to-primary-700',
   },
   {
     iconName: 'Heart',
@@ -68,13 +66,13 @@ const areas = [
       'Ações contra o Estado',
       'Inclusão e Igualdade',
     ],
-    color: 'from-[#4a1942] to-[#7a2d6e]',
+    color: 'from-primary-800 to-primary-600',
   },
   {
-    iconName: 'Puzzle',
-    title: 'Direitos PCD & Neurodiversidade',
+    iconName: 'Users',
+    title: 'Direitos PCD',
     description:
-      'BPC/LOAS, inclusão escolar e laboral, cotas, acessibilidade e combate ao capacitismo. Experiência pessoal como autista — a luta é pessoal e profissional.',
+      'BPC/LOAS, inclusão escolar e laboral, cotas, acessibilidade e combate ao capacitismo. Defesa especializada dos direitos das pessoas com deficiência.',
     topics: [
       'BPC/LOAS para PCDs',
       'Inclusão Escolar',
@@ -83,7 +81,7 @@ const areas = [
       'Combate ao Capacitismo',
       'Lei Brasileira de Inclusão',
     ],
-    color: 'from-[#1b2d4e] to-[#2d4a7a]',
+    color: 'from-primary-700 to-primary-500',
   },
   {
     iconName: 'Globe',
@@ -98,7 +96,7 @@ const areas = [
       'Relatórios de Sustentabilidade',
       'Políticas de Inclusão',
     ],
-    color: 'from-[#1b4e2d] to-[#2d7a4a]',
+    color: 'from-gold-700 to-gold-500',
   },
   {
     iconName: 'Scale',
@@ -113,7 +111,7 @@ const areas = [
       'BPC na Escola',
       'BPC Trabalho',
     ],
-    color: 'from-[#4e1b1b] to-[#7a2d2d]',
+    color: 'from-primary-900 to-primary-600',
   },
   {
     iconName: 'Briefcase',
@@ -128,7 +126,7 @@ const areas = [
       'Invalidez',
       'Cálculos Previdenciários',
     ],
-    color: 'from-[#4e3d1b] to-[#7a5e2d]',
+    color: 'from-gold-600 to-gold-400',
   },
 ];
 
@@ -136,25 +134,24 @@ export default function AreasPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-autism-red via-autism-gold to-autism-blue" />
+      <section className="pt-32 pb-20 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-800 via-gold-500 to-primary-800" />
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-72 h-72 bg-gold-500 rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-autism-blue/20 via-lavender-500/20 to-autism-purple/20 text-lavender-300 border border-lavender-500/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-gold-500/10 text-gold-300 border border-gold-500/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Scale className="w-4 h-4" />
               Especialidades
             </span>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Áreas de <span className="text-lavender-400">Atuação</span>
+              Áreas de <span className="text-gold-400">Atuação</span>
             </h1>
-            <p className="text-primary-200 text-lg max-w-2xl">
-              Pioneira em sua região na integração de conhecimentos jurídicos
-              com compromisso social. Especialização em Direito Previdenciário
-              com atuação multidisciplinar em Direitos Humanos, ESG e inclusão
-              de PCDs. 23 anos de experiência a seu serviço.
+            <p className="text-secondary-300 text-lg max-w-2xl">
+              Especialização em Direito Previdenciário com atuação
+              multidisciplinar em Direitos Humanos, ESG e defesa de PCDs.
+              23 anos de experiência a seu serviço.
             </p>
           </AnimatedSection>
         </div>
@@ -209,7 +206,7 @@ export default function AreasPage() {
                             key={topic}
                             className="flex items-center gap-2"
                           >
-                            <CheckCircle2 className="w-4 h-4 text-lavender-500 flex-shrink-0" />
+                            <CheckCircle2 className="w-4 h-4 text-gold-600 flex-shrink-0" />
                             <span className="text-secondary-700 text-sm">
                               {topic}
                             </span>
@@ -218,7 +215,7 @@ export default function AreasPage() {
                       </div>
                       <Link
                         href="/contato"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-lavender-600 hover:text-lavender-500 transition-colors"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-gold-700 hover:text-gold-600 transition-colors"
                       >
                         Consulte sobre {area.title}
                         <ArrowRight className="w-4 h-4" />
@@ -233,20 +230,20 @@ export default function AreasPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-72 h-72 bg-gold-500 rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10 text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
               Precisa de Orientação Especializada?
             </h2>
-            <p className="text-primary-200 text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-secondary-300 text-lg max-w-2xl mx-auto mb-8">
               Com 23 anos de experiência, estou pronta para analisar seu caso
               com a atenção e o cuidado que ele merece.
             </p>
-            <Link href="/contato" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-medium rounded-xl hover:from-lavender-400 hover:to-lavender-500 transition-all shadow-lg text-base">
+            <Link href="/contato" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-medium rounded-xl hover:from-gold-400 hover:to-gold-500 transition-all shadow-lg text-base">
               Fale Comigo
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>

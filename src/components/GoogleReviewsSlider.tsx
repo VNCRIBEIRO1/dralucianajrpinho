@@ -23,7 +23,7 @@ const GOOGLE_REVIEWS: GoogleReview[] = [
     date: '15/04/2025',
     rating: 5,
     text: 'A Dra. Luciana conseguiu minha aposentadoria por tempo de contribuição quando eu já tinha desistido. Profissional incrível, atenciosa e que realmente entende de Direito Previdenciário!',
-    avatarColor: '#8b5cf6',
+    avatarColor: '#6D4C41',
   },
   {
     name: 'Carlos Roberto M.',
@@ -36,7 +36,7 @@ const GOOGLE_REVIEWS: GoogleReview[] = [
     name: 'Ana Paula Ferreira',
     date: '18/02/2025',
     rating: 5,
-    text: 'A Dra. Luciana foi fundamental para conseguir o BPC/LOAS do meu filho autista. Como ela também é autista, tem uma sensibilidade única para entender nossa luta. Gratidão eterna!',
+    text: 'A Dra. Luciana foi fundamental para conseguir o BPC/LOAS do meu filho. Profissional extremamente dedicada e sensível ao nosso caso, tratou tudo com competência e humanidade. Gratidão eterna!',
     avatarColor: '#f43f5e',
   },
   {
@@ -79,7 +79,7 @@ const GOOGLE_REVIEWS: GoogleReview[] = [
     date: '20/07/2024',
     rating: 5,
     text: 'Atendimento remoto impecável! Moro em Portugal e a Dra. Luciana resolveu meu caso previdenciário com total eficiência. Inscrita na OAP, o que facilita muito.',
-    avatarColor: '#8b5cf6',
+    avatarColor: '#5D4037',
   },
   {
     name: 'Paulo Henrique T.',
@@ -173,12 +173,12 @@ export default function GoogleReviewsSlider() {
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
   return (
-    <section className="py-20 bg-inclusion-cream">
+    <section className="py-20 bg-warm-100">
       <div className="container-custom">
         <AnimatedSection>
           {/* Header com badge EXCELENTE e logo Google */}
           <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-inclusion-lilac/30 to-inclusion-blush/30 text-lavender-600 border border-inclusion-lilac/20 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-100/50 to-secondary-100 text-gold-700 border border-gold-200/30 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
               <Star className="w-4 h-4 fill-gold-500 text-gold-500" />
               Avaliações no Google
             </span>
@@ -186,7 +186,7 @@ export default function GoogleReviewsSlider() {
             <div className="flex flex-col items-center gap-4">
               {/* Badge EXCELENTE */}
               <div className="flex flex-col items-center gap-2">
-                <span className="text-2xl font-bold text-primary-500 tracking-wide uppercase">
+                <span className="text-2xl font-bold text-primary-800 tracking-wide uppercase">
                   Excelente
                 </span>
                 <div className="flex items-center gap-3">
@@ -246,7 +246,7 @@ export default function GoogleReviewsSlider() {
                     className="flex-shrink-0"
                     style={{ width: `calc(${100 / visibleCards}% - ${((visibleCards - 1) * 24) / visibleCards}px)` }}
                   >
-                    <div className="bg-white border border-inclusion-lilac/30 rounded-xl p-6 h-full shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-white border border-secondary-200 rounded-xl p-6 h-full shadow-sm hover:shadow-md transition-shadow">
                       {/* Header: Avatar + Nome + Data + Badge */}
                       <div className="flex items-center gap-3 mb-4">
                         {/* Avatar com inicial */}

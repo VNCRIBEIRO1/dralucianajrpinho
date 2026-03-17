@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     'direitos humanos',
     'ESG',
     'PCD',
-    'autismo',
-    'neurodiversidade',
+    'pessoa com deficiência',
+    'direitos PCD',
     'Lucas do Rio Verde',
     'Mato Grosso',
     'OAP Portugal',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Dra. Luciana Pinho | Advogada Previdenciarista',
-    description: 'Pioneira na integração de conhecimentos jurídicos com compromisso social. 23 anos de experiência.',
+    description: 'Advocacia Previdenciária com 23 anos de experiência e compromisso social.',
     images: [OG_IMAGE],
   },
   robots: {
@@ -76,7 +76,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={inter.className}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="theme-color" content="#2d1b4e" />
+        <meta name="theme-color" content="#3E2723" />
         {/* JSON-LD Structured Data — Attorney / Local Business */}
         <script
           type="application/ld+json"
@@ -87,7 +87,7 @@ export default function RootLayout({
               name: 'Dra. Luciana de Jesus Ribeiro Pinho',
               alternateName: 'Dra. Luciana Pinho',
               description:
-                'Advogada Previdenciarista com 23 anos de experiência. Pioneira em sua região na integração de conhecimentos jurídicos com compromisso social. Especialista em Direito Previdenciário, Direitos Humanos, Direitos da Pessoa com Deficiência, Neurodiversidade e ESG.',
+                'Advogada Previdenciarista com 23 anos de experiência. Especialista em Direito Previdenciário, Direitos Humanos, Direitos da Pessoa com Deficiência e ESG.',
               url: 'https://dralucianajrpinho.vercel.app',
               telephone: '+556599113429',
               email: 'contato@lucianapinho.adv.br',
@@ -126,8 +126,7 @@ export default function RootLayout({
                 'Pensão por Morte',
                 'Direitos Humanos',
                 'Direitos da Pessoa com Deficiência',
-                'Autismo / TEA',
-                'Neurodiversidade',
+                'Direitos PCD',
                 'ESG',
               ],
               aggregateRating: {

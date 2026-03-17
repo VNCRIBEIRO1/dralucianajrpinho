@@ -89,7 +89,7 @@ A Lei 12.764/2012 (Lei Berenice Piana) reconhece o autismo como deficiência par
 
 ## Diagnóstico Tardio
 
-O diagnóstico tardio de autismo em adultos é cada vez mais comum e não diminui nenhum dos direitos garantidos por lei. Como autista com diagnóstico tardio, a Dra. Luciana compreende as particularidades dessa experiência e oferece orientação jurídica especializada.
+O diagnóstico tardio de autismo em adultos é cada vez mais comum e não diminui nenhum dos direitos garantidos por lei. A Dra. Luciana Pinho oferece orientação jurídica especializada para pessoas no espectro autista, independentemente da idade do diagnóstico.
 
 *Este conteúdo tem caráter informativo e não substitui consulta jurídica individualizada.*
     `,
@@ -353,7 +353,7 @@ A dimensão jurídica do ESG é cada vez mais relevante:
 
 ### Social
 - Direitos trabalhistas e condições de trabalho
-- Inclusão e diversidade (PCD, neurodiversidade, gênero)
+- Inclusão e diversidade (PCD, acessibilidade, gênero)
 - Relação com comunidades locais
 - Direitos humanos na cadeia de suprimentos
 
@@ -532,7 +532,7 @@ A Constituição Federal, a LBI (Lei 13.146/2015) e o ECA garantem o direito à 
 
 ## Atuação da Dra. Luciana
 
-Como autista com diagnóstico tardio e membro da ALFAA (Associação Livre de Familiares, Amigos e Autistas), a Dra. Luciana Pinho possui vivência pessoal que enriquece sua atuação jurídica na defesa de crianças e adolescentes neurodivergentes.
+A Dra. Luciana Pinho atua na defesa dos direitos de crianças e adolescentes com deficiência, incluindo aqueles no espectro autista, garantindo o acesso à educação inclusiva e ao acompanhante especializado.
 
 *Este conteúdo tem caráter informativo e não substitui consulta jurídica individualizada.*
     `,

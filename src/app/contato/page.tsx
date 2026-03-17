@@ -7,7 +7,6 @@ import {
   Scale,
   MessageCircle,
   Globe,
-  Puzzle,
 } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
 import SectionHeader from '@/components/SectionHeader';
@@ -52,21 +51,21 @@ export default function ContatoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#07040f] via-[#150c2a] to-[#2d1b4e] relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-autism-red via-autism-gold to-autism-blue" />
+      <section className="pt-32 pb-20 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-800 via-gold-500 to-primary-800" />
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-lavender-500 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-72 h-72 bg-gold-500 rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-autism-blue/20 via-lavender-500/20 to-autism-purple/20 text-lavender-300 border border-lavender-500/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-gold-500/10 text-gold-300 border border-gold-500/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <MessageCircle className="w-4 h-4" />
               Fale Comigo
             </span>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Entre em <span className="text-lavender-400">Contato</span>
+              Entre em <span className="text-gold-400">Contato</span>
             </h1>
-            <p className="text-primary-200 text-lg max-w-2xl">
+            <p className="text-secondary-300 text-lg max-w-2xl">
               Estou pronta para esclarecer suas dúvidas com ética e
               profissionalismo. Atendimento presencial em Lucas do Rio Verde e
               remoto para todo o Brasil e Portugal.
@@ -81,11 +80,11 @@ export default function ContatoPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {contactInfo.map((info, index) => (
               <AnimatedSection key={info.title} delay={index * 0.1}>
-                <div className="bg-inclusion-cream rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 h-full border border-inclusion-lilac/30">
-                  <div className="w-12 h-12 bg-lavender-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <info.icon className="w-6 h-6 text-lavender-500" />
+                <div className="bg-warm-100 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 h-full border border-secondary-200">
+                  <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <info.icon className="w-6 h-6 text-gold-600" />
                   </div>
-                  <h3 className="font-serif font-bold text-primary-500 mb-2">
+                  <h3 className="font-serif font-bold text-primary-800 mb-2">
                     {info.title}
                   </h3>
                   {info.lines.map((line) => (
@@ -93,7 +92,7 @@ export default function ContatoPage() {
                       {info.href ? (
                         <a
                           href={info.href}
-                          className="hover:text-lavender-500 transition-colors"
+                          className="hover:text-gold-600 transition-colors"
                         >
                           {line}
                         </a>
@@ -109,10 +108,10 @@ export default function ContatoPage() {
 
           {/* Destaque atendimento internacional */}
           <AnimatedSection>
-            <div className="bg-gradient-to-r from-lavender-500/5 to-gold-500/5 border border-lavender-500/20 rounded-2xl p-8 mb-16 text-center">
+            <div className="bg-gradient-to-r from-gold-500/5 to-primary-700/5 border border-gold-500/20 rounded-2xl p-8 mb-16 text-center">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <Globe className="w-6 h-6 text-lavender-500" />
-                <h3 className="font-serif font-bold text-primary-500 text-xl">
+                <Globe className="w-6 h-6 text-gold-600" />
+                <h3 className="font-serif font-bold text-primary-800 text-xl">
                   Atendimento Remoto Internacional
                 </h3>
               </div>
@@ -122,8 +121,8 @@ export default function ContatoPage() {
                 atendimento presencial.
               </p>
               <div className="flex items-center justify-center gap-2 mt-3">
-                <Puzzle className="w-4 h-4 text-gold-500" />
-                <span className="text-sm text-secondary-500">Ambiente acolhedor e inclusivo</span>
+                <Scale className="w-4 h-4 text-gold-500" />
+                <span className="text-sm text-secondary-500">Atendimento profissional e acessível</span>
               </div>
             </div>
           </AnimatedSection>
@@ -140,8 +139,8 @@ export default function ContatoPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <div className="bg-inclusion-cream rounded-2xl p-8 h-full border border-inclusion-lilac/30">
-                <h3 className="font-serif font-bold text-primary-500 text-xl mb-6">
+              <div className="bg-warm-100 rounded-2xl p-8 h-full border border-secondary-200">
+                <h3 className="font-serif font-bold text-primary-800 text-xl mb-6">
                   Localização
                 </h3>
                 <div className="aspect-video rounded-xl overflow-hidden bg-secondary-200 mb-6">
@@ -158,11 +157,11 @@ export default function ContatoPage() {
                 </div>
                 <div className="space-y-3">
                   <p className="text-sm text-secondary-600 flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-lavender-500" />
+                    <MapPin className="w-4 h-4 text-gold-600" />
                     Av. Brasil, 200s - Alvorada, Lucas do Rio Verde - MT
                   </p>
                   <p className="text-sm text-secondary-600 flex items-center gap-2">
-                    <Scale className="w-4 h-4 text-lavender-500" />
+                    <Scale className="w-4 h-4 text-gold-600" />
                     OAB/MT 7973-B • CNPJ: 31.430.307/0001-56
                   </p>
                 </div>

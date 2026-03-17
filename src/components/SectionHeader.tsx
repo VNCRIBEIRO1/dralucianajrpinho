@@ -25,7 +25,7 @@ export default function SectionHeader({
           className={`inline-flex items-center gap-2 text-sm font-medium px-5 py-2 rounded-full mb-4 ${
             light
               ? 'bg-white/20 text-white border border-white/10'
-              : 'bg-gradient-to-r from-inclusion-lilac/30 via-inclusion-blush/20 to-inclusion-sky/30 text-lavender-600 border border-inclusion-lilac/20'
+              : 'bg-gradient-to-r from-gold-100/50 via-secondary-100 to-gold-100/50 text-gold-700 border border-gold-200/30'
           }`}
         >
           {badge}
@@ -41,7 +41,7 @@ export default function SectionHeader({
       {subtitle && (
         <p
           className={`section-subtitle ${
-            light ? 'text-primary-200' : ''
+            light ? 'text-secondary-300' : ''
           } ${centered ? 'mx-auto' : ''}`}
         >
           {subtitle}

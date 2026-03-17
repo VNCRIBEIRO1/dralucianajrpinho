@@ -10,15 +10,15 @@
   }
 
   body {
-    @apply font-sans text-secondary-800 bg-inclusion-cream;
+    @apply font-sans text-primary-900 bg-warm-100;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-primary-500;
+    @apply font-serif text-primary-900;
   }
 
   ::selection {
-    @apply bg-lavender-500 text-white;
+    @apply bg-gold-400 text-white;
   }
 }
 
@@ -29,45 +29,29 @@
 
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 
-           bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-semibold rounded-xl
-           hover:from-lavender-400 hover:to-lavender-500 transition-all duration-300
-           shadow-lg shadow-lavender-500/20 hover:shadow-lavender-500/30 hover:-translate-y-0.5
-           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
+           bg-gradient-to-r from-primary-800 to-primary-700 text-white font-semibold rounded-xl
+           hover:from-primary-700 hover:to-primary-600 transition-all duration-300
+           shadow-lg shadow-primary-900/15 hover:shadow-primary-900/25 hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
   }
 
   .btn-outline {
     @apply inline-flex items-center justify-center px-6 py-3
-           border-2 border-lavender-500 text-lavender-600 font-semibold rounded-xl
-           hover:bg-lavender-500 hover:text-white transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
+           border-2 border-primary-600 text-primary-700 font-semibold rounded-xl
+           hover:bg-primary-700 hover:text-white transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
   }
 
   .btn-gold {
     @apply inline-flex items-center justify-center px-6 py-3
-           bg-gradient-to-r from-gold-400 to-gold-500 text-white font-semibold rounded-xl
-           hover:from-gold-500 hover:to-gold-600 transition-all duration-300
-           shadow-lg shadow-gold-500/20 hover:shadow-gold-500/30 hover:-translate-y-0.5
+           bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold rounded-xl
+           hover:from-gold-400 hover:to-gold-500 transition-all duration-300
+           shadow-lg shadow-gold-600/20 hover:shadow-gold-600/30 hover:-translate-y-0.5
            focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
   }
 
-  .btn-lavender {
-    @apply inline-flex items-center justify-center px-6 py-3
-           bg-gradient-to-r from-lavender-500 to-lavender-600 text-white font-semibold rounded-xl
-           hover:from-lavender-400 hover:to-lavender-500 transition-all duration-300
-           shadow-lg shadow-lavender-500/20
-           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
-  }
-
-  .btn-inclusion {
-    @apply inline-flex items-center justify-center px-6 py-3
-           bg-gradient-to-r from-autism-blue via-lavender-500 to-autism-purple text-white font-semibold rounded-xl
-           hover:opacity-90 transition-all duration-300
-           shadow-lg shadow-lavender-500/20
-           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:ring-offset-2;
-  }
-
   .section-title {
-    @apply text-3xl md:text-4xl font-serif font-bold text-primary-500 mb-4;
+    @apply text-3xl md:text-4xl font-serif font-bold text-primary-900 mb-4;
   }
 
   .section-subtitle {
@@ -76,56 +60,25 @@
 
   .card {
     @apply bg-white rounded-2xl shadow-md hover:shadow-xl 
-           transition-all duration-300 overflow-hidden border border-inclusion-lilac/30;
+           transition-all duration-300 overflow-hidden border border-secondary-200;
   }
 
   .card-elevated {
     @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl
            transition-all duration-300 overflow-hidden
-           border border-inclusion-lilac/40;
-  }
-
-  .card-inclusion {
-    @apply bg-gradient-to-br from-white to-inclusion-cream rounded-2xl shadow-md hover:shadow-xl 
-           transition-all duration-300 overflow-hidden
-           border border-inclusion-lilac/30;
+           border border-secondary-300;
   }
 
   .input-field {
-    @apply w-full px-4 py-3 border border-inclusion-lilac/40 rounded-xl
-           focus:outline-none focus:ring-2 focus:ring-lavender-400 focus:border-lavender-500
-           transition-all duration-200 text-secondary-800 placeholder:text-secondary-400
+    @apply w-full px-4 py-3 border border-secondary-300 rounded-xl
+           focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-500
+           transition-all duration-200 text-primary-900 placeholder:text-secondary-500
            bg-white;
   }
 
-  /* Infinity symbol animation - Autism awareness */
-  .infinity-gradient {
-    background: linear-gradient(
-      270deg,
-      #e74c3c, #e67e22, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c
-    );
-    background-size: 700% 700%;
-    animation: rainbowShift 6s ease-in-out infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .neurodiversity-border {
-    border-image: linear-gradient(
-      90deg,
-      #e74c3c, #e67e22, #f1c40f, #2ecc71, #3498db, #9b59b6
-    ) 1;
-  }
-
-  /* Rainbow bar de 6 cores */
-  .rainbow-bar {
-    background: linear-gradient(to right, #e74c3c, #e67e22, #f1c40f, #2ecc71, #3498db, #9b59b6);
-  }
-
-  /* Puzzle piece decorative pattern */
-  .puzzle-bg {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c-2.5 0-4.5 2-4.5 4.5S27.5 14 30 14s4.5-2 4.5-4.5S32.5 5 30 5z' fill='%239b59b6' fill-opacity='0.05'/%3E%3C/svg%3E");
+  /* Decorative accent bar */
+  .accent-bar {
+    @apply h-1 bg-gradient-to-r from-primary-700 via-gold-500 to-primary-700 rounded-full;
   }
 }
 
@@ -138,19 +91,19 @@
 /* ─── CMS Panel Utilities ─── */
 @layer components {
   .painel-card {
-    @apply bg-[#150c2a] border border-[#2d1b4e] rounded-2xl shadow-lg shadow-black/20;
+    @apply bg-[#2C1A15] border border-[#3E2723] rounded-2xl shadow-lg shadow-black/20;
   }
 
   .painel-card-header {
-    @apply px-6 py-4 border-b border-[#2d1b4e] flex items-center justify-between;
+    @apply px-6 py-4 border-b border-[#3E2723] flex items-center justify-between;
   }
 
   .painel-card-body {
-    @apply divide-y divide-[#2d1b4e]/50;
+    @apply divide-y divide-[#3E2723]/50;
   }
 
   .painel-card-row {
-    @apply px-6 py-4 hover:bg-[#241542]/40 transition-colors;
+    @apply px-6 py-4 hover:bg-[#4E342E]/40 transition-colors;
   }
 
   .painel-heading {
@@ -158,7 +111,7 @@
   }
 
   .painel-subheading {
-    @apply text-[#a78bfa] text-sm font-medium tracking-wide;
+    @apply text-[#D7CCC8] text-sm font-medium tracking-wide;
   }
 
   .painel-section-title {
@@ -166,31 +119,31 @@
   }
 
   .painel-label {
-    @apply text-sm font-medium text-[#c4b5fd] mb-1.5 block;
+    @apply text-sm font-medium text-[#BCAAA4] mb-1.5 block;
   }
 
   .painel-input {
-    @apply w-full px-4 py-2.5 bg-[#0e081e] border border-[#2d1b4e] rounded-xl text-white text-sm 
-           placeholder-[#6b5f8a] focus:outline-none focus:border-[#a78bfa]/50 focus:ring-1 focus:ring-[#a78bfa]/20
+    @apply w-full px-4 py-2.5 bg-[#1A0F0A] border border-[#3E2723] rounded-xl text-white text-sm 
+           placeholder-[#8D6E63] focus:outline-none focus:border-[#BFA76A]/50 focus:ring-1 focus:ring-[#BFA76A]/20
            transition-all duration-200;
   }
 
   .painel-btn-primary {
-    @apply px-5 py-2.5 bg-gradient-to-r from-[#8b5cf6] to-[#7c3aed] text-white text-sm font-semibold 
-           rounded-xl hover:from-[#a78bfa] hover:to-[#8b5cf6] transition-all duration-200 
-           shadow-lg shadow-[#8b5cf6]/15 active:scale-[0.98];
+    @apply px-5 py-2.5 bg-gradient-to-r from-[#6D4C41] to-[#5D4037] text-white text-sm font-semibold 
+           rounded-xl hover:from-[#795548] hover:to-[#6D4C41] transition-all duration-200 
+           shadow-lg shadow-[#3E2723]/15 active:scale-[0.98];
   }
 
   .painel-btn-outline {
-    @apply px-4 py-2 text-sm bg-[#150c2a] border border-[#2d1b4e] text-[#a78bfa] rounded-xl 
-           hover:text-white hover:border-[#8b5cf6]/30 transition-all duration-200;
+    @apply px-4 py-2 text-sm bg-[#2C1A15] border border-[#3E2723] text-[#D7CCC8] rounded-xl 
+           hover:text-white hover:border-[#BFA76A]/30 transition-all duration-200;
   }
 
   .painel-link {
-    @apply text-[#a78bfa] hover:text-[#c4b5fd] transition-colors text-sm font-medium;
+    @apply text-[#BFA76A] hover:text-[#E8D5A3] transition-colors text-sm font-medium;
   }
 
   .painel-divider {
-    @apply border-[#2d1b4e];
+    @apply border-[#3E2723];
   }
 }

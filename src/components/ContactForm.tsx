@@ -79,7 +79,7 @@ export default function ContactForm() {
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 className="w-10 h-10 text-green-500" />
           </div>
-          <h3 className="text-2xl font-serif font-bold text-primary-500 mb-4">
+          <h3 className="text-2xl font-serif font-bold text-primary-800 mb-4">
             Mensagem Enviada!
           </h3>
           <p className="text-secondary-600 mb-6 max-w-md mx-auto">
@@ -176,12 +176,12 @@ export default function ContactForm() {
             className="input-field"
           >
             <option value="">Selecione uma área</option>
-            <option value="trabalhista">Direito Trabalhista</option>
-            <option value="criminal">Direito Criminal</option>
-            <option value="civil">Direito Civil</option>
-            <option value="empresarial">Direito Empresarial</option>
-            <option value="administrativo">Direito Administrativo</option>
-            <option value="calculos">Cálculos Judiciais</option>
+            <option value="previdenciario">Direito Previdenciário</option>
+            <option value="aposentadoria">Aposentadorias</option>
+            <option value="bpc">BPC/LOAS</option>
+            <option value="pcd">Direitos PCD</option>
+            <option value="humanos">Direitos Humanos</option>
+            <option value="esg">ESG & Sustentabilidade</option>
             <option value="outro">Outro</option>
           </select>
           {errors.subject && (
@@ -218,11 +218,11 @@ export default function ContactForm() {
           type="checkbox"
           id="consent"
           {...register('consent')}
-          className="mt-1 w-4 h-4 rounded border-secondary-300 text-primary-500 focus:ring-primary-500"
+          className="mt-1 w-4 h-4 rounded border-secondary-300 text-gold-600 focus:ring-gold-500"
         />
         <label htmlFor="consent" className="text-sm text-secondary-600">
           Concordo com a{' '}
-          <a href="/politica-privacidade" className="text-primary-500 underline">
+          <a href="/politica-privacidade" className="text-gold-600 underline">
             Política de Privacidade
           </a>{' '}
           e autorizo o tratamento dos meus dados pessoais conforme a LGPD (Lei

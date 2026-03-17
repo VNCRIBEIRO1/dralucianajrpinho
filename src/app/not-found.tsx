@@ -3,16 +3,16 @@ import { Home, ArrowLeft, Scale } from 'lucide-react';
 
 export default function NotFound() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#050905] via-[#0e1810] to-[#1a2e1f]">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800">
       <div className="container-custom text-center">
         <Scale className="w-16 h-16 text-gold-400 mx-auto mb-6" />
         <h1 className="text-6xl md:text-8xl font-serif font-bold text-white mb-4">
           404
         </h1>
-        <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary-200 mb-6">
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-secondary-300 mb-6">
           Página Não Encontrada
         </h2>
-        <p className="text-primary-300 text-lg max-w-md mx-auto mb-8">
+        <p className="text-secondary-400 text-lg max-w-md mx-auto mb-8">
           A página que você procura não existe ou foi movida. Verifique o
           endereço ou retorne à página inicial.
         </p>
