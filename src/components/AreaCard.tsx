@@ -60,14 +60,14 @@ export default function AreaCard({
             <div className="absolute bottom-0 left-0 w-[2px] bg-gradient-to-t from-gold-400 to-gold-400/30 h-0 group-hover:h-full transition-all duration-700 ease-out delay-300" />
           </div>
 
-          {/* Card background — frosted glass */}
-          <div className="absolute inset-0 bg-white/[0.08] backdrop-blur-xl rounded-2xl" />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.12] via-white/[0.06] to-white/[0.02] rounded-2xl" />
-          {/* Subtle warm overlay on hover */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gold-100/0 to-gold-50/0 group-hover:from-gold-100/[0.08] group-hover:to-gold-50/[0.04] transition-all duration-700 rounded-2xl" />
+          {/* Card background — near transparent glass */}
+          <div className="absolute inset-0 bg-white/[0.03] backdrop-blur-sm rounded-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] via-white/[0.02] to-transparent rounded-2xl" />
+          {/* Subtle glow on hover */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gold-400/0 to-gold-400/0 group-hover:from-gold-400/[0.04] group-hover:to-transparent transition-all duration-700 rounded-2xl" />
 
           {/* Top accent bar */}
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold-400/40 via-gold-400 to-gold-400/40" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/50 to-transparent" />
 
           <div className="relative z-10 p-8 lg:p-9 flex flex-col h-full">
             {/* Top row: number + icon */}
