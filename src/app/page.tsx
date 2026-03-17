@@ -148,45 +148,71 @@ export default function HomePage() {
       </section>
 
       {/* Áreas de Atuação */}
-      <section className="py-28 bg-primary-950 relative overflow-hidden">
+      <section className="py-32 bg-primary-950 relative overflow-hidden">
         {/* Canvas particles */}
-        <GoldParticles particleCount={30} maxSize={2} color="gold" />
-        {/* Radial glow center */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-400/[0.05] via-transparent to-transparent" />
-        {/* Radial glow top */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-400/[0.08] via-transparent to-transparent" />
-        {/* Top/bottom gold lines */}
+        <GoldParticles particleCount={25} maxSize={1.5} color="gold" />
+
+        {/* Decorative background elements */}
+        <div className="absolute inset-0">
+          {/* Large radial glow center */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-400/[0.04] via-transparent to-transparent" />
+          {/* Diagonal gold line — decorative */}
+          <div className="absolute top-0 right-0 w-[1px] h-[400px] bg-gradient-to-b from-gold-400/20 via-gold-400/5 to-transparent origin-top-right rotate-[30deg] translate-x-40" />
+          <div className="absolute bottom-0 left-0 w-[1px] h-[400px] bg-gradient-to-t from-gold-400/20 via-gold-400/5 to-transparent origin-bottom-left rotate-[30deg] -translate-x-40" />
+        </div>
+
+        {/* Top/bottom gold borders */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
+
         <div className="container-custom relative z-10">
+          {/* Custom header for this section — more impactful */}
           <AnimatedSection>
-            <SectionHeader
-              badge="Áreas de Atuação"
-              title="Como Posso Ajudar"
-              subtitle="Especialização em Direito Previdenciário com atuação multidisciplinar em Direitos Humanos, ESG e inclusão de PCDs."
-              light
-            />
+            <div className="text-center mb-20">
+              <span className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.25em] uppercase text-gold-400 mb-8">
+                <span className="w-12 h-[1px] bg-gradient-to-r from-transparent to-gold-400/60" />
+                Áreas de Atuação
+                <span className="w-12 h-[1px] bg-gradient-to-l from-transparent to-gold-400/60" />
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight mb-6">
+                Como Posso{' '}
+                <span className="relative inline-block">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500">
+                    Ajudar
+                  </span>
+                  <span className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-400 to-transparent" />
+                </span>
+              </h2>
+              <p className="text-warm-300/50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+                Especialização em Direito Previdenciário com atuação multidisciplinar em
+                Direitos Humanos, ESG e defesa dos direitos das PCDs.
+              </p>
+            </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {/* Bento grid — first card featured (lg:col-span-2) */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {areas.map((area, index) => (
               <AreaCard
                 key={area.title}
                 iconName={area.iconName}
                 title={area.title}
                 description={area.description}
-                delay={index * 0.1}
+                delay={index * 0.08}
+                index={index}
               />
             ))}
           </div>
 
-          <AnimatedSection className="text-center mt-14">
+          {/* CTA */}
+          <AnimatedSection className="text-center mt-16">
             <Link
               href="/areas-de-atuacao"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-400 to-gold-500 text-primary-950 font-bold text-sm tracking-wide uppercase px-8 py-4 rounded-full shadow-lg shadow-gold-400/25 hover:shadow-gold-400/40 hover:-translate-y-0.5 transition-all duration-300"
+              className="group inline-flex items-center gap-3 text-sm font-semibold tracking-[0.15em] uppercase text-gold-400 hover:text-gold-300 transition-colors duration-300"
             >
+              <span className="w-8 h-[1px] bg-gold-400/40 group-hover:w-12 group-hover:bg-gold-300 transition-all duration-500" />
               Ver Todas as Áreas
-              <ArrowRight className="w-4 h-4" />
+              <span className="w-8 h-[1px] bg-gold-400/40 group-hover:w-12 group-hover:bg-gold-300 transition-all duration-500" />
             </Link>
           </AnimatedSection>
         </div>
