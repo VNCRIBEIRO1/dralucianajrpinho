@@ -148,23 +148,27 @@ export default function HomePage() {
       </section>
 
       {/* Áreas de Atuação */}
-      <section className="py-24 bg-primary-950 relative overflow-hidden">
+      <section className="py-28 bg-primary-950 relative overflow-hidden">
         {/* Canvas particles */}
-        <GoldParticles particleCount={25} maxSize={1.5} color="gold" />
-        {/* Radial glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-400/[0.06] via-transparent to-transparent" />
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
+        <GoldParticles particleCount={30} maxSize={2} color="gold" />
+        {/* Radial glow center */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-400/[0.05] via-transparent to-transparent" />
+        {/* Radial glow top */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-400/[0.08] via-transparent to-transparent" />
+        {/* Top/bottom gold lines */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
         <div className="container-custom relative z-10">
           <AnimatedSection>
             <SectionHeader
               badge="Áreas de Atuação"
               title="Como Posso Ajudar"
               subtitle="Especialização em Direito Previdenciário com atuação multidisciplinar em Direitos Humanos, ESG e inclusão de PCDs."
+              light
             />
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {areas.map((area, index) => (
               <AreaCard
                 key={area.title}
@@ -176,13 +180,13 @@ export default function HomePage() {
             ))}
           </div>
 
-          <AnimatedSection className="text-center mt-12">
+          <AnimatedSection className="text-center mt-14">
             <Link
               href="/areas-de-atuacao"
-              className="btn-primary inline-flex items-center"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-400 to-gold-500 text-primary-950 font-bold text-sm tracking-wide uppercase px-8 py-4 rounded-full shadow-lg shadow-gold-400/25 hover:shadow-gold-400/40 hover:-translate-y-0.5 transition-all duration-300"
             >
               Ver Todas as Áreas
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </AnimatedSection>
         </div>
