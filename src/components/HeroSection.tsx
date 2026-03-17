@@ -9,10 +9,10 @@ import { IMAGES } from '@/lib/images';
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-warm-50 via-warm-100 to-warm-200 overflow-hidden">
-      {/* Background texture — sutil */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      {/* Background texture — escritório jurídico sutil */}
+      <div className="absolute inset-0 opacity-[0.04]">
         <Image
-          src={IMAGES.heroBg}
+          src={IMAGES.hero}
           alt=""
           fill
           className="object-cover"

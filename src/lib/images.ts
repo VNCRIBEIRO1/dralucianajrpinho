@@ -40,14 +40,14 @@ export const IMAGES = {
   logoAlt: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_bracos_cruzados',
   logoMini: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/dra_luciana_photo',
 
-  // Imagens temáticas (backgrounds decorativos)
-  heroBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-inclusion-bg',
-  heroInclusionBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-inclusion-bg',
-  patternLight: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/pattern-inclusion-light',
-  patternDark: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/pattern-inclusion-dark',
-  ctaBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/cta-inclusion-bg',
+  // Imagens temáticas (backgrounds decorativos — escritório jurídico)
+  heroBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-escritorio',
+  heroInclusionBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-escritorio',
+  patternLight: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-escritorio',
+  patternDark: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/hero-escritorio',
+  ctaBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/office',
   logoComposite: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-composite',
-  areasSectionBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/areas-section-bg',
+  areasSectionBg: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/office',
 
   // Logos profissionais gerados por IA (novo header)
   logoHeader: 'https://res.cloudinary.com/dwyrt2g1k/image/upload/f_auto,q_auto/dralucianajrpinho/logo-header',

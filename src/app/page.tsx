@@ -95,11 +95,12 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Seção Destaque: Causas que importam */}
-      <section className="py-16 bg-warm-100 relative overflow-hidden">
-        {/* Subtle pattern background */}
-        <div className="absolute inset-0 opacity-[0.08]">
-          <Image src={IMAGES.patternLight} alt="" fill className="object-cover" sizes="100vw" />
-        </div>
+      <section className="py-16 bg-gradient-to-br from-warm-100 via-warm-50 to-warm-100 relative overflow-hidden">
+        {/* Decorative gradient orbs */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary-200/15 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
+        {/* Subtle line accent */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-300/40 to-transparent" />
         <div className="container-custom relative z-10">
           <AnimatedSection className="text-center mb-12">
             <span className="inline-flex items-center gap-2 text-sm font-medium text-gold-700 bg-gradient-to-r from-gold-100/50 via-secondary-100 to-gold-100/50 px-5 py-2 rounded-full mb-4 border border-gold-200/30">
@@ -157,10 +158,10 @@ export default function HomePage() {
 
       {/* Áreas de Atuação */}
       <section className="py-20 bg-white relative overflow-hidden">
-        {/* Background image decorativa */}
-        <div className="absolute inset-0 opacity-[0.06]">
-          <Image src={IMAGES.areasSectionBg} alt="" fill className="object-cover" sizes="100vw" />
-        </div>
+        {/* Decorative accents */}
+        <div className="absolute top-10 left-10 w-64 h-64 bg-gold-100/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-primary-100/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-200/30 to-transparent" />
         <div className="container-custom relative z-10">
           <AnimatedSection>
             <SectionHeader
@@ -268,11 +269,11 @@ export default function HomePage() {
       </section>
 
       {/* Estatísticas */}
-      <section className="py-16 bg-gradient-to-r from-primary-950 via-primary-900 to-primary-950 relative overflow-hidden">
-        {/* Pattern dark background */}
-        <div className="absolute inset-0 opacity-[0.15]">
-          <Image src={IMAGES.patternDark} alt="" fill className="object-cover" sizes="100vw" />
-        </div>
+      <section className="py-16 bg-gradient-to-r from-primary-900 via-primary-800 to-primary-900 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-600/8 via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -329,14 +330,14 @@ export default function HomePage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 relative overflow-hidden">
-        {/* CTA background image */}
-        <div className="absolute inset-0 opacity-[0.15]">
-          <Image src={IMAGES.ctaBg} alt="" fill className="object-cover" sizes="100vw" />
-        </div>
+      <section className="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 relative overflow-hidden">
+        {/* Radial gradient overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-600/10 via-transparent to-transparent" />
         {/* Warm glows */}
         <div className="absolute top-10 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl" />
+        {/* Border accents */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
 
         <div className="container-custom relative z-10 text-center">
           <AnimatedSection>
