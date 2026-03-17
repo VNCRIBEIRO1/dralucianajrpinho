@@ -75,7 +75,7 @@ export default function TriagemPage() {
 
   const gerarWhatsApp = (t: Triagem) => {
     const numero = t.telefone.replace(/\D/g, '')
-    const msg = `Prezado(a) ${t.nome},\n\nRecebemos sua solicitação referente a ${t.area} - ${t.subarea}.\n\nGostaríamos de agendar uma consulta para analisar seu caso.\n\nPodemos prosseguir?\n\nCerbelera & Oliveira Advogados\nTel: (18) 99610-1884`
+    const msg = `Prezado(a) ${t.nome},\n\nRecebemos sua solicitação referente a ${t.area} - ${t.subarea}.\n\nGostaríamos de agendar uma consulta para analisar seu caso.\n\nPodemos prosseguir?\n\nDra. Luciana J. R. Pinho\nTel: (18) 99610-1884`
     window.open(`https://wa.me/55${numero}?text=${encodeURIComponent(msg)}`, '_blank')
   }
 
@@ -89,7 +89,7 @@ export default function TriagemPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-white tracking-tight">Triagem do ChatBot</h1>
-        <p className="text-[#6b8a6f] text-sm mt-1">
+        <p className="text-[#A1887F] text-sm mt-1">
           {triagens.length} solicitação(ões) total • {quantidadePorStatus('nova')} nova(s)
         </p>
       </div>
@@ -103,7 +103,7 @@ export default function TriagemPage() {
           { label: 'Descartadas', v: quantidadePorStatus('descartada'), cor: 'border-gray-600/30 bg-gray-900/10' },
         ].map(c => (
           <div key={c.label} className={`rounded-xl p-4 border ${c.cor}`}>
-            <p className="text-xs text-[#8a9f8e]">{c.label}</p>
+            <p className="text-xs text-[#BCAAA4]">{c.label}</p>
             <p className="text-2xl font-bold text-white mt-1">{c.v}</p>
           </div>
         ))}
@@ -118,21 +118,21 @@ export default function TriagemPage() {
         ].map(f => (
           <button key={f.value} onClick={() => setFiltro(f.value)}
             className={`px-3 py-1.5 text-xs rounded-lg transition-colors ${
-              filtro === f.value ? 'bg-[#c9a84c]/20 text-[#c9a84c] border border-[#c9a84c]/30' : 'bg-[#0e1810] text-[#8a9f8e] border border-[#2a3f2e] hover:text-white'
+              filtro === f.value ? 'bg-[#BFA76A]/20 text-[#BFA76A] border border-[#BFA76A]/30' : 'bg-[#1A0F0A] text-[#BCAAA4] border border-[#4E342E] hover:text-white'
             }`}>{f.label}</button>
         ))}
       </div>
 
       {loading ? (
-        <div className="flex items-center justify-center py-12"><div className="w-8 h-8 border-2 border-[#c9a84c] border-t-transparent rounded-full animate-spin" /></div>
+        <div className="flex items-center justify-center py-12"><div className="w-8 h-8 border-2 border-[#BFA76A] border-t-transparent rounded-full animate-spin" /></div>
       ) : triagensFiltradas.length === 0 ? (
-        <p className="text-center text-[#6b8a6f] py-12">Nenhuma triagem encontrada</p>
+        <p className="text-center text-[#A1887F] py-12">Nenhuma triagem encontrada</p>
       ) : (
         <div className="space-y-3">
           {triagensFiltradas.map(t => {
             const det = parseDetalhes(t.detalhes)
             return (
-              <div key={t.id} className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-4 hover:border-[#c9a84c]/30 transition-colors">
+              <div key={t.id} className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-4 hover:border-[#BFA76A]/30 transition-colors">
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2 mb-1">
@@ -142,16 +142,16 @@ export default function TriagemPage() {
                       </span>
                       <StatusBadge status={t.status} />
                     </div>
-                    <div className="flex items-center gap-3 text-xs text-[#6b8a6f] mt-1">
+                    <div className="flex items-center gap-3 text-xs text-[#A1887F] mt-1">
                       <span>{t.telefone}</span><span>•</span>
                       <span>{t.area}</span><span>•</span>
                       <span>{t.subarea}</span><span>•</span>
                       <span>{new Date(t.criadoEm).toLocaleDateString('pt-BR')} {new Date(t.criadoEm).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</span>
                     </div>
                     {Object.keys(det).length > 0 && (
-                      <div className="mt-2 p-2 bg-[#1a2e1f] rounded-lg">
+                      <div className="mt-2 p-2 bg-[#2C1A15] rounded-lg">
                         {Object.entries(det).map(([k, v]) => (
-                          <p key={k} className="text-xs text-[#b0c4b4]"><span className="text-[#6b8a6f]">{k}:</span> {String(v)}</p>
+                          <p key={k} className="text-xs text-[#D7CCC8]"><span className="text-[#A1887F]">{k}:</span> {String(v)}</p>
                         ))}
                       </div>
                     )}
@@ -168,7 +168,7 @@ export default function TriagemPage() {
                     {(t.status === 'nova' || t.status === 'em_analise') && (
                       <>
                         <button onClick={() => abrirConversao(t)}
-                          className="px-3 py-1 text-xs bg-[#c9a84c]/20 text-[#c9a84c] rounded-lg border border-[#c9a84c]/30 hover:bg-[#c9a84c]/30">Converter</button>
+                          className="px-3 py-1 text-xs bg-[#BFA76A]/20 text-[#BFA76A] rounded-lg border border-[#BFA76A]/30 hover:bg-[#BFA76A]/30">Converter</button>
                         <button onClick={() => alterarStatus(t.id, 'descartada')}
                           className="px-3 py-1 text-xs bg-gray-800/50 text-gray-400 rounded-lg border border-gray-600/30 hover:bg-gray-800/80">Descartar</button>
                       </>
@@ -185,10 +185,10 @@ export default function TriagemPage() {
       {modalConversao && (
         <Modal aberto={true} onFechar={() => setModalConversao(null)} titulo={`Converter "${modalConversao.nome}" em Cliente`} tamanho="lg">
           <form onSubmit={converterCliente} className="space-y-4">
-            <div className="p-3 bg-[#1a2e1f] rounded-lg text-xs text-[#b0c4b4]">
-              <p><span className="text-[#6b8a6f]">Nome:</span> {modalConversao.nome}</p>
-              <p><span className="text-[#6b8a6f]">Telefone:</span> {modalConversao.telefone}</p>
-              <p><span className="text-[#6b8a6f]">Área:</span> {modalConversao.area} — {modalConversao.subarea}</p>
+            <div className="p-3 bg-[#2C1A15] rounded-lg text-xs text-[#D7CCC8]">
+              <p><span className="text-[#A1887F]">Nome:</span> {modalConversao.nome}</p>
+              <p><span className="text-[#A1887F]">Telefone:</span> {modalConversao.telefone}</p>
+              <p><span className="text-[#A1887F]">Área:</span> {modalConversao.area} — {modalConversao.subarea}</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <FormField label="E-mail"><FormInput type="email" value={formConversao.email} onChange={e => setFormConversao({...formConversao, email: e.target.value})} /></FormField>
@@ -203,7 +203,7 @@ export default function TriagemPage() {
             </div>
             <FormField label="Endereço"><FormInput value={formConversao.endereco} onChange={e => setFormConversao({...formConversao, endereco: e.target.value})} /></FormField>
             <FormField label="Observações"><FormTextarea value={formConversao.observacoes} onChange={e => setFormConversao({...formConversao, observacoes: e.target.value})} rows={2} /></FormField>
-            <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+            <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
               <FormButton variant="secondary" type="button" onClick={() => setModalConversao(null)}>Cancelar</FormButton>
               <FormButton type="submit" disabled={salvando}>{salvando ? 'Convertendo...' : 'Converter em Cliente'}</FormButton>
             </div>

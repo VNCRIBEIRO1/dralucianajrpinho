@@ -25,7 +25,7 @@ const statusConfigs: Record<string, { label: string; className: string }> = {
   parcial: { label: 'Parcial', className: 'bg-yellow-900/50 text-yellow-400 border-yellow-700/50' },
   atrasado: { label: 'Atrasado', className: 'bg-red-900/50 text-red-400 border-red-700/50' },
   // Triagem
-  nova: { label: 'Nova', className: 'bg-[#c9a84c]/20 text-[#c9a84c] border-[#c9a84c]/30' },
+  nova: { label: 'Nova', className: 'bg-[#BFA76A]/20 text-[#BFA76A] border-[#BFA76A]/30' },
   em_analise: { label: 'Em Análise', className: 'bg-blue-900/50 text-blue-400 border-blue-700/50' },
   convertida: { label: 'Convertida', className: 'bg-emerald-900/50 text-emerald-400 border-emerald-700/50' },
   descartada: { label: 'Descartada', className: 'bg-gray-800/50 text-gray-400 border-gray-600/50' },

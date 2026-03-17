@@ -148,7 +148,7 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
     window.open(`https://www.jusbrasil.com.br/consulta-processual/busca?q=${encodeURIComponent(numero)}`, '_blank')
   }
 
-  if (loading) return <div className="flex items-center justify-center min-h-[60vh]"><div className="w-10 h-10 border-3 border-[#c9a84c] border-t-transparent rounded-full animate-spin" /></div>
+  if (loading) return <div className="flex items-center justify-center min-h-[60vh]"><div className="w-10 h-10 border-3 border-[#BFA76A] border-t-transparent rounded-full animate-spin" /></div>
   if (!processo) return <p className="text-red-400 text-center py-12">Processo não encontrado</p>
 
   const totalFinanceiro = processo.pagamentos.reduce((a, p) => a + p.valorTotal, 0)
@@ -159,13 +159,13 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
     <div className="space-y-6">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm">
-        <button onClick={() => router.push('/painel/processos')} className="text-[#c9a84c] hover:underline">Processos</button>
-        <span className="text-[#6b8a6f]">/</span>
-        <span className="text-[#b0c4b4]">{processo.numero || processo.assunto}</span>
+        <button onClick={() => router.push('/painel/processos')} className="text-[#BFA76A] hover:underline">Processos</button>
+        <span className="text-[#A1887F]">/</span>
+        <span className="text-[#D7CCC8]">{processo.numero || processo.assunto}</span>
       </div>
 
       {/* Process Info Card */}
-      <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+      <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-3">
@@ -177,23 +177,23 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
                 </span>
               )}
             </div>
-            <p className="text-sm text-[#d0dcd2] mb-3">{processo.assunto}</p>
-            {processo.descricao && <p className="text-xs text-[#6b8a6f] mb-3 italic">{processo.descricao}</p>}
+            <p className="text-sm text-[#EFEBE9] mb-3">{processo.assunto}</p>
+            {processo.descricao && <p className="text-xs text-[#A1887F] mb-3 italic">{processo.descricao}</p>}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-sm">
-              <p className="text-[#8a9f8e]">Cliente: <button onClick={() => router.push(`/painel/clientes/${processo.cliente.id}`)} className="text-[#c9a84c] hover:underline">{processo.cliente.nome}</button></p>
-              <p className="text-[#8a9f8e]">Tipo: <span className="text-[#d0dcd2] capitalize">{processo.tipo}</span></p>
-              <p className="text-[#8a9f8e]">Vara: <span className="text-[#d0dcd2]">{processo.vara || '-'}</span></p>
-              <p className="text-[#8a9f8e]">Comarca: <span className="text-[#d0dcd2]">{processo.comarca || '-'}</span></p>
-              {processo.foro && <p className="text-[#8a9f8e]">Foro: <span className="text-[#d0dcd2]">{processo.foro}</span></p>}
-              <p className="text-[#8a9f8e]">Valor: <span className="text-[#d0dcd2]">{processo.valorCausa ? formatarMoeda(processo.valorCausa) : '-'}</span></p>
-              {processo.parteContraria && <p className="text-[#8a9f8e]">Parte contrária: <span className="text-[#d0dcd2]">{processo.parteContraria}</span></p>}
-              {processo.advContrario && <p className="text-[#8a9f8e]">Adv. contrário: <span className="text-[#d0dcd2]">{processo.advContrario}</span></p>}
-              <p className="text-[#8a9f8e]">Distribuição: <span className="text-[#d0dcd2]">{processo.dataDistribuicao ? formatarData(processo.dataDistribuicao) : '-'}</span></p>
-              <p className="text-[#8a9f8e]">Desde: <span className="text-[#d0dcd2]">{formatarData(processo.criadoEm)}</span></p>
-              {processo.advogado && <p className="text-[#8a9f8e]">Advogado: <span className="text-[#d0dcd2]">{processo.advogado.nome}</span></p>}
+              <p className="text-[#BCAAA4]">Cliente: <button onClick={() => router.push(`/painel/clientes/${processo.cliente.id}`)} className="text-[#BFA76A] hover:underline">{processo.cliente.nome}</button></p>
+              <p className="text-[#BCAAA4]">Tipo: <span className="text-[#EFEBE9] capitalize">{processo.tipo}</span></p>
+              <p className="text-[#BCAAA4]">Vara: <span className="text-[#EFEBE9]">{processo.vara || '-'}</span></p>
+              <p className="text-[#BCAAA4]">Comarca: <span className="text-[#EFEBE9]">{processo.comarca || '-'}</span></p>
+              {processo.foro && <p className="text-[#BCAAA4]">Foro: <span className="text-[#EFEBE9]">{processo.foro}</span></p>}
+              <p className="text-[#BCAAA4]">Valor: <span className="text-[#EFEBE9]">{processo.valorCausa ? formatarMoeda(processo.valorCausa) : '-'}</span></p>
+              {processo.parteContraria && <p className="text-[#BCAAA4]">Parte contrária: <span className="text-[#EFEBE9]">{processo.parteContraria}</span></p>}
+              {processo.advContrario && <p className="text-[#BCAAA4]">Adv. contrário: <span className="text-[#EFEBE9]">{processo.advContrario}</span></p>}
+              <p className="text-[#BCAAA4]">Distribuição: <span className="text-[#EFEBE9]">{processo.dataDistribuicao ? formatarData(processo.dataDistribuicao) : '-'}</span></p>
+              <p className="text-[#BCAAA4]">Desde: <span className="text-[#EFEBE9]">{formatarData(processo.criadoEm)}</span></p>
+              {processo.advogado && <p className="text-[#BCAAA4]">Advogado: <span className="text-[#EFEBE9]">{processo.advogado.nome}</span></p>}
             </div>
-            {processo.observacoes && <p className="text-xs text-[#6b8a6f] mt-3 italic border-t border-[#2a3f2e] pt-3">Obs: {processo.observacoes}</p>}
+            {processo.observacoes && <p className="text-xs text-[#A1887F] mt-3 italic border-t border-[#4E342E] pt-3">Obs: {processo.observacoes}</p>}
           </div>
 
           {/* Action Buttons */}
@@ -206,7 +206,7 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
               </button>
             )}
             <button onClick={abrirEditar}
-              className="px-3 py-2 text-xs bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] rounded-lg hover:bg-[#c9a84c]/20 flex items-center gap-1.5">
+              className="px-3 py-2 text-xs bg-[#BFA76A]/10 border border-[#BFA76A]/30 text-[#BFA76A] rounded-lg hover:bg-[#BFA76A]/20 flex items-center gap-1.5">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
               Editar
             </button>
@@ -219,16 +219,16 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
         </div>
 
         {/* Mini Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-4 border-t border-[#2a3f2e]">
-          <div className="text-center"><p className="text-lg font-bold text-white">{processo.andamentos.length}</p><p className="text-[10px] text-[#6b8a6f] uppercase">Andamentos</p></div>
-          <div className="text-center"><p className="text-lg font-bold text-white">{processo.prazos.length}</p><p className="text-[10px] text-[#6b8a6f] uppercase">Prazos</p></div>
-          <div className="text-center"><p className="text-lg font-bold text-[#c9a84c]">{totalFinanceiro > 0 ? formatarMoeda(totalFinanceiro) : '-'}</p><p className="text-[10px] text-[#6b8a6f] uppercase">Valor Total</p></div>
-          <div className="text-center"><p className="text-lg font-bold text-emerald-400">{totalPago > 0 ? formatarMoeda(totalPago) : '-'}</p><p className="text-[10px] text-[#6b8a6f] uppercase">Recebido</p></div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-4 border-t border-[#4E342E]">
+          <div className="text-center"><p className="text-lg font-bold text-white">{processo.andamentos.length}</p><p className="text-[10px] text-[#A1887F] uppercase">Andamentos</p></div>
+          <div className="text-center"><p className="text-lg font-bold text-white">{processo.prazos.length}</p><p className="text-[10px] text-[#A1887F] uppercase">Prazos</p></div>
+          <div className="text-center"><p className="text-lg font-bold text-[#BFA76A]">{totalFinanceiro > 0 ? formatarMoeda(totalFinanceiro) : '-'}</p><p className="text-[10px] text-[#A1887F] uppercase">Valor Total</p></div>
+          <div className="text-center"><p className="text-lg font-bold text-emerald-400">{totalPago > 0 ? formatarMoeda(totalPago) : '-'}</p><p className="text-[10px] text-[#A1887F] uppercase">Recebido</p></div>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-1 bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-1">
+      <div className="flex gap-1 bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-1">
         {[
           { key: 'andamentos', label: 'Andamentos', count: processo.andamentos.length },
           { key: 'prazos', label: 'Prazos', count: processo.prazos.length },
@@ -236,7 +236,7 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
         ].map(aba => (
           <button key={aba.key} onClick={() => setAbaAtiva(aba.key)}
             className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              abaAtiva === aba.key ? 'bg-[#c9a84c]/20 text-[#c9a84c]' : 'text-[#8a9f8e] hover:text-white hover:bg-[#1a2e1f]'
+              abaAtiva === aba.key ? 'bg-[#BFA76A]/20 text-[#BFA76A]' : 'text-[#BCAAA4] hover:text-white hover:bg-[#2C1A15]'
             }`}>{aba.label} ({aba.count})</button>
         ))}
       </div>
@@ -251,21 +251,21 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
             {processo.andamentos.map((and, i) => (
               <div key={and.id} className="flex gap-4">
                 <div className="flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#c9a84c] flex-shrink-0" />
-                  {i < processo.andamentos.length - 1 && <div className="w-0.5 flex-1 bg-[#2a3f2e]" />}
+                  <div className="w-3 h-3 rounded-full bg-[#BFA76A] flex-shrink-0" />
+                  {i < processo.andamentos.length - 1 && <div className="w-0.5 flex-1 bg-[#4E342E]" />}
                 </div>
-                <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-4 flex-1 mb-2">
+                <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-4 flex-1 mb-2">
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex-1">
                       <p className="text-sm text-white">{and.descricao}</p>
-                      <span className="text-xs text-[#8a9f8e] capitalize mt-1 inline-block px-2 py-0.5 bg-[#1a2e1f] rounded">{and.tipo}</span>
+                      <span className="text-xs text-[#BCAAA4] capitalize mt-1 inline-block px-2 py-0.5 bg-[#2C1A15] rounded">{and.tipo}</span>
                     </div>
-                    <span className="text-xs text-[#6b8a6f] flex-shrink-0">{formatarData(and.data)}</span>
+                    <span className="text-xs text-[#A1887F] flex-shrink-0">{formatarData(and.data)}</span>
                   </div>
                 </div>
               </div>
             ))}
-            {processo.andamentos.length === 0 && <p className="text-center text-[#6b8a6f] py-8">Nenhum andamento registrado</p>}
+            {processo.andamentos.length === 0 && <p className="text-center text-[#A1887F] py-8">Nenhum andamento registrado</p>}
           </div>
         </div>
       )}
@@ -281,11 +281,11 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
               const vencido = p.status === 'pendente' && new Date(p.dataLimite) < new Date()
               const diasRestantes = Math.ceil((new Date(p.dataLimite).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
               return (
-                <div key={p.id} className={`bg-[#0e1810] border rounded-xl p-4 ${vencido ? 'border-red-800/50 bg-red-950/10' : 'border-[#2a3f2e]'}`}>
+                <div key={p.id} className={`bg-[#1A0F0A] border rounded-xl p-4 ${vencido ? 'border-red-800/50 bg-red-950/10' : 'border-[#4E342E]'}`}>
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1">
                       <p className="text-sm font-medium text-white">{p.titulo}</p>
-                      {p.descricao && <p className="text-xs text-[#6b8a6f] mt-1">{p.descricao}</p>}
+                      {p.descricao && <p className="text-xs text-[#A1887F] mt-1">{p.descricao}</p>}
                       <div className="flex items-center gap-2 mt-2">
                         <span className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded border ${
                           p.prioridade === 'urgente' ? 'bg-red-900/30 text-red-400 border-red-700' :
@@ -293,14 +293,14 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
                           p.prioridade === 'normal' ? 'bg-blue-900/30 text-blue-400 border-blue-700' :
                           'bg-gray-800/50 text-gray-400 border-gray-600'
                         }`}>{p.prioridade}</span>
-                        <span className="text-xs text-[#8a9f8e] capitalize">{p.tipo}</span>
+                        <span className="text-xs text-[#BCAAA4] capitalize">{p.tipo}</span>
                       </div>
                     </div>
                     <div className="text-right flex-shrink-0 space-y-2">
-                      <p className={`text-sm font-medium ${vencido ? 'text-red-400' : diasRestantes === 0 ? 'text-orange-400' : diasRestantes <= 3 ? 'text-yellow-400' : 'text-[#c9a84c]'}`}>
+                      <p className={`text-sm font-medium ${vencido ? 'text-red-400' : diasRestantes === 0 ? 'text-orange-400' : diasRestantes <= 3 ? 'text-yellow-400' : 'text-[#BFA76A]'}`}>
                         {vencido ? `${Math.abs(diasRestantes)}d atrás` : diasRestantes === 0 ? 'Hoje' : `${diasRestantes}d`}
                       </p>
-                      <p className="text-xs text-[#6b8a6f]">{formatarData(p.dataLimite)}</p>
+                      <p className="text-xs text-[#A1887F]">{formatarData(p.dataLimite)}</p>
                       <div className="flex items-center gap-1">
                         <StatusBadge status={p.status} />
                         {p.status === 'pendente' && (
@@ -315,7 +315,7 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
                 </div>
               )
             })}
-            {processo.prazos.length === 0 && <p className="text-center text-[#6b8a6f] py-8">Nenhum prazo</p>}
+            {processo.prazos.length === 0 && <p className="text-center text-[#A1887F] py-8">Nenhum prazo</p>}
           </div>
         </div>
       )}
@@ -327,9 +327,9 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
             <FormButton onClick={() => { setFormPagamento({ descricao: '', valorTotal: '', formaPagamento: 'avista', numParcelas: '1' }); setModalPagamento(true) }}>+ Novo Pagamento</FormButton>
           </div>
           {processo.pagamentos.map(pag => (
-            <div key={pag.id} className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-4">
+            <div key={pag.id} className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-4">
               <div className="flex items-center justify-between mb-3">
-                <div><p className="text-sm font-medium text-white">{pag.descricao}</p><p className="text-xs text-[#6b8a6f]">Total: {formatarMoeda(pag.valorTotal)}</p></div>
+                <div><p className="text-sm font-medium text-white">{pag.descricao}</p><p className="text-xs text-[#A1887F]">Total: {formatarMoeda(pag.valorTotal)}</p></div>
                 <StatusBadge status={pag.status} />
               </div>
               {pag.parcelas.length > 0 && (
@@ -337,11 +337,11 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
                   {pag.parcelas.map(parc => {
                     const vencida = parc.status === 'pendente' && new Date(parc.dataVencimento) < new Date()
                     return (
-                      <div key={parc.id} className={`flex items-center justify-between px-3 py-2 rounded-lg ${vencida ? 'bg-red-950/20' : 'bg-[#1a2e1f]'}`}>
+                      <div key={parc.id} className={`flex items-center justify-between px-3 py-2 rounded-lg ${vencida ? 'bg-red-950/20' : 'bg-[#2C1A15]'}`}>
                         <div className="flex items-center gap-3">
-                          <span className="text-xs text-[#8a9f8e]">#{parc.numero}</span>
+                          <span className="text-xs text-[#BCAAA4]">#{parc.numero}</span>
                           <span className="text-sm text-white">{formatarMoeda(parc.valor)}</span>
-                          <span className="text-xs text-[#6b8a6f]">Venc: {formatarData(parc.dataVencimento)}</span>
+                          <span className="text-xs text-[#A1887F]">Venc: {formatarData(parc.dataVencimento)}</span>
                           {parc.dataPagamento && <span className="text-xs text-emerald-400">Pago: {formatarData(parc.dataPagamento)}</span>}
                         </div>
                         <div className="flex items-center gap-2">
@@ -358,7 +358,7 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
               )}
             </div>
           ))}
-          {processo.pagamentos.length === 0 && <p className="text-center text-[#6b8a6f] py-8">Nenhum pagamento vinculado</p>}
+          {processo.pagamentos.length === 0 && <p className="text-center text-[#A1887F] py-8">Nenhum pagamento vinculado</p>}
         </div>
       )}
 
@@ -392,7 +392,7 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
           </div>
           <FormField label="Descrição"><FormTextarea value={formEditar.descricao} onChange={e => setFormEditar({...formEditar, descricao: e.target.value})} rows={3} /></FormField>
           <FormField label="Observações"><FormTextarea value={formEditar.observacoes} onChange={e => setFormEditar({...formEditar, observacoes: e.target.value})} rows={2} /></FormField>
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setModalEditar(false)}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : 'Salvar Alterações'}</FormButton>
           </div>
@@ -419,7 +419,7 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
             </FormField>
           </div>
           <FormField label="Descrição"><FormTextarea value={formPrazo.descricao} onChange={e => setFormPrazo({...formPrazo, descricao: e.target.value})} rows={2} /></FormField>
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setModalPrazo(false)}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : 'Criar Prazo'}</FormButton>
           </div>
@@ -441,7 +441,7 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
             </FormField>
             <FormField label="Data"><FormInput type="date" value={formAndamento.data} onChange={e => setFormAndamento({...formAndamento, data: e.target.value})} /></FormField>
           </div>
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setModalAndamento(false)}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : 'Registrar'}</FormButton>
           </div>
@@ -463,9 +463,9 @@ export default function ProcessoDetalhesPage({ params }: { params: Promise<{ id:
             <FormField label="Nº Parcelas"><FormInput type="number" min="1" max="60" value={formPagamento.numParcelas} onChange={e => setFormPagamento({...formPagamento, numParcelas: e.target.value})} /></FormField>
           </div>
           {parseInt(formPagamento.numParcelas) > 1 && formPagamento.valorTotal && (
-            <p className="text-sm text-[#c9a84c]">{formPagamento.numParcelas}x de {formatarMoeda(parseFloat(formPagamento.valorTotal) / parseInt(formPagamento.numParcelas))}</p>
+            <p className="text-sm text-[#BFA76A]">{formPagamento.numParcelas}x de {formatarMoeda(parseFloat(formPagamento.valorTotal) / parseInt(formPagamento.numParcelas))}</p>
           )}
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setModalPagamento(false)}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : 'Registrar Pagamento'}</FormButton>
           </div>

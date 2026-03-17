@@ -234,9 +234,9 @@ export default function AgendaPage() {
     const dt = new Date(ag.dataHora)
     const dataStr = dt.toLocaleDateString('pt-BR'), horaStr = dt.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
     const msgs: Record<string, string> = {
-      confirmacao: `Prezado(a) ${nomeCliente},\n\nConfirmamos seu agendamento:\n\n📅 Data: ${dataStr}\n🕐 Horário: ${horaStr}\n📋 Tipo: ${ag.tipo}\n${ag.local ? `📍 Local: ${ag.local}\n` : ''}\nQualquer dúvida, estamos à disposição.\n\nCerbelera & Oliveira Advogados\n📞 (18) 99610-1884`,
-      lembrete: `Prezado(a) ${nomeCliente},\n\nLembramos do seu compromisso:\n\n📅 Data: ${dataStr}\n🕐 Horário: ${horaStr}\n📋 Tipo: ${ag.tipo}\n${ag.local ? `📍 Local: ${ag.local}\n` : ''}\nCaso precise remarcar, entre em contato.\n\nCerbelera & Oliveira Advogados\n📞 (18) 99610-1884`,
-      cancelamento: `Prezado(a) ${nomeCliente},\n\nSeu agendamento foi cancelado:\n\n📅 Data: ${dataStr}\n🕐 Horário: ${horaStr}\n\nPara reagendar, acesse nosso site ou entre em contato.\n\nCerbelera & Oliveira Advogados\n📞 (18) 99610-1884`,
+      confirmacao: `Prezado(a) ${nomeCliente},\n\nConfirmamos seu agendamento:\n\n📅 Data: ${dataStr}\n🕐 Horário: ${horaStr}\n📋 Tipo: ${ag.tipo}\n${ag.local ? `📍 Local: ${ag.local}\n` : ''}\nQualquer dúvida, estamos à disposição.\n\nDra. Luciana J. R. Pinho\n📞 (18) 99610-1884`,
+      lembrete: `Prezado(a) ${nomeCliente},\n\nLembramos do seu compromisso:\n\n📅 Data: ${dataStr}\n🕐 Horário: ${horaStr}\n📋 Tipo: ${ag.tipo}\n${ag.local ? `📍 Local: ${ag.local}\n` : ''}\nCaso precise remarcar, entre em contato.\n\nDra. Luciana J. R. Pinho\n📞 (18) 99610-1884`,
+      cancelamento: `Prezado(a) ${nomeCliente},\n\nSeu agendamento foi cancelado:\n\n📅 Data: ${dataStr}\n🕐 Horário: ${horaStr}\n\nPara reagendar, acesse nosso site ou entre em contato.\n\nDra. Luciana J. R. Pinho\n📞 (18) 99610-1884`,
     }
     window.open(`https://wa.me/55${numero}?text=${encodeURIComponent(msgs[tipo])}`, '_blank')
   }
@@ -319,7 +319,7 @@ export default function AgendaPage() {
           <p className="text-xs text-blue-400">{isEdit ? 'Alterações serão sincronizadas' : 'Será criado no'} Google Calendar</p>
         </div>
       )}
-      <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+      <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
         <FormButton variant="secondary" type="button" onClick={() => isEdit ? setModalEditar(false) : setModalNovo(false)}>Cancelar</FormButton>
         <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : isEdit ? 'Salvar Alterações' : 'Agendar'}</FormButton>
       </div>
@@ -333,7 +333,7 @@ export default function AgendaPage() {
         <div>
           <h1 className="text-3xl font-bold text-white tracking-tight">Agenda</h1>
           <div className="flex items-center gap-2 mt-1 flex-wrap">
-            <p className="text-[#6b8a6f] text-sm">{stats.total} agendamento(s)</p>
+            <p className="text-[#A1887F] text-sm">{stats.total} agendamento(s)</p>
             {stats.pendentes > 0 && <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-yellow-900/20 text-yellow-400 border border-yellow-700/30">⏳ {stats.pendentes} pendente(s)</span>}
             {stats.origemSite > 0 && <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-purple-900/20 text-purple-400 border border-purple-700/30">🌐 {stats.origemSite} via site</span>}
             {bloqueiosAtivos.length > 0 && <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-red-900/20 text-red-400 border border-red-700/30">🚫 {bloqueiosAtivos.length} bloqueio(s)</span>}
@@ -348,23 +348,23 @@ export default function AgendaPage() {
               {sincronizando ? 'Sincronizando...' : 'Sync Google'}
             </button>
           ) : (
-            <a href="/painel/configuracoes?aba=google" className="px-3 py-2 text-xs bg-[#0e1810] border border-[#2a3f2e] text-[#8a9f8e] rounded-lg hover:border-blue-700/30 hover:text-blue-400 flex items-center gap-1.5">
+            <a href="/painel/configuracoes?aba=google" className="px-3 py-2 text-xs bg-[#1A0F0A] border border-[#4E342E] text-[#BCAAA4] rounded-lg hover:border-blue-700/30 hover:text-blue-400 flex items-center gap-1.5">
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/></svg>
               Conectar Google
             </a>
           )}
-          <button onClick={abrirNovo} className="px-4 py-2 bg-gradient-to-r from-[#c9a84c] to-[#b8942e] text-white text-sm font-medium rounded-lg hover:from-[#d4b55a] hover:to-[#c9a84c]">+ Novo</button>
+          <button onClick={abrirNovo} className="px-4 py-2 bg-gradient-to-r from-[#BFA76A] to-[#9A8A4C] text-white text-sm font-medium rounded-lg hover:from-[#D4B55A] hover:to-[#BFA76A]">+ Novo</button>
         </div>
       </div>
 
       {syncMsg && <div className={`p-3 rounded-lg text-sm ${syncMsg.startsWith('Erro') ? 'bg-red-900/20 text-red-400 border border-red-700/30' : 'bg-blue-900/20 text-blue-400 border border-blue-700/30'}`}>{syncMsg}</div>}
 
       {/* Tabs */}
-      <div className="flex bg-[#0e1810] border border-[#2a3f2e] rounded-xl overflow-hidden">
-        <button onClick={() => setTab('agendamentos')} className={`flex-1 px-4 py-2.5 text-sm font-medium transition-all ${tab === 'agendamentos' ? 'bg-[#c9a84c]/20 text-[#c9a84c] border-b-2 border-[#c9a84c]' : 'text-[#8a9f8e] hover:text-white'}`}>
+      <div className="flex bg-[#1A0F0A] border border-[#4E342E] rounded-xl overflow-hidden">
+        <button onClick={() => setTab('agendamentos')} className={`flex-1 px-4 py-2.5 text-sm font-medium transition-all ${tab === 'agendamentos' ? 'bg-[#BFA76A]/20 text-[#BFA76A] border-b-2 border-[#BFA76A]' : 'text-[#BCAAA4] hover:text-white'}`}>
           📅 Agendamentos
         </button>
-        <button onClick={() => setTab('disponibilidade')} className={`flex-1 px-4 py-2.5 text-sm font-medium transition-all ${tab === 'disponibilidade' ? 'bg-[#c9a84c]/20 text-[#c9a84c] border-b-2 border-[#c9a84c]' : 'text-[#8a9f8e] hover:text-white'}`}>
+        <button onClick={() => setTab('disponibilidade')} className={`flex-1 px-4 py-2.5 text-sm font-medium transition-all ${tab === 'disponibilidade' ? 'bg-[#BFA76A]/20 text-[#BFA76A] border-b-2 border-[#BFA76A]' : 'text-[#BCAAA4] hover:text-white'}`}>
           🕐 Disponibilidade {bloqueiosAtivos.length > 0 && <span className="ml-1 px-1.5 py-0.5 bg-red-900/30 text-red-400 rounded text-[10px]">{bloqueiosAtivos.length}</span>}
         </button>
       </div>
@@ -380,9 +380,9 @@ export default function AgendaPage() {
               { label: 'Confirmados', value: stats.confirmados, cor: 'text-green-400' },
               { label: 'Realizados', value: stats.realizados, cor: 'text-emerald-400' },
             ].map(s => (
-              <div key={s.label} className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-3 text-center">
+              <div key={s.label} className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-3 text-center">
                 <p className={`text-xl font-bold ${s.cor}`}>{s.value}</p>
-                <p className="text-[10px] text-[#6b8a6f]">{s.label}</p>
+                <p className="text-[10px] text-[#A1887F]">{s.label}</p>
               </div>
             ))}
           </div>
@@ -390,28 +390,28 @@ export default function AgendaPage() {
           {/* Filtros + Views */}
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <select value={filtroStatus} onChange={e => setFiltroStatus(e.target.value)} className="px-3 py-2 text-xs bg-[#0e1810] border border-[#2a3f2e] text-[#8a9f8e] rounded-lg">
+              <select value={filtroStatus} onChange={e => setFiltroStatus(e.target.value)} className="px-3 py-2 text-xs bg-[#1A0F0A] border border-[#4E342E] text-[#BCAAA4] rounded-lg">
                 <option value="">Todos os status</option>
                 {STATUS_OPTIONS.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
               </select>
-              <div className="flex bg-[#0e1810] border border-[#2a3f2e] rounded-lg overflow-hidden">
-                <button onClick={() => setVisualizacao('lista')} className={`px-3 py-2 text-xs ${visualizacao === 'lista' ? 'bg-[#c9a84c]/20 text-[#c9a84c]' : 'text-[#8a9f8e] hover:text-white'}`}>Lista</button>
-                <button onClick={() => setVisualizacao('calendario')} className={`px-3 py-2 text-xs ${visualizacao === 'calendario' ? 'bg-[#c9a84c]/20 text-[#c9a84c]' : 'text-[#8a9f8e] hover:text-white'}`}>Calendário</button>
+              <div className="flex bg-[#1A0F0A] border border-[#4E342E] rounded-lg overflow-hidden">
+                <button onClick={() => setVisualizacao('lista')} className={`px-3 py-2 text-xs ${visualizacao === 'lista' ? 'bg-[#BFA76A]/20 text-[#BFA76A]' : 'text-[#BCAAA4] hover:text-white'}`}>Lista</button>
+                <button onClick={() => setVisualizacao('calendario')} className={`px-3 py-2 text-xs ${visualizacao === 'calendario' ? 'bg-[#BFA76A]/20 text-[#BFA76A]' : 'text-[#BCAAA4] hover:text-white'}`}>Calendário</button>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <button onClick={() => navegarMes(-1)} className="p-1.5 rounded-lg text-[#8a9f8e] hover:text-white hover:bg-[#1a2e1f]">‹</button>
+              <button onClick={() => navegarMes(-1)} className="p-1.5 rounded-lg text-[#BCAAA4] hover:text-white hover:bg-[#2C1A15]">‹</button>
               <h2 className="text-sm font-semibold text-white min-w-[160px] text-center">{meses[mesAtual - 1]} {anoAtual}</h2>
-              <button onClick={() => navegarMes(1)} className="p-1.5 rounded-lg text-[#8a9f8e] hover:text-white hover:bg-[#1a2e1f]">›</button>
+              <button onClick={() => navegarMes(1)} className="p-1.5 rounded-lg text-[#BCAAA4] hover:text-white hover:bg-[#2C1A15]">›</button>
             </div>
           </div>
 
           {loading ? (
-            <div className="flex items-center justify-center py-12"><div className="w-8 h-8 border-2 border-[#c9a84c] border-t-transparent rounded-full animate-spin" /></div>
+            <div className="flex items-center justify-center py-12"><div className="w-8 h-8 border-2 border-[#BFA76A] border-t-transparent rounded-full animate-spin" /></div>
           ) : visualizacao === 'calendario' ? (
-            <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-4">
+            <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-4">
               <div className="grid grid-cols-7 gap-1">
-                {['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'].map(d => <div key={d} className="text-center text-xs font-medium text-[#8a9f8e] py-2">{d}</div>)}
+                {['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'].map(d => <div key={d} className="text-center text-xs font-medium text-[#BCAAA4] py-2">{d}</div>)}
                 {gerarCalendario().map((dia, i) => {
                   const ags = dia ? agendamentosNoDia(dia) : []
                   const isHoje = dia && new Date().getDate() === dia && new Date().getMonth() === mesAtual - 1 && new Date().getFullYear() === anoAtual
@@ -427,19 +427,19 @@ export default function AgendaPage() {
                     return false
                   })
                   return (
-                    <div key={i} className={`min-h-[80px] p-1 rounded-lg border ${dia ? (diaBloqueado ? 'border-red-700/30 bg-red-900/5' : isHoje ? 'border-[#c9a84c]/50 bg-[#c9a84c]/5' : 'border-[#2a3f2e]/50 hover:border-[#2a3f2e]') : 'border-transparent'}`}>
+                    <div key={i} className={`min-h-[80px] p-1 rounded-lg border ${dia ? (diaBloqueado ? 'border-red-700/30 bg-red-900/5' : isHoje ? 'border-[#BFA76A]/50 bg-[#BFA76A]/5' : 'border-[#4E342E]/50 hover:border-[#4E342E]') : 'border-transparent'}`}>
                       {dia && (
                         <>
                           <div className="flex items-center justify-between">
-                            <p className={`text-xs font-medium ${diaBloqueado ? 'text-red-400' : isHoje ? 'text-[#c9a84c]' : 'text-[#8a9f8e]'}`}>{dia}</p>
+                            <p className={`text-xs font-medium ${diaBloqueado ? 'text-red-400' : isHoje ? 'text-[#BFA76A]' : 'text-[#BCAAA4]'}`}>{dia}</p>
                             {diaBloqueado && <span className="text-[8px] text-red-400">🚫</span>}
                           </div>
                           {ags.slice(0, 3).map(ag => (
-                            <button key={ag.id} onClick={() => abrirDetalhe(ag)} className={`w-full text-left text-[10px] px-1 py-0.5 mb-0.5 rounded truncate hover:opacity-80 ${ag.status === 'pendente' ? 'bg-yellow-900/20 text-yellow-300' : ag.status === 'confirmado' ? 'bg-green-900/20 text-green-300' : ag.status === 'cancelado' ? 'bg-red-900/20 text-red-300 line-through' : 'bg-[#1a2e1f] text-[#b0c4b4]'}`}>
+                            <button key={ag.id} onClick={() => abrirDetalhe(ag)} className={`w-full text-left text-[10px] px-1 py-0.5 mb-0.5 rounded truncate hover:opacity-80 ${ag.status === 'pendente' ? 'bg-yellow-900/20 text-yellow-300' : ag.status === 'confirmado' ? 'bg-green-900/20 text-green-300' : ag.status === 'cancelado' ? 'bg-red-900/20 text-red-300 line-through' : 'bg-[#2C1A15] text-[#D7CCC8]'}`}>
                               {new Date(ag.dataHora).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })} {ag.titulo.substring(0, 18)}
                             </button>
                           ))}
-                          {ags.length > 3 && <p className="text-[10px] text-[#6b8a6f]">+{ags.length - 3}</p>}
+                          {ags.length > 3 && <p className="text-[10px] text-[#A1887F]">+{ags.length - 3}</p>}
                         </>
                       )}
                     </div>
@@ -450,13 +450,13 @@ export default function AgendaPage() {
           ) : (
             <div className="space-y-6">
               {Object.keys(agrupadoPorDia).length === 0 ? (
-                <p className="text-center text-[#6b8a6f] py-12">Nenhum agendamento neste mês</p>
+                <p className="text-center text-[#A1887F] py-12">Nenhum agendamento neste mês</p>
               ) : Object.entries(agrupadoPorDia).map(([dia, ags]) => (
                 <div key={dia}>
-                  <h3 className="text-sm font-medium text-[#c9a84c] mb-2 flex items-center gap-2">{dia} <span className="text-[10px] text-[#6b8a6f]">({ags.length})</span></h3>
+                  <h3 className="text-sm font-medium text-[#BFA76A] mb-2 flex items-center gap-2">{dia} <span className="text-[10px] text-[#A1887F]">({ags.length})</span></h3>
                   <div className="space-y-2">
                     {ags.map(ag => (
-                      <div key={ag.id} className={`bg-[#0e1810] border rounded-xl p-4 hover:border-[#c9a84c]/30 transition-colors ${ag.status === 'pendente' ? 'border-yellow-700/30' : ag.status === 'cancelado' ? 'border-red-700/20 opacity-60' : 'border-[#2a3f2e]'}`}>
+                      <div key={ag.id} className={`bg-[#1A0F0A] border rounded-xl p-4 hover:border-[#BFA76A]/30 transition-colors ${ag.status === 'pendente' ? 'border-yellow-700/30' : ag.status === 'cancelado' ? 'border-red-700/20 opacity-60' : 'border-[#4E342E]'}`}>
                         <div className="flex items-start justify-between gap-3">
                           <div className="min-w-0 flex-1 cursor-pointer" onClick={() => abrirDetalhe(ag)}>
                             <div className="flex items-center gap-2 flex-wrap">
@@ -464,13 +464,13 @@ export default function AgendaPage() {
                               {ag.googleEventId && <span className="px-1.5 py-0.5 rounded text-[9px] bg-blue-900/20 text-blue-400 border border-blue-700/30">Google</span>}
                               {isOrigemSite(ag) && <span className="px-1.5 py-0.5 rounded text-[9px] bg-purple-900/20 text-purple-400 border border-purple-700/30">🌐 Site</span>}
                             </div>
-                            <div className="flex items-center gap-3 mt-1 text-xs text-[#6b8a6f]">
+                            <div className="flex items-center gap-3 mt-1 text-xs text-[#A1887F]">
                               <span>{new Date(ag.dataHora).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</span>
                               <span>{ag.duracao}min</span>
                               <span className="capitalize">{ag.tipo}</span>
                               {ag.local && <span>{ag.local}</span>}
                             </div>
-                            {ag.cliente && <p className="text-xs text-[#8a9f8e] mt-1">👤 {ag.cliente.nome}</p>}
+                            {ag.cliente && <p className="text-xs text-[#BCAAA4] mt-1">👤 {ag.cliente.nome}</p>}
                           </div>
                           <div className="flex items-center gap-1.5 flex-shrink-0">
                             <StatusBadge status={ag.status} />
@@ -479,19 +479,19 @@ export default function AgendaPage() {
                               <button className="p-1.5 rounded-lg text-green-500 hover:bg-green-900/30" title="WhatsApp">
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                               </button>
-                              <div className="absolute right-0 top-full mt-1 bg-[#1a2e1f] border border-[#2a3f2e] rounded-lg shadow-xl py-1 hidden group-hover:block z-20 min-w-[160px]">
-                                <button onClick={() => enviarWhatsApp(ag, 'confirmacao')} className="w-full text-left px-3 py-1.5 text-xs text-[#b0c4b4] hover:bg-[#2a3f2e] hover:text-white">✅ Confirmação</button>
-                                <button onClick={() => enviarWhatsApp(ag, 'lembrete')} className="w-full text-left px-3 py-1.5 text-xs text-[#b0c4b4] hover:bg-[#2a3f2e] hover:text-white">🔔 Lembrete</button>
-                                <button onClick={() => enviarWhatsApp(ag, 'cancelamento')} className="w-full text-left px-3 py-1.5 text-xs text-[#b0c4b4] hover:bg-[#2a3f2e] hover:text-white">❌ Cancelamento</button>
+                              <div className="absolute right-0 top-full mt-1 bg-[#2C1A15] border border-[#4E342E] rounded-lg shadow-xl py-1 hidden group-hover:block z-20 min-w-[160px]">
+                                <button onClick={() => enviarWhatsApp(ag, 'confirmacao')} className="w-full text-left px-3 py-1.5 text-xs text-[#D7CCC8] hover:bg-[#4E342E] hover:text-white">✅ Confirmação</button>
+                                <button onClick={() => enviarWhatsApp(ag, 'lembrete')} className="w-full text-left px-3 py-1.5 text-xs text-[#D7CCC8] hover:bg-[#4E342E] hover:text-white">🔔 Lembrete</button>
+                                <button onClick={() => enviarWhatsApp(ag, 'cancelamento')} className="w-full text-left px-3 py-1.5 text-xs text-[#D7CCC8] hover:bg-[#4E342E] hover:text-white">❌ Cancelamento</button>
                               </div>
                             </div>
-                            <button onClick={() => abrirEditar(ag)} className="p-1.5 rounded-lg text-[#8a9f8e] hover:bg-[#1a2e1f] hover:text-white" title="Editar">
+                            <button onClick={() => abrirEditar(ag)} className="p-1.5 rounded-lg text-[#BCAAA4] hover:bg-[#2C1A15] hover:text-white" title="Editar">
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                             </button>
                             <button onClick={() => confirmarDeletar(ag)} className="p-1.5 rounded-lg text-red-400/60 hover:bg-red-900/20 hover:text-red-400" title="Excluir">
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                             </button>
-                            <select value={ag.status} onChange={e => alterarStatus(ag.id, e.target.value)} className="px-2 py-1 text-xs bg-[#1a2e1f] border border-[#2a3f2e] rounded text-white max-w-[110px]">
+                            <select value={ag.status} onChange={e => alterarStatus(ag.id, e.target.value)} className="px-2 py-1 text-xs bg-[#2C1A15] border border-[#4E342E] rounded text-white max-w-[110px]">
                               {STATUS_OPTIONS.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
                             </select>
                           </div>
@@ -511,7 +511,7 @@ export default function AgendaPage() {
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-[#6b8a6f] text-sm">Gerencie quando o advogado estará <strong className="text-[#b0c4b4]">indisponível</strong>. Os bloqueios impedem clientes de agendar online nestes horários.</p>
+              <p className="text-[#A1887F] text-sm">Gerencie quando o advogado estará <strong className="text-[#D7CCC8]">indisponível</strong>. Os bloqueios impedem clientes de agendar online nestes horários.</p>
             </div>
             <button onClick={abrirNovoBloqueio} className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white text-sm font-medium rounded-lg hover:from-red-700 hover:to-red-800 flex items-center gap-1.5">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
@@ -522,19 +522,19 @@ export default function AgendaPage() {
           {/* Bloqueios recorrentes */}
           {bloqueiosRecorrentes.length > 0 && (
             <div>
-              <h3 className="text-sm font-medium text-[#c9a84c] mb-3 flex items-center gap-2">🔁 Recorrentes <span className="text-[10px] text-[#6b8a6f]">(se repetem toda semana)</span></h3>
+              <h3 className="text-sm font-medium text-[#BFA76A] mb-3 flex items-center gap-2">🔁 Recorrentes <span className="text-[10px] text-[#A1887F]">(se repetem toda semana)</span></h3>
               <div className="space-y-2">
                 {bloqueiosRecorrentes.map(b => (
-                  <div key={b.id} className="bg-[#0e1810] border border-red-700/20 rounded-xl p-4 flex items-center justify-between">
+                  <div key={b.id} className="bg-[#1A0F0A] border border-red-700/20 rounded-xl p-4 flex items-center justify-between">
                     <div>
                       <p className="text-sm text-white font-medium">{b.diaSemana !== null ? DIAS_SEMANA[b.diaSemana] : 'Não definido'}</p>
-                      <div className="flex items-center gap-3 text-xs text-[#6b8a6f] mt-1">
+                      <div className="flex items-center gap-3 text-xs text-[#A1887F] mt-1">
                         <span>{b.tipo === 'dia_inteiro' ? 'Dia inteiro' : `${b.horaInicio} - ${b.horaFim}`}</span>
                         {b.motivo && <span>• {b.motivo}</span>}
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <button onClick={() => abrirEditarBloqueio(b)} className="p-1.5 rounded-lg text-[#8a9f8e] hover:bg-[#1a2e1f] hover:text-white">
+                      <button onClick={() => abrirEditarBloqueio(b)} className="p-1.5 rounded-lg text-[#BCAAA4] hover:bg-[#2C1A15] hover:text-white">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                       </button>
                       <button onClick={() => confirmarDeletarBloqueio(b)} className="p-1.5 rounded-lg text-red-400/60 hover:bg-red-900/20 hover:text-red-400">
@@ -549,9 +549,9 @@ export default function AgendaPage() {
 
           {/* Bloqueios pontuais */}
           <div>
-            <h3 className="text-sm font-medium text-[#c9a84c] mb-3 flex items-center gap-2">📅 Pontuais <span className="text-[10px] text-[#6b8a6f]">(datas específicas)</span></h3>
+            <h3 className="text-sm font-medium text-[#BFA76A] mb-3 flex items-center gap-2">📅 Pontuais <span className="text-[10px] text-[#A1887F]">(datas específicas)</span></h3>
             {bloqueiosPontuais.length === 0 ? (
-              <p className="text-center text-[#6b8a6f] py-8 text-sm">Nenhum bloqueio pontual ativo</p>
+              <p className="text-center text-[#A1887F] py-8 text-sm">Nenhum bloqueio pontual ativo</p>
             ) : (
               <div className="space-y-2">
                 {bloqueiosPontuais.map(b => {
@@ -559,20 +559,20 @@ export default function AgendaPage() {
                   const dtF = b.dataFim ? new Date(b.dataFim) : null
                   const passado = dtF ? dtF < new Date() : dtI < new Date()
                   return (
-                    <div key={b.id} className={`bg-[#0e1810] border rounded-xl p-4 flex items-center justify-between ${passado ? 'border-[#2a3f2e] opacity-50' : 'border-red-700/20'}`}>
+                    <div key={b.id} className={`bg-[#1A0F0A] border rounded-xl p-4 flex items-center justify-between ${passado ? 'border-[#4E342E] opacity-50' : 'border-red-700/20'}`}>
                       <div>
                         <p className="text-sm text-white font-medium">
                           {dtI.toLocaleDateString('pt-BR')}
                           {dtF && dtF.toDateString() !== dtI.toDateString() && ` → ${dtF.toLocaleDateString('pt-BR')}`}
                         </p>
-                        <div className="flex items-center gap-3 text-xs text-[#6b8a6f] mt-1">
+                        <div className="flex items-center gap-3 text-xs text-[#A1887F] mt-1">
                           <span>{b.tipo === 'dia_inteiro' ? 'Dia inteiro' : `${b.horaInicio} - ${b.horaFim}`}</span>
                           {b.motivo && <span>• {b.motivo}</span>}
                           {passado && <span className="text-yellow-400/60">• Passado</span>}
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <button onClick={() => abrirEditarBloqueio(b)} className="p-1.5 rounded-lg text-[#8a9f8e] hover:bg-[#1a2e1f] hover:text-white">
+                        <button onClick={() => abrirEditarBloqueio(b)} className="p-1.5 rounded-lg text-[#BCAAA4] hover:bg-[#2C1A15] hover:text-white">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                         </button>
                         <button onClick={() => confirmarDeletarBloqueio(b)} className="p-1.5 rounded-lg text-red-400/60 hover:bg-red-900/20 hover:text-red-400">
@@ -587,12 +587,12 @@ export default function AgendaPage() {
           </div>
 
           {/* Dicas */}
-          <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-4">
-            <h4 className="text-xs font-bold text-[#c9a84c] mb-3">💡 Como funciona</h4>
-            <ul className="space-y-2 text-xs text-[#8a9f8e]">
-              <li>• <strong className="text-[#b0c4b4]">Dia inteiro:</strong> Bloqueia todas as vagas do dia (férias, viagem, feriado)</li>
-              <li>• <strong className="text-[#b0c4b4]">Período:</strong> Bloqueia apenas parte do dia (manhã ou tarde)</li>
-              <li>• <strong className="text-[#b0c4b4]">Recorrente:</strong> Se repete toda semana (ex: quarta-feira sem atendimento)</li>
+          <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-4">
+            <h4 className="text-xs font-bold text-[#BFA76A] mb-3">💡 Como funciona</h4>
+            <ul className="space-y-2 text-xs text-[#BCAAA4]">
+              <li>• <strong className="text-[#D7CCC8]">Dia inteiro:</strong> Bloqueia todas as vagas do dia (férias, viagem, feriado)</li>
+              <li>• <strong className="text-[#D7CCC8]">Período:</strong> Bloqueia apenas parte do dia (manhã ou tarde)</li>
+              <li>• <strong className="text-[#D7CCC8]">Recorrente:</strong> Se repete toda semana (ex: quarta-feira sem atendimento)</li>
               <li>• Clientes no site verão os dias/horários bloqueados como <span className="text-red-400">indisponíveis</span></li>
               <li>• Agendamentos pendentes precisam de <span className="text-yellow-400">aprovação</span> do advogado via CMS</li>
             </ul>
@@ -621,28 +621,28 @@ export default function AgendaPage() {
                 ['Tipo', agSelecionado.tipo],
                 ['Local', agSelecionado.local || 'Não informado'],
               ].map(([l, v]) => (
-                <div key={l} className="bg-[#1a2e1f] rounded-lg p-3">
-                  <p className="text-[10px] text-[#6b8a6f] mb-1">{l}</p>
+                <div key={l} className="bg-[#2C1A15] rounded-lg p-3">
+                  <p className="text-[10px] text-[#A1887F] mb-1">{l}</p>
                   <p className="text-sm text-white capitalize">{v}</p>
                 </div>
               ))}
             </div>
             {agSelecionado.cliente && (
-              <div className="bg-[#1a2e1f] rounded-lg p-3">
-                <p className="text-[10px] text-[#6b8a6f] mb-1">Cliente</p>
+              <div className="bg-[#2C1A15] rounded-lg p-3">
+                <p className="text-[10px] text-[#A1887F] mb-1">Cliente</p>
                 <p className="text-sm text-white">{agSelecionado.cliente.nome}</p>
-                <p className="text-xs text-[#8a9f8e]">{agSelecionado.cliente.telefone}</p>
+                <p className="text-xs text-[#BCAAA4]">{agSelecionado.cliente.telefone}</p>
               </div>
             )}
             {agSelecionado.observacoes && (
-              <div className="bg-[#1a2e1f] rounded-lg p-3">
-                <p className="text-[10px] text-[#6b8a6f] mb-1">Observações</p>
-                <p className="text-sm text-[#b0c4b4] whitespace-pre-line">{agSelecionado.observacoes}</p>
+              <div className="bg-[#2C1A15] rounded-lg p-3">
+                <p className="text-[10px] text-[#A1887F] mb-1">Observações</p>
+                <p className="text-sm text-[#D7CCC8] whitespace-pre-line">{agSelecionado.observacoes}</p>
               </div>
             )}
-            <p className="text-[10px] text-[#6b8a6f]">Criado em: {new Date(agSelecionado.criadoEm).toLocaleString('pt-BR')}</p>
-            <div className="flex flex-wrap gap-2 pt-4 border-t border-[#2a3f2e]">
-              <button onClick={() => { setModalDetalhe(false); abrirEditar(agSelecionado) }} className="px-4 py-2 text-sm bg-[#c9a84c]/20 text-[#c9a84c] border border-[#c9a84c]/30 rounded-lg hover:bg-[#c9a84c]/30">✏️ Editar</button>
+            <p className="text-[10px] text-[#A1887F]">Criado em: {new Date(agSelecionado.criadoEm).toLocaleString('pt-BR')}</p>
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-[#4E342E]">
+              <button onClick={() => { setModalDetalhe(false); abrirEditar(agSelecionado) }} className="px-4 py-2 text-sm bg-[#BFA76A]/20 text-[#BFA76A] border border-[#BFA76A]/30 rounded-lg hover:bg-[#BFA76A]/30">✏️ Editar</button>
               {agSelecionado.status === 'pendente' && (
                 <button onClick={() => { alterarStatus(agSelecionado.id, 'confirmado'); enviarWhatsApp(agSelecionado, 'confirmacao'); setModalDetalhe(false); setAgSelecionado(null) }}
                   className="px-4 py-2 text-sm bg-green-900/20 text-green-400 border border-green-700/30 rounded-lg hover:bg-green-900/30">✅ Aprovar + WhatsApp</button>
@@ -661,9 +661,9 @@ export default function AgendaPage() {
       {/* Modal CONFIRMAR DELETE AGENDAMENTO */}
       <Modal aberto={modalDeletar} onFechar={() => { setModalDeletar(false); setAgSelecionado(null) }} titulo="Excluir Agendamento" tamanho="sm">
         <div className="space-y-4">
-          <p className="text-sm text-[#b0c4b4]">Excluir <strong className="text-white">&quot;{agSelecionado?.titulo}&quot;</strong>?</p>
+          <p className="text-sm text-[#D7CCC8]">Excluir <strong className="text-white">&quot;{agSelecionado?.titulo}&quot;</strong>?</p>
           {agSelecionado?.googleEventId && <p className="text-xs text-blue-400 p-3 bg-blue-900/10 border border-blue-700/20 rounded-lg">⚠️ Também será removido do Google Calendar.</p>}
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" onClick={() => { setModalDeletar(false); setAgSelecionado(null) }}>Cancelar</FormButton>
             <button onClick={executarDeletar} disabled={salvando} className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-lg disabled:opacity-50">{salvando ? 'Excluindo...' : 'Excluir'}</button>
           </div>
@@ -680,9 +680,9 @@ export default function AgendaPage() {
             </FormSelect>
           </FormField>
 
-          <div className="flex items-center gap-3 p-3 bg-[#1a2e1f] rounded-lg">
+          <div className="flex items-center gap-3 p-3 bg-[#2C1A15] rounded-lg">
             <label className="flex items-center gap-2 text-sm text-white cursor-pointer">
-              <input type="checkbox" checked={formBloqueio.recorrente} onChange={e => setFormBloqueio({...formBloqueio, recorrente: e.target.checked})} className="accent-[#c9a84c]" />
+              <input type="checkbox" checked={formBloqueio.recorrente} onChange={e => setFormBloqueio({...formBloqueio, recorrente: e.target.checked})} className="accent-[#BFA76A]" />
               Repetir toda semana
             </label>
           </div>
@@ -720,7 +720,7 @@ export default function AgendaPage() {
             <FormInput value={formBloqueio.motivo} onChange={e => setFormBloqueio({...formBloqueio, motivo: e.target.value})} placeholder="Ex: Férias, audiência externa, viagem..." />
           </FormField>
 
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => { setModalBloqueio(false); setBloqueioSelecionado(null) }}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : bloqueioSelecionado ? 'Salvar' : 'Criar Bloqueio'}</FormButton>
           </div>
@@ -730,8 +730,8 @@ export default function AgendaPage() {
       {/* Modal CONFIRMAR DELETE BLOQUEIO */}
       <Modal aberto={modalDeletarBloqueio} onFechar={() => { setModalDeletarBloqueio(false); setBloqueioSelecionado(null) }} titulo="Remover Bloqueio" tamanho="sm">
         <div className="space-y-4">
-          <p className="text-sm text-[#b0c4b4]">Remover este bloqueio? Os horários ficarão disponíveis novamente para agendamento.</p>
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <p className="text-sm text-[#D7CCC8]">Remover este bloqueio? Os horários ficarão disponíveis novamente para agendamento.</p>
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" onClick={() => { setModalDeletarBloqueio(false); setBloqueioSelecionado(null) }}>Cancelar</FormButton>
             <button onClick={executarDeletarBloqueio} disabled={salvando} className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-lg disabled:opacity-50">{salvando ? 'Removendo...' : 'Remover'}</button>
           </div>

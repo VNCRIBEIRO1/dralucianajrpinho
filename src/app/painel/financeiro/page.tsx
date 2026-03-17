@@ -53,7 +53,7 @@ export default function FinanceiroPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-white tracking-tight">Financeiro</h1>
-        <p className="text-[#7a9f7e] text-sm mt-1.5 font-medium">Gestão de pagamentos e parcelas</p>
+        <p className="text-[#BCAAA4] text-sm mt-1.5 font-medium">Gestão de pagamentos e parcelas</p>
       </div>
 
       {/* Summary Cards */}
@@ -68,7 +68,7 @@ export default function FinanceiroPage() {
             { label: 'Parc. Atrasadas', valor: String(resumo.parcelasAtrasadas), cor: 'border-red-600/30 bg-red-900/10', txt: 'text-red-400' },
           ].map(c => (
             <div key={c.label} className={`rounded-xl p-4 border ${c.cor}`}>
-              <p className="text-[10px] uppercase text-[#8a9f8e]">{c.label}</p>
+              <p className="text-[10px] uppercase text-[#BCAAA4]">{c.label}</p>
               <p className={`text-lg font-bold mt-1 ${c.txt}`}>{c.valor}</p>
             </div>
           ))}
@@ -77,25 +77,25 @@ export default function FinanceiroPage() {
 
       {/* Export */}
       <div className="flex gap-2">
-        <a href="/api/exportar?tipo=financeiro&formato=csv" className="px-3 py-1.5 text-xs bg-[#0e1810] border border-[#2a3f2e] text-[#8a9f8e] rounded-lg hover:text-white">Exportar CSV</a>
-        <a href="/api/exportar?tipo=financeiro&formato=json" className="px-3 py-1.5 text-xs bg-[#0e1810] border border-[#2a3f2e] text-[#8a9f8e] rounded-lg hover:text-white">Exportar JSON</a>
+        <a href="/api/exportar?tipo=financeiro&formato=csv" className="px-3 py-1.5 text-xs bg-[#1A0F0A] border border-[#4E342E] text-[#BCAAA4] rounded-lg hover:text-white">Exportar CSV</a>
+        <a href="/api/exportar?tipo=financeiro&formato=json" className="px-3 py-1.5 text-xs bg-[#1A0F0A] border border-[#4E342E] text-[#BCAAA4] rounded-lg hover:text-white">Exportar JSON</a>
       </div>
 
       {loading ? (
-        <div className="flex items-center justify-center py-12"><div className="w-8 h-8 border-2 border-[#c9a84c] border-t-transparent rounded-full animate-spin" /></div>
+        <div className="flex items-center justify-center py-12"><div className="w-8 h-8 border-2 border-[#BFA76A] border-t-transparent rounded-full animate-spin" /></div>
       ) : pagamentos.length === 0 ? (
-        <p className="text-center text-[#6b8a6f] py-12">Nenhum pagamento registrado</p>
+        <p className="text-center text-[#A1887F] py-12">Nenhum pagamento registrado</p>
       ) : (
         <div className="space-y-3">
           {pagamentos.map(pag => (
-            <div key={pag.id} className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl overflow-hidden">
+            <div key={pag.id} className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl overflow-hidden">
               <button onClick={() => setExpandido(expandido === pag.id ? null : pag.id)}
-                className="w-full p-4 text-left hover:bg-[#1a2e1f]/50 transition-colors">
+                className="w-full p-4 text-left hover:bg-[#2C1A15]/50 transition-colors">
                 <div className="flex items-center justify-between gap-4">
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-medium text-white">{pag.descricao}</p>
-                    <div className="flex items-center gap-3 mt-1 text-xs text-[#6b8a6f]">
-                      <a href={`/painel/clientes/${pag.cliente.id}`} className="text-[#c9a84c] hover:underline">{pag.cliente.nome}</a>
+                    <div className="flex items-center gap-3 mt-1 text-xs text-[#A1887F]">
+                      <a href={`/painel/clientes/${pag.cliente.id}`} className="text-[#BFA76A] hover:underline">{pag.cliente.nome}</a>
                       {pag.processo && <>
                         <span>•</span>
                         <a href={`/painel/processos/${pag.processo.id}`} className="hover:text-white">{pag.processo.numero || pag.processo.assunto}</a>
@@ -106,7 +106,7 @@ export default function FinanceiroPage() {
                   <div className="flex items-center gap-3 flex-shrink-0">
                     <StatusBadge status={pag.status} />
                     <p className="text-sm font-bold text-white">{formatarMoeda(pag.valorTotal)}</p>
-                    <svg className={`w-4 h-4 text-[#6b8a6f] transition-transform ${expandido === pag.id ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className={`w-4 h-4 text-[#A1887F] transition-transform ${expandido === pag.id ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
@@ -114,10 +114,10 @@ export default function FinanceiroPage() {
               </button>
 
               {expandido === pag.id && pag.parcelas.length > 0 && (
-                <div className="border-t border-[#2a3f2e] p-4">
+                <div className="border-t border-[#4E342E] p-4">
                   <table className="w-full text-xs">
                     <thead>
-                      <tr className="text-[#6b8a6f]">
+                      <tr className="text-[#A1887F]">
                         <th className="text-left py-1 font-medium">Parcela</th>
                         <th className="text-left py-1 font-medium">Vencimento</th>
                         <th className="text-left py-1 font-medium">Valor</th>
@@ -130,11 +130,11 @@ export default function FinanceiroPage() {
                       {pag.parcelas.map(parc => {
                         const vencida = parc.status === 'pendente' && new Date(parc.dataVencimento) < new Date()
                         return (
-                          <tr key={parc.id} className={`border-t border-[#2a3f2e]/50 ${vencida ? 'bg-red-950/10' : ''}`}>
+                          <tr key={parc.id} className={`border-t border-[#4E342E]/50 ${vencida ? 'bg-red-950/10' : ''}`}>
                             <td className="py-2 text-white">{parc.numero}/{pag.parcelas.length}</td>
-                            <td className="py-2 text-[#b0c4b4]">{new Date(parc.dataVencimento).toLocaleDateString('pt-BR')}</td>
+                            <td className="py-2 text-[#D7CCC8]">{new Date(parc.dataVencimento).toLocaleDateString('pt-BR')}</td>
                             <td className="py-2 text-white font-medium">{formatarMoeda(parc.valor)}</td>
-                            <td className="py-2 text-[#b0c4b4]">{parc.dataPagamento ? new Date(parc.dataPagamento).toLocaleDateString('pt-BR') : '—'}</td>
+                            <td className="py-2 text-[#D7CCC8]">{parc.dataPagamento ? new Date(parc.dataPagamento).toLocaleDateString('pt-BR') : '—'}</td>
                             <td className="py-2"><StatusBadge status={vencida ? 'atrasado' : parc.status} /></td>
                             <td className="py-2 text-right">
                               {(parc.status === 'pendente' || vencida) && (

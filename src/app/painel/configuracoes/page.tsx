@@ -130,7 +130,7 @@ export default function ConfiguracoesPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-white tracking-tight">Configurações</h1>
-        <p className="text-[#7a9f7e] text-sm mt-1.5 font-medium">Gerenciar sistema, integrações e conta</p>
+        <p className="text-[#BCAAA4] text-sm mt-1.5 font-medium">Gerenciar sistema, integrações e conta</p>
       </div>
 
       {msg && (
@@ -141,11 +141,11 @@ export default function ConfiguracoesPage() {
       )}
 
       {/* Tabs */}
-      <div className="flex gap-1 bg-[#0e1810] border border-[#2a3f2e] rounded-lg p-1 overflow-x-auto">
+      <div className="flex gap-1 bg-[#1A0F0A] border border-[#4E342E] rounded-lg p-1 overflow-x-auto">
         {([['geral', 'Geral'], ['google', 'Google Calendar'], ['usuarios', 'Usuários'], ['backup', 'Backup']] as const).map(([v, l]) => (
           <button key={v} onClick={() => setAba(v)}
             className={`flex-1 px-4 py-2 text-sm rounded-md transition-colors whitespace-nowrap ${
-              aba === v ? 'bg-[#1a2e1f] text-white' : 'text-[#8a9f8e] hover:text-white'
+              aba === v ? 'bg-[#2C1A15] text-white' : 'text-[#BCAAA4] hover:text-white'
             }`}>{l}</button>
         ))}
       </div>
@@ -153,34 +153,34 @@ export default function ConfiguracoesPage() {
       {/* ====== ABA GERAL ====== */}
       {aba === 'geral' && (
         <div className="space-y-4">
-          <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+          <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
             <h3 className="text-sm font-semibold text-white mb-4">Informações do Sistema</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               {[
-                ['Escritório', 'Cerbelera & Oliveira Advogados Associados'],
+                ['Escritório', 'Dra. Luciana J. R. Pinho Associados'],
                 ['Versão', '1.0.0'],
                 ['Banco de Dados', 'PostgreSQL (Neon)'],
                 ['Framework', 'Next.js'],
               ].map(([k, v]) => (
                 <div key={k}>
-                  <p className="text-[#6b8a6f] text-xs">{k}</p>
+                  <p className="text-[#A1887F] text-xs">{k}</p>
                   <p className="text-white">{v}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+          <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
             <h3 className="text-sm font-semibold text-white mb-4">Segurança</h3>
             <button onClick={() => setModalSenha(true)}
-              className="px-4 py-2 text-sm bg-[#1a2e1f] border border-[#2a3f2e] text-white rounded-lg hover:border-[#c9a84c]/30">
+              className="px-4 py-2 text-sm bg-[#2C1A15] border border-[#4E342E] text-white rounded-lg hover:border-[#BFA76A]/30">
               Alterar Senha
             </button>
           </div>
 
-          <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+          <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
             <h3 className="text-sm font-semibold text-white mb-4">WhatsApp</h3>
-            <p className="text-xs text-[#6b8a6f] mb-2">Número principal para contato com clientes</p>
+            <p className="text-xs text-[#A1887F] mb-2">Número principal para contato com clientes</p>
             <p className="text-white text-sm">(18) 99610-1884</p>
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function ConfiguracoesPage() {
       {aba === 'google' && (
         <div className="space-y-4">
           {/* Status da conexão */}
-          <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+          <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-blue-900/20 border border-blue-700/30 rounded-xl flex items-center justify-center flex-shrink-0">
                 <svg className="w-7 h-7 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
@@ -202,7 +202,7 @@ export default function ConfiguracoesPage() {
               </div>
               <div className="flex-1">
                 <h3 className="text-lg font-semibold text-white">Google Calendar</h3>
-                <p className="text-sm text-[#6b8a6f] mt-1">
+                <p className="text-sm text-[#A1887F] mt-1">
                   Sincronize seus agendamentos automaticamente com o Google Calendar
                 </p>
                 {googleLoading ? (
@@ -234,7 +234,7 @@ export default function ConfiguracoesPage() {
           </div>
 
           {/* Como funciona */}
-          <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+          <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
             <h3 className="text-sm font-semibold text-white mb-4">Como funciona a integração</h3>
             <div className="space-y-3">
               {[
@@ -245,10 +245,10 @@ export default function ConfiguracoesPage() {
                 { icone: '5', titulo: 'Lembretes', desc: 'Cada evento recebe lembretes automáticos: 30 minutos antes e 1 dia antes.' },
               ].map(item => (
                 <div key={item.icone} className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-[#c9a84c]/20 text-[#c9a84c] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">{item.icone}</div>
+                  <div className="w-6 h-6 bg-[#BFA76A]/20 text-[#BFA76A] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">{item.icone}</div>
                   <div>
                     <p className="text-sm text-white font-medium">{item.titulo}</p>
-                    <p className="text-xs text-[#6b8a6f] mt-0.5">{item.desc}</p>
+                    <p className="text-xs text-[#A1887F] mt-0.5">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -257,18 +257,18 @@ export default function ConfiguracoesPage() {
 
           {/* Instruções de configuração */}
           {!googleConectado && (
-            <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+            <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
               <h3 className="text-sm font-semibold text-white mb-4">Configuração Inicial (Administrador)</h3>
-              <p className="text-xs text-[#6b8a6f] mb-3">
+              <p className="text-xs text-[#A1887F] mb-3">
                 Para ativar a integração, é necessário configurar as credenciais do Google Cloud Console:
               </p>
-              <div className="p-3 bg-[#1a2e1f] rounded-lg text-xs text-[#b0c4b4] font-mono space-y-1">
-                <p className="text-[#6b8a6f]"># 1. Acesse console.cloud.google.com</p>
-                <p className="text-[#6b8a6f]"># 2. Crie um projeto e ative a Google Calendar API</p>
-                <p className="text-[#6b8a6f]"># 3. Crie credenciais OAuth 2.0 (Web Application)</p>
-                <p className="text-[#6b8a6f]"># 4. Adicione o redirect URI:</p>
+              <div className="p-3 bg-[#2C1A15] rounded-lg text-xs text-[#D7CCC8] font-mono space-y-1">
+                <p className="text-[#A1887F]"># 1. Acesse console.cloud.google.com</p>
+                <p className="text-[#A1887F]"># 2. Crie um projeto e ative a Google Calendar API</p>
+                <p className="text-[#A1887F]"># 3. Crie credenciais OAuth 2.0 (Web Application)</p>
+                <p className="text-[#A1887F]"># 4. Adicione o redirect URI:</p>
                 <p className="text-white">https://cerbeleraeoliveiraadv.vercel.app/api/google/callback</p>
-                <p className="text-[#6b8a6f] mt-2"># 5. Configure as variáveis no Vercel:</p>
+                <p className="text-[#A1887F] mt-2"># 5. Configure as variáveis no Vercel:</p>
                 <p className="text-white">GOOGLE_CLIENT_ID=seu_client_id</p>
                 <p className="text-white">GOOGLE_CLIENT_SECRET=seu_client_secret</p>
               </div>
@@ -279,17 +279,17 @@ export default function ConfiguracoesPage() {
 
       {/* ====== ABA USUÁRIOS ====== */}
       {aba === 'usuarios' && (
-        <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+        <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
           <h3 className="text-sm font-semibold text-white mb-4">Usuários do Sistema</h3>
           {loading ? (
-            <div className="flex items-center justify-center py-8"><div className="w-6 h-6 border-2 border-[#c9a84c] border-t-transparent rounded-full animate-spin" /></div>
+            <div className="flex items-center justify-center py-8"><div className="w-6 h-6 border-2 border-[#BFA76A] border-t-transparent rounded-full animate-spin" /></div>
           ) : (
             <div className="space-y-3">
               {usuarios.map(u => (
-                <div key={u.id} className="flex items-center justify-between p-3 bg-[#1a2e1f] rounded-lg">
+                <div key={u.id} className="flex items-center justify-between p-3 bg-[#2C1A15] rounded-lg">
                   <div>
                     <p className="text-sm text-white font-medium">{u.nome}</p>
-                    <p className="text-xs text-[#6b8a6f]">{u.email} • {u.role}</p>
+                    <p className="text-xs text-[#A1887F]">{u.email} • {u.role}</p>
                   </div>
                   <span className={`text-xs px-2 py-0.5 rounded ${u.ativo ? 'bg-green-900/20 text-green-400' : 'bg-red-900/20 text-red-400'}`}>
                     {u.ativo ? 'Ativo' : 'Inativo'}
@@ -298,16 +298,16 @@ export default function ConfiguracoesPage() {
               ))}
             </div>
           )}
-          <p className="text-xs text-[#6b8a6f] mt-4">Para registrar novos usuários, utilize a tela de login com a chave de administração.</p>
+          <p className="text-xs text-[#A1887F] mt-4">Para registrar novos usuários, utilize a tela de login com a chave de administração.</p>
         </div>
       )}
 
       {/* ====== ABA BACKUP ====== */}
       {aba === 'backup' && (
         <div className="space-y-4">
-          <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+          <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
             <h3 className="text-sm font-semibold text-white mb-4">Exportar Dados</h3>
-            <p className="text-xs text-[#6b8a6f] mb-4">Exporte os dados do sistema em formato CSV ou JSON</p>
+            <p className="text-xs text-[#A1887F] mb-4">Exporte os dados do sistema em formato CSV ou JSON</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
                 { tipo: 'clientes', label: 'Clientes' },
@@ -319,22 +319,22 @@ export default function ConfiguracoesPage() {
                   <p className="text-xs text-white font-medium">{exp.label}</p>
                   <div className="flex gap-1">
                     <a href={`/api/exportar?tipo=${exp.tipo}&formato=csv`}
-                      className="flex-1 px-2 py-1 text-[10px] text-center bg-[#1a2e1f] border border-[#2a3f2e] text-[#8a9f8e] rounded hover:text-white">CSV</a>
+                      className="flex-1 px-2 py-1 text-[10px] text-center bg-[#2C1A15] border border-[#4E342E] text-[#BCAAA4] rounded hover:text-white">CSV</a>
                     <a href={`/api/exportar?tipo=${exp.tipo}&formato=json`}
-                      className="flex-1 px-2 py-1 text-[10px] text-center bg-[#1a2e1f] border border-[#2a3f2e] text-[#8a9f8e] rounded hover:text-white">JSON</a>
+                      className="flex-1 px-2 py-1 text-[10px] text-center bg-[#2C1A15] border border-[#4E342E] text-[#BCAAA4] rounded hover:text-white">JSON</a>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+          <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
             <h3 className="text-sm font-semibold text-white mb-4">Banco de Dados na Nuvem</h3>
-            <p className="text-xs text-[#6b8a6f] mb-2">
+            <p className="text-xs text-[#A1887F] mb-2">
               O banco de dados PostgreSQL está hospedado no <span className="text-white font-semibold">Neon</span> via Vercel.
               Os dados são persistentes e com backup automático.
             </p>
-            <p className="text-xs text-[#6b8a6f]">
+            <p className="text-xs text-[#A1887F]">
               Para acessar o painel do banco, vá ao <span className="text-white">Dashboard do Vercel</span> → Storage → Neon Console.
             </p>
           </div>
@@ -353,7 +353,7 @@ export default function ConfiguracoesPage() {
           <FormField label="Confirmar Nova Senha" obrigatorio>
             <FormInput type="password" value={senhaForm.confirmar} onChange={e => setSenhaForm({...senhaForm, confirmar: e.target.value})} required />
           </FormField>
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setModalSenha(false)}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : 'Alterar Senha'}</FormButton>
           </div>

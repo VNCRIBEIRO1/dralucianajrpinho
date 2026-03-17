@@ -124,7 +124,7 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
     setCliente(data)
   }
 
-  if (loading) return <div className="flex items-center justify-center min-h-[60vh]"><div className="w-10 h-10 border-3 border-[#c9a84c] border-t-transparent rounded-full animate-spin" /></div>
+  if (loading) return <div className="flex items-center justify-center min-h-[60vh]"><div className="w-10 h-10 border-3 border-[#BFA76A] border-t-transparent rounded-full animate-spin" /></div>
   if (!cliente) return <p className="text-red-400 text-center py-12">Cliente não encontrado</p>
 
   const abas = [
@@ -137,13 +137,13 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
     <div className="space-y-6">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm">
-        <button onClick={() => router.push('/painel/clientes')} className="text-[#c9a84c] hover:underline">Clientes</button>
-        <span className="text-[#6b8a6f]">/</span>
-        <span className="text-[#b0c4b4]">{cliente.nome}</span>
+        <button onClick={() => router.push('/painel/clientes')} className="text-[#BFA76A] hover:underline">Clientes</button>
+        <span className="text-[#A1887F]">/</span>
+        <span className="text-[#D7CCC8]">{cliente.nome}</span>
       </div>
 
       {/* Client Info Card */}
-      <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-6">
+      <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-6">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
           <div>
             <div className="flex items-center gap-3 mb-2">
@@ -151,14 +151,14 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
               <StatusBadge status={cliente.status} />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-sm">
-              <p className="text-[#8a9f8e]">CPF/CNPJ: <span className="text-[#d0dcd2]">{cliente.cpfCnpj || '-'}</span></p>
-              <p className="text-[#8a9f8e]">Telefone: <span className="text-[#d0dcd2]">{cliente.telefone}</span></p>
-              <p className="text-[#8a9f8e]">Email: <span className="text-[#d0dcd2]">{cliente.email || '-'}</span></p>
-              <p className="text-[#8a9f8e]">Endereço: <span className="text-[#d0dcd2]">{cliente.endereco ? `${cliente.endereco}, ${cliente.cidade}/${cliente.estado}` : '-'}</span></p>
-              <p className="text-[#8a9f8e]">Origem: <span className="text-[#d0dcd2]">{cliente.origem}</span></p>
-              <p className="text-[#8a9f8e]">Desde: <span className="text-[#d0dcd2]">{formatarData(cliente.criadoEm)}</span></p>
+              <p className="text-[#BCAAA4]">CPF/CNPJ: <span className="text-[#EFEBE9]">{cliente.cpfCnpj || '-'}</span></p>
+              <p className="text-[#BCAAA4]">Telefone: <span className="text-[#EFEBE9]">{cliente.telefone}</span></p>
+              <p className="text-[#BCAAA4]">Email: <span className="text-[#EFEBE9]">{cliente.email || '-'}</span></p>
+              <p className="text-[#BCAAA4]">Endereço: <span className="text-[#EFEBE9]">{cliente.endereco ? `${cliente.endereco}, ${cliente.cidade}/${cliente.estado}` : '-'}</span></p>
+              <p className="text-[#BCAAA4]">Origem: <span className="text-[#EFEBE9]">{cliente.origem}</span></p>
+              <p className="text-[#BCAAA4]">Desde: <span className="text-[#EFEBE9]">{formatarData(cliente.criadoEm)}</span></p>
             </div>
-            {cliente.observacoes && <p className="text-sm text-[#6b8a6f] mt-3 italic">{cliente.observacoes}</p>}
+            {cliente.observacoes && <p className="text-sm text-[#A1887F] mt-3 italic">{cliente.observacoes}</p>}
           </div>
           <div className="flex gap-2 flex-shrink-0">
             <button onClick={() => { const n = (cliente.whatsapp || cliente.telefone).replace(/\D/g, ''); window.open(`https://wa.me/55${n}`, '_blank') }}
@@ -170,13 +170,13 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-1 bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-1">
+      <div className="flex gap-1 bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-1">
         {abas.map(aba => (
           <button
             key={aba.key}
             onClick={() => setAbaAtiva(aba.key)}
             className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              abaAtiva === aba.key ? 'bg-[#c9a84c]/20 text-[#c9a84c]' : 'text-[#8a9f8e] hover:text-white hover:bg-[#1a2e1f]'
+              abaAtiva === aba.key ? 'bg-[#BFA76A]/20 text-[#BFA76A]' : 'text-[#BCAAA4] hover:text-white hover:bg-[#2C1A15]'
             }`}
           >
             {aba.label} ({aba.count})
@@ -191,16 +191,16 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
             <FormButton onClick={() => setModalProcesso(true)}>+ Novo Processo</FormButton>
           </div>
           {cliente.processos.length === 0 ? (
-            <p className="text-center text-[#6b8a6f] py-8">Nenhum processo vinculado</p>
+            <p className="text-center text-[#A1887F] py-8">Nenhum processo vinculado</p>
           ) : (
             <div className="space-y-3">
               {cliente.processos.map(p => (
-                <div key={p.id} className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-4 hover:border-[#c9a84c]/30 transition-colors cursor-pointer"
+                <div key={p.id} className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-4 hover:border-[#BFA76A]/30 transition-colors cursor-pointer"
                   onClick={() => router.push(`/painel/processos/${p.id}`)}>
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="text-sm font-medium text-white">{p.numero || 'Sem número'} - {p.assunto}</p>
-                      <p className="text-xs text-[#6b8a6f] mt-1">Tipo: {p.tipo} | {p._count.prazos} prazos | {p._count.andamentos} andamentos</p>
+                      <p className="text-xs text-[#A1887F] mt-1">Tipo: {p.tipo} | {p._count.prazos} prazos | {p._count.andamentos} andamentos</p>
                     </div>
                     <StatusBadge status={p.status} />
                   </div>
@@ -217,15 +217,15 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
             <FormButton onClick={() => setModalAgendamento(true)}>+ Novo Agendamento</FormButton>
           </div>
           {cliente.agendamentos.length === 0 ? (
-            <p className="text-center text-[#6b8a6f] py-8">Nenhum agendamento</p>
+            <p className="text-center text-[#A1887F] py-8">Nenhum agendamento</p>
           ) : (
             <div className="space-y-3">
               {cliente.agendamentos.map(a => (
-                <div key={a.id} className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-4">
+                <div key={a.id} className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-4">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm font-medium text-white">{a.titulo}</p>
-                      <p className="text-xs text-[#6b8a6f] mt-1">{new Date(a.dataHora).toLocaleString('pt-BR')} | {a.tipo}</p>
+                      <p className="text-xs text-[#A1887F] mt-1">{new Date(a.dataHora).toLocaleString('pt-BR')} | {a.tipo}</p>
                     </div>
                     <StatusBadge status={a.status} />
                   </div>
@@ -242,26 +242,26 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
             <FormButton onClick={() => setModalPagamento(true)}>+ Novo Pagamento</FormButton>
           </div>
           {cliente.pagamentos.length === 0 ? (
-            <p className="text-center text-[#6b8a6f] py-8">Nenhum pagamento registrado</p>
+            <p className="text-center text-[#A1887F] py-8">Nenhum pagamento registrado</p>
           ) : (
             <div className="space-y-4">
               {cliente.pagamentos.map(pag => (
-                <div key={pag.id} className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl p-4">
+                <div key={pag.id} className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl p-4">
                   <div className="flex items-center justify-between mb-3">
                     <div>
                       <p className="text-sm font-medium text-white">{pag.descricao}</p>
-                      <p className="text-xs text-[#6b8a6f]">Total: {formatarMoeda(pag.valorTotal)}</p>
+                      <p className="text-xs text-[#A1887F]">Total: {formatarMoeda(pag.valorTotal)}</p>
                     </div>
                     <StatusBadge status={pag.status} />
                   </div>
                   {pag.parcelas.length > 0 && (
                     <div className="space-y-2">
                       {pag.parcelas.map(parc => (
-                        <div key={parc.id} className="flex items-center justify-between px-3 py-2 bg-[#1a2e1f] rounded-lg">
+                        <div key={parc.id} className="flex items-center justify-between px-3 py-2 bg-[#2C1A15] rounded-lg">
                           <div className="flex items-center gap-3">
-                            <span className="text-xs text-[#8a9f8e]">#{parc.numero}</span>
+                            <span className="text-xs text-[#BCAAA4]">#{parc.numero}</span>
                             <span className="text-sm text-white">{formatarMoeda(parc.valor)}</span>
-                            <span className="text-xs text-[#6b8a6f]">Venc: {formatarData(parc.dataVencimento)}</span>
+                            <span className="text-xs text-[#A1887F]">Venc: {formatarData(parc.dataVencimento)}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <StatusBadge status={parc.status === 'pendente' && new Date(parc.dataVencimento) < new Date() ? 'atrasado' : parc.status} />
@@ -301,7 +301,7 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
             <FormField label="Comarca"><FormInput value={formProcesso.comarca} onChange={e => setFormProcesso({...formProcesso, comarca: e.target.value})} placeholder="Birigui/SP" /></FormField>
           </div>
           <FormField label="Descrição"><FormTextarea value={formProcesso.descricao} onChange={e => setFormProcesso({...formProcesso, descricao: e.target.value})} rows={3} /></FormField>
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setModalProcesso(false)}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : 'Criar Processo'}</FormButton>
           </div>
@@ -324,7 +324,7 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
           </div>
           <FormField label="Local"><FormInput value={formAgendamento.local} onChange={e => setFormAgendamento({...formAgendamento, local: e.target.value})} placeholder="Escritório / Online" /></FormField>
           <FormField label="Descrição"><FormTextarea value={formAgendamento.descricao} onChange={e => setFormAgendamento({...formAgendamento, descricao: e.target.value})} rows={2} /></FormField>
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setModalAgendamento(false)}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : 'Agendar'}</FormButton>
           </div>
@@ -345,9 +345,9 @@ export default function ClienteDetalhesPage({ params }: { params: Promise<{ id: 
             <FormField label="Nº de Parcelas"><FormInput type="number" min="1" max="60" value={formPagamento.numParcelas} onChange={e => setFormPagamento({...formPagamento, numParcelas: e.target.value})} /></FormField>
           </div>
           {parseInt(formPagamento.numParcelas) > 1 && formPagamento.valorTotal && (
-            <p className="text-sm text-[#c9a84c]">{formPagamento.numParcelas}x de {formatarMoeda(parseFloat(formPagamento.valorTotal) / parseInt(formPagamento.numParcelas))}</p>
+            <p className="text-sm text-[#BFA76A]">{formPagamento.numParcelas}x de {formatarMoeda(parseFloat(formPagamento.valorTotal) / parseInt(formPagamento.numParcelas))}</p>
           )}
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setModalPagamento(false)}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : 'Registrar Pagamento'}</FormButton>
           </div>

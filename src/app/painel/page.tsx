@@ -77,7 +77,7 @@ export default function DashboardPage() {
   const aprovarEWhatsApp = async (id: string, telefone: string, nome: string, dataHora: string, tipo: string) => {
     await fetch(`/api/agenda/${id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: 'confirmado' }) })
     if (telefone) {
-      const msg = encodeURIComponent(`Prezado(a) ${nome},\n\nConfirmamos seu agendamento:\n\n📅 ${formatarDataHora(dataHora)}\n📋 Tipo: ${tipo}\n\nCerbelera & Oliveira Advogados\n📞 (18) 99610-1884`)
+      const msg = encodeURIComponent(`Prezado(a) ${nome},\n\nConfirmamos seu agendamento:\n\n📅 ${formatarDataHora(dataHora)}\n📋 Tipo: ${tipo}\n\nDra. Luciana J. R. Pinho\n📞 (18) 99610-1884`)
       window.open(`https://wa.me/55${telefone.replace(/\D/g, '')}?text=${msg}`, '_blank')
     }
     carregarDados()
@@ -87,8 +87,8 @@ export default function DashboardPage() {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
-          <div className="w-12 h-12 border-3 border-[#c9a84c] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-[#6b8a6f]">Carregando dashboard...</p>
+          <div className="w-12 h-12 border-3 border-[#BFA76A] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-[#A1887F]">Carregando dashboard...</p>
         </div>
       </div>
     )
@@ -99,7 +99,7 @@ export default function DashboardPage() {
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
           <p className="text-red-400 mb-2">{erro || 'Erro ao carregar dashboard'}</p>
-          <button onClick={() => { setLoading(true); carregarDados() }} className="px-4 py-2 text-sm bg-[#1a2e1f] text-[#c9a84c] rounded-lg border border-[#2a3f2e] hover:border-[#c9a84c]/30">
+          <button onClick={() => { setLoading(true); carregarDados() }} className="px-4 py-2 text-sm bg-[#2C1A15] text-[#BFA76A] rounded-lg border border-[#4E342E] hover:border-[#BFA76A]/30">
             Tentar novamente
           </button>
         </div>
@@ -118,19 +118,19 @@ export default function DashboardPage() {
         <div>
           <h1 className="text-3xl font-bold text-white tracking-tight">Dashboard</h1>
           <div className="flex items-center gap-3 mt-2">
-            <p className="text-[#7a9f7e] text-sm font-medium">Visão geral do escritório</p>
-            <span className="text-[10px] text-[#5a7b5e] flex items-center gap-1.5 bg-[#0e1810] px-2.5 py-1 rounded-full border border-[#1e3323]">
+            <p className="text-[#BCAAA4] text-sm font-medium">Visão geral do escritório</p>
+            <span className="text-[10px] text-[#8D6E63] flex items-center gap-1.5 bg-[#1A0F0A] px-2.5 py-1 rounded-full border border-[#3E2723]">
               <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
               Atualizado {horaRefresh}
             </span>
           </div>
         </div>
         <div className="flex gap-2.5 flex-wrap">
-          <button onClick={() => { setLoading(true); carregarDados() }} className="px-4 py-2.5 text-xs bg-[#0e1810] border border-[#1e3323] text-[#8a9f8e] rounded-xl hover:text-white hover:border-[#c9a84c]/30 flex items-center gap-2 transition-all duration-200">
+          <button onClick={() => { setLoading(true); carregarDados() }} className="px-4 py-2.5 text-xs bg-[#1A0F0A] border border-[#3E2723] text-[#BCAAA4] rounded-xl hover:text-white hover:border-[#BFA76A]/30 flex items-center gap-2 transition-all duration-200">
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
             Atualizar
           </button>
-          <Link href="/painel/clientes" className="px-5 py-2.5 bg-gradient-to-r from-[#c9a84c] to-[#b8942e] text-white text-sm font-semibold rounded-xl hover:from-[#d4b55a] hover:to-[#c9a84c] transition-all shadow-lg shadow-[#c9a84c]/15 active:scale-[0.98]">
+          <Link href="/painel/clientes" className="px-5 py-2.5 bg-gradient-to-r from-[#BFA76A] to-[#9A8A4C] text-white text-sm font-semibold rounded-xl hover:from-[#D4B55A] hover:to-[#BFA76A] transition-all shadow-lg shadow-[#BFA76A]/15 active:scale-[0.98]">
             + Novo Cliente
           </Link>
         </div>
@@ -162,13 +162,13 @@ export default function DashboardPage() {
             </Link>
           )}
           {stats.triagensNovas > 0 && (
-            <Link href="/painel/triagem" className="flex items-center gap-3 p-4 bg-[#c9a84c]/8 border border-[#c9a84c]/20 rounded-2xl hover:bg-[#c9a84c]/12 transition-all duration-200 group">
-              <div className="w-11 h-11 bg-[#c9a84c]/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+            <Link href="/painel/triagem" className="flex items-center gap-3 p-4 bg-[#BFA76A]/8 border border-[#BFA76A]/20 rounded-2xl hover:bg-[#BFA76A]/12 transition-all duration-200 group">
+              <div className="w-11 h-11 bg-[#BFA76A]/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                 <span className="text-lg">💬</span>
               </div>
               <div>
-                <p className="text-sm font-semibold text-[#c9a84c]">{stats.triagensNovas} triagem(ns) nova(s)</p>
-                <p className="text-[10px] text-[#c9a84c]/50 font-medium">Do chatbot ou formulário</p>
+                <p className="text-sm font-semibold text-[#BFA76A]">{stats.triagensNovas} triagem(ns) nova(s)</p>
+                <p className="text-[10px] text-[#BFA76A]/50 font-medium">Do chatbot ou formulário</p>
               </div>
             </Link>
           )}
@@ -200,8 +200,8 @@ export default function DashboardPage() {
 
       {/* Aprovações Pendentes (Quick Actions) */}
       {agendamentosPendentes.length > 0 && (
-        <div className="bg-[#0e1810] border border-yellow-800/20 rounded-2xl shadow-lg shadow-black/20">
-          <div className="px-6 py-4 border-b border-[#1e3323] flex items-center justify-between">
+        <div className="bg-[#1A0F0A] border border-yellow-800/20 rounded-2xl shadow-lg shadow-black/20">
+          <div className="px-6 py-4 border-b border-[#3E2723] flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-yellow-900/25 flex items-center justify-center">
                 <span className="text-sm">⏳</span>
@@ -209,22 +209,22 @@ export default function DashboardPage() {
               <h3 className="text-[15px] font-semibold text-white tracking-tight">Aprovações Pendentes</h3>
               <span className="px-2.5 py-0.5 rounded-full text-[10px] bg-yellow-900/20 text-yellow-400 border border-yellow-800/30 font-bold">{agendamentosPendentes.length}</span>
             </div>
-            <Link href="/painel/agenda" className="text-xs text-[#c9a84c] hover:text-[#d4b55a] font-medium">Ver agenda →</Link>
+            <Link href="/painel/agenda" className="text-xs text-[#BFA76A] hover:text-[#D4B55A] font-medium">Ver agenda →</Link>
           </div>
-          <div className="divide-y divide-[#1e3323]/50">
+          <div className="divide-y divide-[#3E2723]/50">
             {agendamentosPendentes.slice(0, 5).map(ag => {
               const nomeCliente = ag.cliente?.nome || ag.titulo.match(/- (.+)$/)?.[1] || 'Cliente'
               const telCliente = ag.cliente?.telefone || ag.observacoes?.match(/Telefone:\s*(\d+)/)?.[1] || ''
               const isVindoDoSite = ag.observacoes?.includes('Agendamento via site')
               return (
-                <div key={ag.id} className="px-6 py-4 hover:bg-[#1a2e1f]/30 transition-colors">
+                <div key={ag.id} className="px-6 py-4 hover:bg-[#2C1A15]/30 transition-colors">
                   <div className="flex items-center justify-between gap-4">
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
                         <p className="text-sm font-semibold text-white truncate">{ag.titulo}</p>
                         {isVindoDoSite && <span className="px-1.5 py-0.5 rounded-md text-[9px] bg-purple-900/20 text-purple-400 border border-purple-800/30 font-medium">🌐 Site</span>}
                       </div>
-                      <p className="text-xs text-[#5a7b5e] mt-1 font-medium">{formatarDataHora(ag.dataHora)} • {ag.tipo}</p>
+                      <p className="text-xs text-[#8D6E63] mt-1 font-medium">{formatarDataHora(ag.dataHora)} • {ag.tipo}</p>
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
                       {telCliente && (
@@ -233,7 +233,7 @@ export default function DashboardPage() {
                           ✅ Aprovar + WhatsApp
                         </button>
                       )}
-                      <button onClick={() => aprovarEWhatsApp(ag.id, '', nomeCliente, ag.dataHora, ag.tipo)} className="px-3 py-1.5 text-[11px] font-semibold bg-[#c9a84c]/15 text-[#c9a84c] border border-[#c9a84c]/25 rounded-xl hover:bg-[#c9a84c]/25 transition-all">
+                      <button onClick={() => aprovarEWhatsApp(ag.id, '', nomeCliente, ag.dataHora, ag.tipo)} className="px-3 py-1.5 text-[11px] font-semibold bg-[#BFA76A]/15 text-[#BFA76A] border border-[#BFA76A]/25 rounded-xl hover:bg-[#BFA76A]/25 transition-all">
                         ✅ Aprovar
                       </button>
                     </div>
@@ -248,38 +248,38 @@ export default function DashboardPage() {
       {/* Main Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Próximos Prazos */}
-        <div className="bg-[#0e1810] border border-[#1e3323] rounded-2xl shadow-lg shadow-black/20">
-          <div className="px-6 py-4 border-b border-[#1e3323] flex items-center justify-between">
+        <div className="bg-[#1A0F0A] border border-[#3E2723] rounded-2xl shadow-lg shadow-black/20">
+          <div className="px-6 py-4 border-b border-[#3E2723] flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#c9a84c]/10 flex items-center justify-center">
-                <svg className="w-4 h-4 text-[#c9a84c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <div className="w-8 h-8 rounded-lg bg-[#BFA76A]/10 flex items-center justify-center">
+                <svg className="w-4 h-4 text-[#BFA76A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               </div>
               <h3 className="text-[15px] font-semibold text-white tracking-tight">Próximos Prazos</h3>
               {stats.prazosVencidos > 0 && <span className="px-2.5 py-0.5 rounded-full text-[10px] bg-red-900/20 text-red-400 border border-red-800/30 font-bold">{stats.prazosVencidos} vencido(s)</span>}
             </div>
-            <Link href="/painel/prazos" className="text-xs text-[#c9a84c] hover:text-[#d4b55a] font-medium">Ver todos →</Link>
+            <Link href="/painel/prazos" className="text-xs text-[#BFA76A] hover:text-[#D4B55A] font-medium">Ver todos →</Link>
           </div>
-          <div className="divide-y divide-[#1e3323]/50">
+          <div className="divide-y divide-[#3E2723]/50">
             {data.proximosPrazos.length === 0 ? (
-              <p className="px-6 py-10 text-center text-[#5a7b5e] text-sm font-medium">Nenhum prazo pendente ✅</p>
+              <p className="px-6 py-10 text-center text-[#8D6E63] text-sm font-medium">Nenhum prazo pendente ✅</p>
             ) : (
               data.proximosPrazos.map(prazo => {
                 const vencido = new Date(prazo.dataLimite) < new Date()
                 const hoje = new Date(prazo.dataLimite).toDateString() === new Date().toDateString()
                 return (
-                  <div key={prazo.id} className={`px-6 py-4 hover:bg-[#1a2e1f]/30 transition-colors ${vencido ? 'bg-red-950/10' : ''}`}>
+                  <div key={prazo.id} className={`px-6 py-4 hover:bg-[#2C1A15]/30 transition-colors ${vencido ? 'bg-red-950/10' : ''}`}>
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0 flex-1">
                         <p className="text-sm font-semibold text-white truncate">{prazo.titulo}</p>
-                        <p className="text-xs text-[#5a7b5e] mt-1 font-medium">
+                        <p className="text-xs text-[#8D6E63] mt-1 font-medium">
                           {prazo.processo.cliente.nome} • {prazo.processo.numero || prazo.processo.assunto}
                         </p>
                       </div>
                       <div className="text-right flex-shrink-0">
-                        <p className={`text-xs font-bold ${vencido ? 'text-red-400' : hoje ? 'text-orange-400' : 'text-[#c9a84c]'}`}>
+                        <p className={`text-xs font-bold ${vencido ? 'text-red-400' : hoje ? 'text-orange-400' : 'text-[#BFA76A]'}`}>
                           {diasAte(prazo.dataLimite)}
                         </p>
-                        <p className="text-[10px] text-[#4a6b4e] font-medium">{formatarData(prazo.dataLimite)}</p>
+                        <p className="text-[10px] text-[#6D4C41] font-medium">{formatarData(prazo.dataLimite)}</p>
                       </div>
                     </div>
                   </div>
@@ -290,22 +290,22 @@ export default function DashboardPage() {
         </div>
 
         {/* Próximos Agendamentos */}
-        <div className="bg-[#0e1810] border border-[#1e3323] rounded-2xl shadow-lg shadow-black/20">
-          <div className="px-6 py-4 border-b border-[#1e3323] flex items-center justify-between">
+        <div className="bg-[#1A0F0A] border border-[#3E2723] rounded-2xl shadow-lg shadow-black/20">
+          <div className="px-6 py-4 border-b border-[#3E2723] flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
                 <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
               </div>
               <h3 className="text-[15px] font-semibold text-white tracking-tight">Próximos Agendamentos</h3>
             </div>
-            <Link href="/painel/agenda" className="text-xs text-[#c9a84c] hover:text-[#d4b55a] font-medium">Ver agenda →</Link>
+            <Link href="/painel/agenda" className="text-xs text-[#BFA76A] hover:text-[#D4B55A] font-medium">Ver agenda →</Link>
           </div>
-          <div className="divide-y divide-[#1e3323]/50">
+          <div className="divide-y divide-[#3E2723]/50">
             {data.proximosAgendamentos.length === 0 ? (
-              <p className="px-6 py-10 text-center text-[#5a7b5e] text-sm font-medium">Nenhum agendamento próximo</p>
+              <p className="px-6 py-10 text-center text-[#8D6E63] text-sm font-medium">Nenhum agendamento próximo</p>
             ) : (
               data.proximosAgendamentos.map(ag => (
-                <div key={ag.id} className="px-6 py-4 hover:bg-[#1a2e1f]/30 transition-colors">
+                <div key={ag.id} className="px-6 py-4 hover:bg-[#2C1A15]/30 transition-colors">
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
@@ -314,10 +314,10 @@ export default function DashboardPage() {
                           <span className="px-1.5 py-0.5 rounded-md text-[8px] bg-purple-900/20 text-purple-400 border border-purple-800/30 font-bold">🌐</span>
                         )}
                       </div>
-                      <p className="text-xs text-[#5a7b5e] mt-1 font-medium">{ag.cliente?.nome || 'Sem cliente vinculado'}</p>
+                      <p className="text-xs text-[#8D6E63] mt-1 font-medium">{ag.cliente?.nome || 'Sem cliente vinculado'}</p>
                     </div>
                     <div className="text-right flex-shrink-0">
-                      <p className="text-xs text-[#c9a84c] font-medium">{formatarDataHora(ag.dataHora)}</p>
+                      <p className="text-xs text-[#BFA76A] font-medium">{formatarDataHora(ag.dataHora)}</p>
                       <StatusBadge status={ag.status} />
                     </div>
                   </div>
@@ -328,27 +328,27 @@ export default function DashboardPage() {
         </div>
 
         {/* Últimas Triagens (Chatbot + Contato) */}
-        <div className="bg-[#0e1810] border border-[#1e3323] rounded-2xl shadow-lg shadow-black/20 lg:col-span-2">
-          <div className="px-6 py-4 border-b border-[#1e3323] flex items-center justify-between">
+        <div className="bg-[#1A0F0A] border border-[#3E2723] rounded-2xl shadow-lg shadow-black/20 lg:col-span-2">
+          <div className="px-6 py-4 border-b border-[#3E2723] flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
                 <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
               </div>
               <h3 className="text-[15px] font-semibold text-white tracking-tight">Novas Triagens e Contatos</h3>
               {stats.triagensNovas > 0 && (
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] bg-[#c9a84c]/15 text-[#c9a84c] font-bold">{stats.triagensNovas}</span>
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] bg-[#BFA76A]/15 text-[#BFA76A] font-bold">{stats.triagensNovas}</span>
               )}
             </div>
-            <Link href="/painel/triagem" className="text-xs text-[#c9a84c] hover:text-[#d4b55a] font-medium">Ver todas →</Link>
+            <Link href="/painel/triagem" className="text-xs text-[#BFA76A] hover:text-[#D4B55A] font-medium">Ver todas →</Link>
           </div>
-          <div className="divide-y divide-[#1e3323]/50">
+          <div className="divide-y divide-[#3E2723]/50">
             {data.ultimasTriagens.length === 0 ? (
-              <p className="px-6 py-10 text-center text-[#5a7b5e] text-sm font-medium">Nenhuma triagem nova</p>
+              <p className="px-6 py-10 text-center text-[#8D6E63] text-sm font-medium">Nenhuma triagem nova</p>
             ) : (
               data.ultimasTriagens.map(triagem => {
                 const isContato = triagem.area.includes('Contato')
                 return (
-                  <div key={triagem.id} className="px-6 py-4 hover:bg-[#1a2e1f]/30 transition-colors">
+                  <div key={triagem.id} className="px-6 py-4 hover:bg-[#2C1A15]/30 transition-colors">
                     <div className="flex items-center justify-between gap-3">
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
@@ -359,11 +359,11 @@ export default function DashboardPage() {
                             <span className="px-1.5 py-0.5 rounded-md text-[9px] bg-purple-900/20 text-purple-400 border border-purple-800/30 font-medium">🤖 Chatbot</span>
                           )}
                         </div>
-                        <p className="text-xs text-[#5a7b5e] font-medium mt-1">{triagem.telefone || 'Sem telefone'} • {triagem.area}</p>
+                        <p className="text-xs text-[#8D6E63] font-medium mt-1">{triagem.telefone || 'Sem telefone'} • {triagem.area}</p>
                       </div>
                       <div className="flex items-center gap-2.5 flex-shrink-0">
                         <StatusBadge status={triagem.urgencia === 'alta' ? 'urgente' : triagem.urgencia === 'media' ? 'alta' : 'normal'} />
-                        <span className="text-[10px] text-[#4a6b4e] font-medium">{formatarData(triagem.criadoEm)}</span>
+                        <span className="text-[10px] text-[#6D4C41] font-medium">{formatarData(triagem.criadoEm)}</span>
                         {triagem.telefone && (
                           <a href={`https://wa.me/55${triagem.telefone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer"
                             className="p-1.5 rounded-lg text-green-500/60 hover:text-green-400 hover:bg-green-900/20" title="WhatsApp">
@@ -383,14 +383,14 @@ export default function DashboardPage() {
       {/* Atalhos Rápidos */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          { href: '/painel/agenda', label: 'Nova Consulta', icon: '📅', cor: 'border-[#c9a84c]/15 hover:border-[#c9a84c]/35 hover:bg-[#c9a84c]/5' },
+          { href: '/painel/agenda', label: 'Nova Consulta', icon: '📅', cor: 'border-[#BFA76A]/15 hover:border-[#BFA76A]/35 hover:bg-[#BFA76A]/5' },
           { href: '/painel/processos', label: 'Novo Processo', icon: '📋', cor: 'border-blue-800/20 hover:border-blue-700/35 hover:bg-blue-950/15' },
           { href: '/painel/triagem', label: 'Ver Triagens', icon: '💬', cor: 'border-purple-800/20 hover:border-purple-700/35 hover:bg-purple-950/15' },
           { href: '/painel/financeiro', label: 'Financeiro', icon: '💰', cor: 'border-emerald-800/20 hover:border-emerald-700/35 hover:bg-emerald-950/15' },
         ].map(a => (
-          <Link key={a.href} href={a.href} className={`flex items-center gap-3 p-4 bg-[#0e1810] border rounded-2xl transition-all duration-200 group ${a.cor}`}>
+          <Link key={a.href} href={a.href} className={`flex items-center gap-3 p-4 bg-[#1A0F0A] border rounded-2xl transition-all duration-200 group ${a.cor}`}>
             <span className="text-xl group-hover:scale-110 transition-transform">{a.icon}</span>
-            <span className="text-sm text-[#b0c4b4] font-semibold">{a.label}</span>
+            <span className="text-sm text-[#D7CCC8] font-semibold">{a.label}</span>
           </Link>
         ))}
       </div>

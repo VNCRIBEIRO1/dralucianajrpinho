@@ -22,13 +22,13 @@ export default function LawyerPortrait({
       >
         <defs>
           <linearGradient id="portrait-bg" x1="0" y1="0" x2="0.3" y2="1">
-            <stop offset="0%" stopColor="#1a2e1f" />
-            <stop offset="50%" stopColor="#0e1810" />
-            <stop offset="100%" stopColor="#0a110b" />
+            <stop offset="0%" stopColor="#3E2723" />
+            <stop offset="50%" stopColor="#1A0F0A" />
+            <stop offset="100%" stopColor="#120B07" />
           </linearGradient>
           <linearGradient id="suit-gradient" x1="0.5" y1="0" x2="0.5" y2="1">
-            <stop offset="0%" stopColor="#1a1a2e" />
-            <stop offset="100%" stopColor="#0f0f1e" />
+            <stop offset="0%" stopColor="#2C1A15" />
+            <stop offset="100%" stopColor="#1A0F0A" />
           </linearGradient>
           <linearGradient id="shirt-gradient" x1="0.5" y1="0" x2="0.5" y2="1">
             <stop offset="0%" stopColor="#f8fafc" />
@@ -39,8 +39,8 @@ export default function LawyerPortrait({
             <stop offset="100%" stopColor="#d2a679" />
           </linearGradient>
           <linearGradient id="tie-gradient" x1="0.5" y1="0" x2="0.5" y2="1">
-            <stop offset="0%" stopColor="#1a2e1f" />
-            <stop offset="100%" stopColor="#0e1810" />
+            <stop offset="0%" stopColor="#3E2723" />
+            <stop offset="100%" stopColor="#1A0F0A" />
           </linearGradient>
           <linearGradient id="gold-accent" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#d4a853" />
@@ -71,15 +71,15 @@ export default function LawyerPortrait({
           {/* Suit lapels */}
           <path
             d="M170 268 L185 310 L200 340 L200 310 Z"
-            fill="#242440"
+            fill="#3E2723"
           />
           <path
             d="M230 268 L215 310 L200 340 L200 310 Z"
-            fill="#242440"
+            fill="#3E2723"
           />
           {/* Suit shadow lines */}
-          <line x1="155" y1="290" x2="140" y2="500" stroke="#0a0a16" strokeWidth="1" opacity="0.3" />
-          <line x1="245" y1="290" x2="260" y2="500" stroke="#0a0a16" strokeWidth="1" opacity="0.3" />
+          <line x1="155" y1="290" x2="140" y2="500" stroke="#120B07" strokeWidth="1" opacity="0.3" />
+          <line x1="245" y1="290" x2="260" y2="500" stroke="#120B07" strokeWidth="1" opacity="0.3" />
 
           {/* Shirt */}
           <path

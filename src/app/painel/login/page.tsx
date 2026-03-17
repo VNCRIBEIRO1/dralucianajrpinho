@@ -82,22 +82,22 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#050905] via-[#0a0f0b] to-[#0e1810] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#050905] via-[#120B07] to-[#1A0F0A] flex items-center justify-center p-4">
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1a2e1f]/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#2C1A15]/20 via-transparent to-transparent pointer-events-none" />
       
       <div className="w-full max-w-md relative">
         {/* Logo */}
         <div className="text-center mb-10">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#c9a84c] to-[#b8942e] flex items-center justify-center mx-auto mb-5 shadow-2xl shadow-[#c9a84c]/20 ring-1 ring-[#c9a84c]/30">
+          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#BFA76A] to-[#9A8A4C] flex items-center justify-center mx-auto mb-5 shadow-2xl shadow-[#BFA76A]/20 ring-1 ring-[#BFA76A]/30">
             <span className="text-white font-bold text-3xl tracking-tight">C&O</span>
           </div>
-          <h1 className="text-3xl font-bold text-white tracking-tight">Cerbelera & Oliveira</h1>
-          <p className="text-[#5a7b5e] text-sm mt-2 font-medium">Painel de Gestão Jurídica</p>
+          <h1 className="text-3xl font-bold text-white tracking-tight">Dra. Luciana Pinho</h1>
+          <p className="text-[#8D6E63] text-sm mt-2 font-medium">Painel de Gestão Jurídica</p>
         </div>
 
         {/* Form Card */}
-        <div className="bg-[#0e1810]/80 backdrop-blur-xl border border-[#1e3323] rounded-2xl p-8 shadow-2xl shadow-black/40">
+        <div className="bg-[#1A0F0A]/80 backdrop-blur-xl border border-[#3E2723] rounded-2xl p-8 shadow-2xl shadow-black/40">
           <h2 className="text-lg font-semibold text-white mb-6 tracking-tight">
             {modoRegistro ? 'Criar Conta de Acesso' : 'Acessar Painel'}
           </h2>
@@ -112,24 +112,24 @@ export default function LoginPage() {
             {modoRegistro && (
               <>
                 <div>
-                  <label className="block text-sm font-semibold text-[#b0c4b4] mb-1.5">Nome Completo</label>
+                  <label className="block text-sm font-semibold text-[#D7CCC8] mb-1.5">Nome Completo</label>
                   <input
                     type="text"
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
                     required
-                    className="w-full px-4 py-3 bg-[#111a13] border border-[#1e3323] rounded-xl text-white text-sm placeholder-[#4a6b4e] focus:outline-none focus:border-[#c9a84c]/50 focus:ring-1 focus:ring-[#c9a84c]/20 transition-all"
+                    className="w-full px-4 py-3 bg-[#1E1410] border border-[#3E2723] rounded-xl text-white text-sm placeholder-[#6D4C41] focus:outline-none focus:border-[#BFA76A]/50 focus:ring-1 focus:ring-[#BFA76A]/20 transition-all"
                     placeholder="Dr(a). Nome Completo"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-[#b0c4b4] mb-1.5">Chave de Administrador</label>
+                  <label className="block text-sm font-semibold text-[#D7CCC8] mb-1.5">Chave de Administrador</label>
                   <input
                     type="password"
                     value={chaveAdmin}
                     onChange={(e) => setChaveAdmin(e.target.value)}
                     required
-                    className="w-full px-4 py-3 bg-[#111a13] border border-[#1e3323] rounded-xl text-white text-sm placeholder-[#4a6b4e] focus:outline-none focus:border-[#c9a84c]/50 focus:ring-1 focus:ring-[#c9a84c]/20 transition-all"
+                    className="w-full px-4 py-3 bg-[#1E1410] border border-[#3E2723] rounded-xl text-white text-sm placeholder-[#6D4C41] focus:outline-none focus:border-[#BFA76A]/50 focus:ring-1 focus:ring-[#BFA76A]/20 transition-all"
                     placeholder="Chave de segurança"
                   />
                 </div>
@@ -137,26 +137,26 @@ export default function LoginPage() {
             )}
 
             <div>
-              <label className="block text-sm font-semibold text-[#b0c4b4] mb-1.5">Email</label>
+              <label className="block text-sm font-semibold text-[#D7CCC8] mb-1.5">Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-[#111a13] border border-[#1e3323] rounded-xl text-white text-sm placeholder-[#4a6b4e] focus:outline-none focus:border-[#c9a84c]/50 focus:ring-1 focus:ring-[#c9a84c]/20 transition-all"
+                className="w-full px-4 py-3 bg-[#1E1410] border border-[#3E2723] rounded-xl text-white text-sm placeholder-[#6D4C41] focus:outline-none focus:border-[#BFA76A]/50 focus:ring-1 focus:ring-[#BFA76A]/20 transition-all"
                 placeholder="seu@email.com"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#b0c4b4] mb-1.5">Senha</label>
+              <label className="block text-sm font-semibold text-[#D7CCC8] mb-1.5">Senha</label>
               <input
                 type="password"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-3 bg-[#111a13] border border-[#1e3323] rounded-xl text-white text-sm placeholder-[#4a6b4e] focus:outline-none focus:border-[#c9a84c]/50 focus:ring-1 focus:ring-[#c9a84c]/20 transition-all"
+                className="w-full px-4 py-3 bg-[#1E1410] border border-[#3E2723] rounded-xl text-white text-sm placeholder-[#6D4C41] focus:outline-none focus:border-[#BFA76A]/50 focus:ring-1 focus:ring-[#BFA76A]/20 transition-all"
                 placeholder="••••••••"
               />
             </div>
@@ -164,7 +164,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#c9a84c] to-[#b8942e] text-white font-semibold text-sm hover:from-[#d4b55a] hover:to-[#c9a84c] disabled:opacity-50 transition-all duration-200 shadow-lg shadow-[#c9a84c]/20 active:scale-[0.98]"
+              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#BFA76A] to-[#9A8A4C] text-white font-semibold text-sm hover:from-[#D4B55A] hover:to-[#BFA76A] disabled:opacity-50 transition-all duration-200 shadow-lg shadow-[#BFA76A]/20 active:scale-[0.98]"
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">
@@ -178,7 +178,7 @@ export default function LoginPage() {
           <div className="mt-6 text-center">
             <button
               onClick={() => { setModoRegistro(!modoRegistro); setErro('') }}
-              className="text-sm text-[#c9a84c] hover:text-[#d4b55a] transition-colors"
+              className="text-sm text-[#BFA76A] hover:text-[#D4B55A] transition-colors"
             >
               {modoRegistro ? 'Já tenho conta - Fazer login' : 'Primeiro acesso - Criar conta'}
             </button>

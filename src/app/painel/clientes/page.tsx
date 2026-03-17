@@ -133,7 +133,7 @@ export default function ClientesPage() {
 
   const gerarWhatsApp = (telefone: string, nome: string) => {
     const numero = telefone.replace(/\D/g, '')
-    const msg = encodeURIComponent(`Olá ${nome}, aqui é da Cerbelera & Oliveira Advogados. `)
+    const msg = encodeURIComponent(`Olá ${nome}, aqui é da Dra. Luciana J. R. Pinho. `)
     window.open(`https://wa.me/55${numero}?text=${msg}`, '_blank')
   }
 
@@ -143,18 +143,18 @@ export default function ClientesPage() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-white tracking-tight">Clientes</h1>
-          <p className="text-[#7a9f7e] text-sm mt-1.5 font-medium">{total} cliente(s) cadastrado(s)</p>
+          <p className="text-[#BCAAA4] text-sm mt-1.5 font-medium">{total} cliente(s) cadastrado(s)</p>
         </div>
         <div className="flex gap-2">
           <button
             onClick={() => window.open('/api/exportar?tipo=clientes&formato=csv', '_blank')}
-            className="px-3 py-2 bg-[#1a2e1f] border border-[#2a3f2e] text-[#b0c4b4] text-sm rounded-lg hover:bg-[#2a3f2e] transition-colors"
+            className="px-3 py-2 bg-[#2C1A15] border border-[#4E342E] text-[#D7CCC8] text-sm rounded-lg hover:bg-[#4E342E] transition-colors"
           >
             Exportar CSV
           </button>
           <button
             onClick={abrirNovo}
-            className="px-4 py-2 bg-gradient-to-r from-[#c9a84c] to-[#b8942e] text-white text-sm font-medium rounded-lg hover:from-[#d4b55a] hover:to-[#c9a84c] transition-all"
+            className="px-4 py-2 bg-gradient-to-r from-[#BFA76A] to-[#9A8A4C] text-white text-sm font-medium rounded-lg hover:from-[#D4B55A] hover:to-[#BFA76A] transition-all"
           >
             + Novo Cliente
           </button>
@@ -164,7 +164,7 @@ export default function ClientesPage() {
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
-          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6b8a6f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A1887F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <input
@@ -172,13 +172,13 @@ export default function ClientesPage() {
             placeholder="Buscar por nome, CPF, email ou telefone..."
             value={busca}
             onChange={(e) => { setBusca(e.target.value); setPagina(1) }}
-            className="w-full pl-10 pr-4 py-2.5 bg-[#1a2e1f] border border-[#2a3f2e] rounded-lg text-white text-sm placeholder-[#6b8a6f] focus:outline-none focus:border-[#c9a84c]/50"
+            className="w-full pl-10 pr-4 py-2.5 bg-[#2C1A15] border border-[#4E342E] rounded-lg text-white text-sm placeholder-[#A1887F] focus:outline-none focus:border-[#BFA76A]/50"
           />
         </div>
         <select
           value={filtroStatus}
           onChange={(e) => { setFiltroStatus(e.target.value); setPagina(1) }}
-          className="px-3 py-2.5 bg-[#1a2e1f] border border-[#2a3f2e] rounded-lg text-white text-sm focus:outline-none focus:border-[#c9a84c]/50"
+          className="px-3 py-2.5 bg-[#2C1A15] border border-[#4E342E] rounded-lg text-white text-sm focus:outline-none focus:border-[#BFA76A]/50"
         >
           <option value="">Todos os status</option>
           <option value="ativo">Ativo</option>
@@ -188,39 +188,39 @@ export default function ClientesPage() {
       </div>
 
       {/* Table */}
-      <div className="bg-[#0e1810] border border-[#2a3f2e] rounded-xl overflow-hidden">
+      <div className="bg-[#1A0F0A] border border-[#4E342E] rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#2a3f2e]">
-                <th className="text-left px-4 py-3 text-xs font-medium text-[#8a9f8e] uppercase">Nome</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-[#8a9f8e] uppercase hidden md:table-cell">Telefone</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-[#8a9f8e] uppercase hidden lg:table-cell">Email</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-[#8a9f8e] uppercase">Status</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-[#8a9f8e] uppercase hidden md:table-cell">Processos</th>
-                <th className="text-right px-4 py-3 text-xs font-medium text-[#8a9f8e] uppercase">Ações</th>
+              <tr className="border-b border-[#4E342E]">
+                <th className="text-left px-4 py-3 text-xs font-medium text-[#BCAAA4] uppercase">Nome</th>
+                <th className="text-left px-4 py-3 text-xs font-medium text-[#BCAAA4] uppercase hidden md:table-cell">Telefone</th>
+                <th className="text-left px-4 py-3 text-xs font-medium text-[#BCAAA4] uppercase hidden lg:table-cell">Email</th>
+                <th className="text-left px-4 py-3 text-xs font-medium text-[#BCAAA4] uppercase">Status</th>
+                <th className="text-left px-4 py-3 text-xs font-medium text-[#BCAAA4] uppercase hidden md:table-cell">Processos</th>
+                <th className="text-right px-4 py-3 text-xs font-medium text-[#BCAAA4] uppercase">Ações</th>
               </tr>
             </thead>
             <tbody>
               {loading ? (
-                <tr><td colSpan={6} className="px-4 py-12 text-center text-[#6b8a6f]">
-                  <div className="w-5 h-5 border-2 border-[#c9a84c] border-t-transparent rounded-full animate-spin mx-auto" />
+                <tr><td colSpan={6} className="px-4 py-12 text-center text-[#A1887F]">
+                  <div className="w-5 h-5 border-2 border-[#BFA76A] border-t-transparent rounded-full animate-spin mx-auto" />
                 </td></tr>
               ) : clientes.length === 0 ? (
-                <tr><td colSpan={6} className="px-4 py-12 text-center text-[#6b8a6f]">Nenhum cliente encontrado</td></tr>
+                <tr><td colSpan={6} className="px-4 py-12 text-center text-[#A1887F]">Nenhum cliente encontrado</td></tr>
               ) : (
                 clientes.map(c => (
-                  <tr key={c.id} className="border-b border-[#2a3f2e]/50 hover:bg-[#1a2e1f]/50 transition-colors">
+                  <tr key={c.id} className="border-b border-[#4E342E]/50 hover:bg-[#2C1A15]/50 transition-colors">
                     <td className="px-4 py-3">
                       <button onClick={() => router.push(`/painel/clientes/${c.id}`)} className="text-left">
-                        <p className="text-sm font-medium text-white hover:text-[#c9a84c] transition-colors">{c.nome}</p>
-                        <p className="text-xs text-[#6b8a6f]">{c.cpfCnpj || 'CPF não informado'}</p>
+                        <p className="text-sm font-medium text-white hover:text-[#BFA76A] transition-colors">{c.nome}</p>
+                        <p className="text-xs text-[#A1887F]">{c.cpfCnpj || 'CPF não informado'}</p>
                       </button>
                     </td>
-                    <td className="px-4 py-3 text-sm text-[#d0dcd2] hidden md:table-cell">{c.telefone}</td>
-                    <td className="px-4 py-3 text-sm text-[#d0dcd2] hidden lg:table-cell">{c.email || '-'}</td>
+                    <td className="px-4 py-3 text-sm text-[#EFEBE9] hidden md:table-cell">{c.telefone}</td>
+                    <td className="px-4 py-3 text-sm text-[#EFEBE9] hidden lg:table-cell">{c.email || '-'}</td>
                     <td className="px-4 py-3"><StatusBadge status={c.status} /></td>
-                    <td className="px-4 py-3 text-sm text-[#d0dcd2] hidden md:table-cell">{c._count.processos}</td>
+                    <td className="px-4 py-3 text-sm text-[#EFEBE9] hidden md:table-cell">{c._count.processos}</td>
                     <td className="px-4 py-3">
                       <div className="flex items-center justify-end gap-1">
                         <button
@@ -239,7 +239,7 @@ export default function ClientesPage() {
                         </button>
                         <button
                           onClick={() => abrirEditar(c)}
-                          className="p-1.5 rounded-lg text-[#c9a84c] hover:bg-[#c9a84c]/20 transition-colors"
+                          className="p-1.5 rounded-lg text-[#BFA76A] hover:bg-[#BFA76A]/20 transition-colors"
                           title="Editar"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
@@ -261,14 +261,14 @@ export default function ClientesPage() {
         </div>
 
         {total > 20 && (
-          <div className="flex items-center justify-between px-4 py-3 border-t border-[#2a3f2e]">
-            <p className="text-xs text-[#6b8a6f]">{total} registro(s)</p>
+          <div className="flex items-center justify-between px-4 py-3 border-t border-[#4E342E]">
+            <p className="text-xs text-[#A1887F]">{total} registro(s)</p>
             <div className="flex gap-2">
               <button onClick={() => setPagina(p => Math.max(1, p - 1))} disabled={pagina === 1}
-                className="px-3 py-1 text-xs rounded-lg bg-[#1a2e1f] text-[#b0c4b4] disabled:opacity-40 hover:bg-[#2a3f2e]">Anterior</button>
-              <span className="px-3 py-1 text-xs text-[#8a9f8e]">Página {pagina}</span>
+                className="px-3 py-1 text-xs rounded-lg bg-[#2C1A15] text-[#D7CCC8] disabled:opacity-40 hover:bg-[#4E342E]">Anterior</button>
+              <span className="px-3 py-1 text-xs text-[#BCAAA4]">Página {pagina}</span>
               <button onClick={() => setPagina(p => p + 1)} disabled={clientes.length < 20}
-                className="px-3 py-1 text-xs rounded-lg bg-[#1a2e1f] text-[#b0c4b4] disabled:opacity-40 hover:bg-[#2a3f2e]">Próxima</button>
+                className="px-3 py-1 text-xs rounded-lg bg-[#2C1A15] text-[#D7CCC8] disabled:opacity-40 hover:bg-[#4E342E]">Próxima</button>
             </div>
           </div>
         )}
@@ -328,7 +328,7 @@ export default function ClientesPage() {
           <FormField label="Observações">
             <FormTextarea value={form.observacoes} onChange={(e) => setForm({...form, observacoes: e.target.value})} rows={3} placeholder="Observações sobre o cliente" />
           </FormField>
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#2a3f2e]">
+          <div className="flex justify-end gap-3 pt-4 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setModalAberto(false)}>Cancelar</FormButton>
             <FormButton type="submit" disabled={salvando}>{salvando ? 'Salvando...' : editandoId ? 'Atualizar' : 'Cadastrar'}</FormButton>
           </div>
@@ -349,11 +349,11 @@ export default function ClientesPage() {
               </div>
             </div>
           </div>
-          <p className="text-sm text-[#b0c4b4]">
+          <p className="text-sm text-[#D7CCC8]">
             Deseja realmente excluir o cliente <strong className="text-white">&quot;{confirmExcluir?.nome}&quot;</strong>?
           </p>
-          <p className="text-xs text-[#6b8a6f]">Processos, prazos, agendamentos e dados financeiros vinculados serão removidos.</p>
-          <div className="flex justify-end gap-3 pt-3 border-t border-[#2a3f2e]">
+          <p className="text-xs text-[#A1887F]">Processos, prazos, agendamentos e dados financeiros vinculados serão removidos.</p>
+          <div className="flex justify-end gap-3 pt-3 border-t border-[#4E342E]">
             <FormButton variant="secondary" type="button" onClick={() => setConfirmExcluir(null)}>Cancelar</FormButton>
             <button onClick={() => confirmExcluir && excluir(confirmExcluir.id)}
               className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-lg transition-colors">

@@ -62,7 +62,7 @@ export default function PrazosPage() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-white tracking-tight">Prazos Processuais</h1>
-          <p className="text-[#6b8a6f] text-sm mt-1">
+          <p className="text-[#A1887F] text-sm mt-1">
             {prazosPendentes.length} pendente(s) • {prazosVencidos.length} vencido(s)
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function PrazosPage() {
           { label: 'Cumpridos', v: prazosCumpridos.length, cor: 'border-green-600/30 bg-green-900/10' },
         ].map(card => (
           <div key={card.label} className={`rounded-xl p-4 border ${card.cor}`}>
-            <p className="text-xs text-[#8a9f8e]">{card.label}</p>
+            <p className="text-xs text-[#BCAAA4]">{card.label}</p>
             <p className="text-2xl font-bold text-white mt-1">{card.v}</p>
           </div>
         ))}
@@ -91,23 +91,23 @@ export default function PrazosPage() {
         ].map(f => (
           <button key={f.value} onClick={() => setFiltro(f.value)}
             className={`px-3 py-1.5 text-xs rounded-lg transition-colors ${
-              filtro === f.value ? 'bg-[#c9a84c]/20 text-[#c9a84c] border border-[#c9a84c]/30' : 'bg-[#0e1810] text-[#8a9f8e] border border-[#2a3f2e] hover:text-white'
+              filtro === f.value ? 'bg-[#BFA76A]/20 text-[#BFA76A] border border-[#BFA76A]/30' : 'bg-[#1A0F0A] text-[#BCAAA4] border border-[#4E342E] hover:text-white'
             }`}>{f.label}</button>
         ))}
       </div>
 
       {loading ? (
-        <div className="flex items-center justify-center py-12"><div className="w-8 h-8 border-2 border-[#c9a84c] border-t-transparent rounded-full animate-spin" /></div>
+        <div className="flex items-center justify-center py-12"><div className="w-8 h-8 border-2 border-[#BFA76A] border-t-transparent rounded-full animate-spin" /></div>
       ) : prazos.length === 0 ? (
-        <p className="text-center text-[#6b8a6f] py-12">Nenhum prazo encontrado</p>
+        <p className="text-center text-[#A1887F] py-12">Nenhum prazo encontrado</p>
       ) : (
         <div className="space-y-3">
           {prazos.map(prazo => {
             const info = diasRestantes(prazo.dataLimite)
             const vencido = prazo.status === 'pendente' && new Date(prazo.dataLimite) < new Date()
             return (
-              <div key={prazo.id} className={`bg-[#0e1810] border rounded-xl p-4 transition-colors ${
-                vencido ? 'border-red-800/50 bg-red-950/10' : 'border-[#2a3f2e] hover:border-[#c9a84c]/30'
+              <div key={prazo.id} className={`bg-[#1A0F0A] border rounded-xl p-4 transition-colors ${
+                vencido ? 'border-red-800/50 bg-red-950/10' : 'border-[#4E342E] hover:border-[#BFA76A]/30'
               }`}>
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0 flex-1">
@@ -118,11 +118,11 @@ export default function PrazosPage() {
                       <StatusBadge status={prazo.status} />
                     </div>
                     <p className="text-sm font-medium text-white">{prazo.titulo}</p>
-                    {prazo.descricao && <p className="text-xs text-[#6b8a6f] mt-0.5">{prazo.descricao}</p>}
-                    <div className="flex items-center gap-3 mt-2 text-xs text-[#6b8a6f]">
+                    {prazo.descricao && <p className="text-xs text-[#A1887F] mt-0.5">{prazo.descricao}</p>}
+                    <div className="flex items-center gap-3 mt-2 text-xs text-[#A1887F]">
                       <span className="capitalize">{prazo.tipo}</span>
                       <span>•</span>
-                      <a href={`/painel/processos/${prazo.processo.id}`} className="text-[#c9a84c] hover:underline">
+                      <a href={`/painel/processos/${prazo.processo.id}`} className="text-[#BFA76A] hover:underline">
                         {prazo.processo.numero || prazo.processo.assunto}
                       </a>
                       <span>•</span>
@@ -131,7 +131,7 @@ export default function PrazosPage() {
                   </div>
                   <div className="flex flex-col items-end gap-2 flex-shrink-0">
                     <p className={`text-sm font-medium ${info.cor}`}>{info.texto}</p>
-                    <p className="text-xs text-[#6b8a6f]">{new Date(prazo.dataLimite).toLocaleDateString('pt-BR')}</p>
+                    <p className="text-xs text-[#A1887F]">{new Date(prazo.dataLimite).toLocaleDateString('pt-BR')}</p>
                     {prazo.status === 'pendente' && (
                       <button onClick={() => marcarCumprido(prazo.id)}
                         className="px-3 py-1 text-xs bg-green-900/30 text-green-400 rounded-lg border border-green-700/30 hover:bg-green-900/50 transition-colors">
